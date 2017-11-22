@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>金若愚的blog</title>
   
-  <subtitle>ang</subtitle>
+  
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hzjry123.github.io/"/>
@@ -10,7 +10,7 @@
   <id>https://hzjry123.github.io/</id>
   
   <author>
-    <name>[object Object]</name>
+    <name>金若愚</name>
     
   </author>
   
