@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>金若愚的blog啊</title>
+  <title>金若愚的blog</title>
   
-  <subtitle>algorithm,machine learning</subtitle>
+  <subtitle>ang</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hzjry123.github.io/"/>
@@ -10,7 +10,7 @@
   <id>https://hzjry123.github.io/</id>
   
   <author>
-    <name>金若愚</name>
+    <name>[object Object]</name>
     
   </author>
   
