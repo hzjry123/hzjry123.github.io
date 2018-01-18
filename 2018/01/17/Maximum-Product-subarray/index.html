@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="LeetCode," />
+  <meta name="keywords" content="LeetCode, DynamicProgramming," />
 
 
 
@@ -81,19 +81,19 @@
 
 
 
-<meta name="description" content="121. Best Time to Buy and Sell Stock1. Description：Say you have an array for which the ith element is the price of a given stock on day i.
-If you were only permitted to complete at most one transactio">
+<meta name="description" content="152.Maximum-Product-SubaArray1. Description:Find the contiguous subarray within an array (containing at least one number) which has the largest product.
+123For example, given the array[2,3,-2,4]`,the">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode121">
-<meta property="og:url" content="https://hzjry123.github.io/2017/11/19/LeetCode121/index.html">
+<meta property="og:title" content="Maximum Product subarray">
+<meta property="og:url" content="https://hzjry123.github.io/2018/01/17/Maximum-Product-subarray/index.html">
 <meta property="og:site_name" content="金若愚的blog">
-<meta property="og:description" content="121. Best Time to Buy and Sell Stock1. Description：Say you have an array for which the ith element is the price of a given stock on day i.
-If you were only permitted to complete at most one transactio">
-<meta property="og:updated_time" content="2017-11-22T02:51:58.007Z">
+<meta property="og:description" content="152.Maximum-Product-SubaArray1. Description:Find the contiguous subarray within an array (containing at least one number) which has the largest product.
+123For example, given the array[2,3,-2,4]`,the">
+<meta property="og:updated_time" content="2018-01-18T23:29:58.114Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode121">
-<meta name="twitter:description" content="121. Best Time to Buy and Sell Stock1. Description：Say you have an array for which the ith element is the price of a given stock on day i.
-If you were only permitted to complete at most one transactio">
+<meta name="twitter:title" content="Maximum Product subarray">
+<meta name="twitter:description" content="152.Maximum-Product-SubaArray1. Description:Find the contiguous subarray within an array (containing at least one number) which has the largest product.
+123For example, given the array[2,3,-2,4]`,the">
 
 
 
@@ -123,13 +123,13 @@ If you were only permitted to complete at most one transactio">
 
 
 
-  <link rel="canonical" href="https://hzjry123.github.io/2017/11/19/LeetCode121/"/>
+  <link rel="canonical" href="https://hzjry123.github.io/2018/01/17/Maximum-Product-subarray/"/>
 
 
 
 
 
-  <title>LeetCode121 | 金若愚的blog</title>
+  <title>Maximum Product subarray | 金若愚的blog</title>
   
 
 
@@ -265,7 +265,7 @@ If you were only permitted to complete at most one transactio">
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2017/11/19/LeetCode121/">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/01/17/Maximum-Product-subarray/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="金若愚">
@@ -282,7 +282,7 @@ If you were only permitted to complete at most one transactio">
 
         
         
-          <h2 class="post-title" itemprop="name headline">LeetCode121</h2>
+          <h2 class="post-title" itemprop="name headline">Maximum Product subarray</h2>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@ If you were only permitted to complete at most one transactio">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-19T12:17:14-05:00">
-                2017-11-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-18T12:48:06+08:00">
+                2018-01-18
               </time>
             
 
@@ -312,7 +312,7 @@ If you were only permitted to complete at most one transactio">
 
           
           
-             <span id="/2017/11/19/LeetCode121/" class="leancloud_visitors" data-flag-title="LeetCode121">
+             <span id="/2018/01/17/Maximum-Product-subarray/" class="leancloud_visitors" data-flag-title="Maximum Product subarray">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -337,7 +337,7 @@ If you were only permitted to complete at most one transactio">
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  291
+                  907
                 </span>
               
 
@@ -353,7 +353,7 @@ If you were only permitted to complete at most one transactio">
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  4
                 </span>
               
             </div>
@@ -374,24 +374,43 @@ If you were only permitted to complete at most one transactio">
       
 
       
-        <h1 id="121-Best-Time-to-Buy-and-Sell-Stock"><a href="#121-Best-Time-to-Buy-and-Sell-Stock" class="headerlink" title="121. Best Time to Buy and Sell Stock"></a>121. Best Time to Buy and Sell Stock</h1><h3 id="1-Description："><a href="#1-Description：" class="headerlink" title="1. Description："></a>1. Description：</h3><p>Say you have an array for which the <em>i</em>th element is the price of a given stock on day <em>i</em>.</p>
-<p>If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit.</p>
-<p><strong>Example 1:</strong></p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">Input</span>: [7, 1, 5, 3, 6, 4]</div><div class="line"><span class="attribute">Output</span>: 5</div><div class="line"></div><div class="line"><span class="lsl">max. difference = <span class="number">6</span><span class="number">-1</span> = <span class="number">5</span> (not <span class="number">7</span><span class="number">-1</span> = <span class="number">6</span>, as selling price needs to be larger than buying price)</span></div></pre></td></tr></table></figure>
-<p><strong>Example 2:</strong></p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">Input</span>: [7, 6, 4, 3, 1]</div><div class="line"><span class="attribute">Output</span>: 0</div><div class="line"></div><div class="line"><span class="livescript">In <span class="keyword">this</span> <span class="keyword">case</span>, <span class="literal">no</span> transaction <span class="keyword">is</span> done, i.e. max profit = <span class="number">0.</span></span></div></pre></td></tr></table></figure>
-<hr>
-<a id="more"></a>
-<h3 id="2-Difficulty"><a href="#2-Difficulty" class="headerlink" title="2. Difficulty:"></a>2. Difficulty:</h3><p>Easy</p>
-<h3 id="3-Relative-Problems"><a href="#3-Relative-Problems" class="headerlink" title="3.  Relative Problems:"></a>3.  Relative Problems:</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">122</span>. <span class="keyword">Best </span>Time to <span class="keyword">Buy </span><span class="keyword">and </span><span class="keyword">Sell </span>Stock II</div><div class="line"><span class="number">123</span>. <span class="keyword">Best </span>Time to <span class="keyword">Buy </span><span class="keyword">and </span><span class="keyword">Sell </span>Stock III</div><div class="line"><span class="number">188</span>. <span class="keyword">Best </span>Time to <span class="keyword">Buy </span><span class="keyword">and </span><span class="keyword">Sell </span>Stock IV</div><div class="line"><span class="number">309</span>. <span class="keyword">Best </span>Time to <span class="keyword">Buy </span><span class="keyword">and </span><span class="keyword">Sell </span>Stock with Cooldown</div></pre></td></tr></table></figure>
-<h3 id="4-Solution"><a href="#4-Solution" class="headerlink" title="4. Solution:"></a>4. Solution:</h3><p><strong>Analysis</strong>: </p>
-<p>( 1 ). We should find a day the stock price is lower than next day price.</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">e.g.:</div><div class="line"><span class="number">8</span> <span class="number">1</span> <span class="number">9</span> </div><div class="line">It <span class="keyword">is</span> impossible <span class="keyword">to</span> <span class="keyword">get</span> a higher profit <span class="keyword">if</span> you buy <span class="keyword">at</span> day1 <span class="keyword">and</span> sell <span class="keyword">at</span> day3 <span class="keyword">instead of</span> buying <span class="keyword">at</span> <span class="built_in">day</span> <span class="number">2</span>, selling <span class="keyword">at</span> day3.</div></pre></td></tr></table></figure>
-<p> ( 2 ). If the profit &lt; 0. Choose a new day to buy.</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">e.g.:</div><div class="line"><span class="number">2</span> <span class="number">6</span> <span class="number">1</span> <span class="number">4</span> <span class="number">10</span></div><div class="line">It <span class="keyword">is</span> impossible <span class="keyword">to</span> <span class="keyword">get</span> a higher profit <span class="keyword">if</span> you buy <span class="keyword">at</span> day1 <span class="keyword">and</span> sell <span class="keyword">at</span> day4 <span class="keyword">or</span> day5.</div><div class="line">The best solution <span class="keyword">is</span> buy <span class="keyword">at</span> <span class="built_in">day</span> <span class="number">3</span> sell <span class="keyword">at</span> <span class="built_in">day</span> <span class="number">5.</span></div></pre></td></tr></table></figure>
-<p><strong>Code</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> maxProfit = <span class="number">0</span>;</div><div class="line">   <span class="keyword">int</span> cur = <span class="number">0</span>;</div><div class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; prices.length; i++)&#123;</div><div class="line">       cur = Math.max(<span class="number">0</span>,cur += prices[i] - prices[i - <span class="number">1</span>]);</div><div class="line">       maxProfit = Math.max(maxProfit,cur);</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> maxProfit;</div></pre></td></tr></table></figure>
-<p>It is also called Kadane’s Algorithm.</p>
+        <h1 id="152-Maximum-Product-SubaArray"><a href="#152-Maximum-Product-SubaArray" class="headerlink" title="152.Maximum-Product-SubaArray"></a>152.Maximum-Product-SubaArray</h1><h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description:"></a>1. Description:</h2><p>Find the contiguous subarray within an array (containing at least one number) which has the largest product.</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">For example, given the array[<span class="number">2</span>,<span class="number">3</span>,<span class="number">-2</span>,<span class="number">4</span>]`,</div><div class="line"></div><div class="line">the contiguous subarray [<span class="number">2</span>,<span class="number">3</span>] has the largest product = <span class="number">6.</span></div></pre></td></tr></table></figure>
+<h3 id="2-Difficulty"><a href="#2-Difficulty" class="headerlink" title="2. Difficulty:"></a>2. Difficulty:</h3><p>Medium</p>
+<h3 id="3-Solution"><a href="#3-Solution" class="headerlink" title="3. Solution:"></a>3. Solution:</h3><p>It remains us of Maximum-Sum-SubArray, but it is more complicated</p>
+<p>First I came up with a brute $O(n^2)$ solution.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxProduct</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> len = nums.length,max = nums[len - <span class="number">1</span>];</div><div class="line">        <span class="keyword">if</span>(len == <span class="number">1</span>)<span class="keyword">return</span> nums[<span class="number">0</span>];</div><div class="line">        <span class="keyword">int</span>[][] product = <span class="keyword">new</span> <span class="keyword">int</span>[len][len];</div><div class="line">        product[len - <span class="number">1</span>][len - <span class="number">1</span>] = nums[len - <span class="number">1</span>];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">            product[i][i] = nums[i];</div><div class="line">            max = Math.max(max,nums[i]);</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</div><div class="line">                product[i][j] = nums[i] * product[i + <span class="number">1</span>][j];</div><div class="line">                max = Math.max(max,product[i][j]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> max;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>But it failed to pass OJ.</p>
+<p>解法一：</p>
+<p>Then I came up with another <strong>Dynamic Programming</strong> Solution.</p>
+<p>我们知道在乘法中，只要乘数不包括0，那么结果在绝对值上也会变大，因此我们要追踪的是当前的最大以及最小值，这两者理论上都有可能在后面变成最大乘积。</p>
+<p>参考Discuss上的一段话</p>
+<blockquote>
+<p>Besides keeping track of the largest product, we also need to keep track of the smallest product. Why? The smallest product, which is the largest in the negative sense could become the maximum when being multiplied by a negative number.</p>
+</blockquote>
+<p>但是我们要保证一点，就是在循环到nums[i]处时，当前步骤的最大值必须是受到nusm[i-1]影响的。在得到最大最小值时，我们要比较的是nums[i]和上一步的最大最小值的乘积以及当前nums[i].</p>
+<p>因此在nums[i] &gt; 0时，我们可以得到转移方程<br>$$<br>max[i] = Math.max(max[i - 1] * nums[i],nums[i])<br>$$</p>
+<p>$$<br>min[i] = Math.max(min[i-1]*nums[i],nums[i])<br>$$</p>
+<p>在nums[i] &lt; 0 时，我们可以得到转移方程<br>$$<br>max[i] = Math.max(min[i - 1] * nums[i],nums[i])<br>$$</p>
+<p>$$<br>min[i] = Math.max(max[i-1]*nums[i],nums[i])<br>$$</p>
+<p>在得到最后的最大值时只需遍历max数组即可。</p>
+<p>在空间上优化：用变量max，min代替数组，每步都获得当前的最大值。<br>$$<br>cur_max =Math.max(cur_max,max)<br>$$</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxProduct_n</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> res = nums[<span class="number">0</span>],max = res,min = res,len = nums.length;</div><div class="line">    <span class="keyword">if</span>(len == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; i++)&#123;</div><div class="line">        <span class="keyword">if</span>(nums[i] &gt; <span class="number">0</span>)&#123;</div><div class="line">            max = Math.max(nums[i] * max, nums[i]);</div><div class="line">            min = Math.min(nums[i] * min, nums[i]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">int</span> temp = max;</div><div class="line">            max = Math.max(min * nums[i],nums[i]);</div><div class="line">            min = Math.min(temp * nums[i],nums[i]);</div><div class="line">        &#125;</div><div class="line">        res = Math.max(res,max);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> res;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>解法二: </p>
+<p>解法一代码简化。</p>
+<p>从上一步我们可以看出，max和min的值是交换的。即在nums &lt;= 0的时候，max和min就会发生互换。因此我们可以加入一个判断</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(nums[i] =&lt; <span class="number">0</span>) swap(max,min);</div><div class="line"> max = Math.max(nums[i] * max, nums[i]);</div><div class="line">    min = Math.min(nums[i] * min, nums[i]);</div></pre></td></tr></table></figure>
+<p>解法三:</p>
+<p>由于是乘法，考虑没有0的情况，每加入一个新的数，乘积的绝对值都会变大，如果整个数组有n个负数</p>
+<p>若n为偶，则subarray就是全部array。</p>
+<p>若n为奇，则可以得到负数为偶数个的subarray来比较乘积</p>
+<p>头尾是正，如[2,3,-4,1,2]  就是[2,3] 和 [1,2]的比较。</p>
+<p>头尾是负，[-4,1,-2,3,-4]就是[-4,1,-2,3],[1,-2,3,-4]。</p>
+<p>头是正[1,-1,-3,3,-2]就是[1,-1,-3,3]</p>
+<p>尾是正[-1,-1,-3,3,2]就是[-1,-3,3,2]</p>
+<p>由此其实可以直观感觉出，如果有最大值的话，那么最大值一定是会包括头或者尾的。</p>
+<p>故可以遍历两边，从头遍历一遍，从尾遍历一遍</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxProduct_n</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> res = nums[<span class="number">0</span>],len = nums.length,product = <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span>(len == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</div><div class="line">      	product *= nums[i];</div><div class="line">        res = Math.max(res,product);</div><div class="line">      	<span class="keyword">if</span>(nums[i] == <span class="number">0</span>)product = <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">  	product = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = len - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</div><div class="line">      	product *= nums[i];</div><div class="line">        res = Math.max(res,product);</div><div class="line">      	<span class="keyword">if</span>(nums[i] == <span class="number">0</span>)product = <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> res;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -409,7 +428,7 @@ If you were only permitted to complete at most one transactio">
       
         <div class="post-tags">
           
-            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+            <a href="/tags/LeetCode-DynamicProgramming/" rel="tag"># LeetCode, DynamicProgramming</a>
           
         </div>
       
@@ -422,8 +441,8 @@ If you were only permitted to complete at most one transactio">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/18/LeetCode32/" rel="next" title="LeetCode32">
-                <i class="fa fa-chevron-left"></i> LeetCode32
+              <a href="/2017/11/27/461-Hamming-Distance/" rel="next" title="461. Hamming Distance">
+                <i class="fa fa-chevron-left"></i> 461. Hamming Distance
               </a>
             
           </div>
@@ -431,10 +450,6 @@ If you were only permitted to complete at most one transactio">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/19/LeetCode221/" rel="prev" title="LeetCode221">
-                LeetCode221 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -601,7 +616,7 @@ If you were only permitted to complete at most one transactio">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#121-Best-Time-to-Buy-and-Sell-Stock"><span class="nav-number">1.</span> <span class="nav-text">121. Best Time to Buy and Sell Stock</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Description："><span class="nav-number">1.0.1.</span> <span class="nav-text">1. Description：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Difficulty"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. Difficulty:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Relative-Problems"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.  Relative Problems:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Solution"><span class="nav-number">1.0.4.</span> <span class="nav-text">4. Solution:</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#152-Maximum-Product-SubaArray"><span class="nav-number">1.</span> <span class="nav-text">152.Maximum-Product-SubaArray</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Description"><span class="nav-number">1.1.</span> <span class="nav-text">1. Description:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Difficulty"><span class="nav-number">1.1.1.</span> <span class="nav-text">2. Difficulty:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Solution"><span class="nav-number">1.1.2.</span> <span class="nav-text">3. Solution:</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
