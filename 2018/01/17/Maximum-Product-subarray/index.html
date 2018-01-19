@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="金若愚的blog">
 <meta property="og:description" content="152.Maximum-Product-SubaArray1. Description:Find the contiguous subarray within an array (containing at least one number) which has the largest product.
 123For example, given the array[2,3,-2,4]`,the">
-<meta property="og:updated_time" content="2018-01-19T00:06:57.609Z">
+<meta property="og:updated_time" content="2018-01-19T00:49:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maximum Product subarray">
 <meta name="twitter:description" content="152.Maximum-Product-SubaArray1. Description:Find the contiguous subarray within an array (containing at least one number) which has the largest product.
@@ -390,16 +390,16 @@
 <p>Besides keeping track of the largest product, we also need to keep track of the smallest product. Why? The smallest product, which is the largest in the negative sense could become the maximum when being multiplied by a negative number.</p>
 </blockquote>
 <p>但是我们要保证一点，就是在循环到nums[i]处时，当前步骤的最大值必须是受到nusm[i-1]影响的。在得到最大最小值时，我们要比较的是nums[i]和上一步的最大最小值的乘积以及当前nums[i].</p>
-<p>因此在nums[i] &gt; 0时，我们可以得到转移方程</p>
+<p>因此在nums[i] &gt; 0时，我们可以得到转移方程:</p>
 <script type="math/tex; mode=display">
-R \times x  = 6</script><script type="math/tex; mode=display">\frac { dy }{ dx } =\frac { { e }^{ x } }{ 3{ y }^{ 2 } }</script><script type="math/tex; mode=display">max[i] = Math.max(max[i - 1] * nums[i],nums[i])</script><script type="math/tex; mode=display">
+max[i] = Math.max(max[i - 1] * nums[i],nums[i])</script><script type="math/tex; mode=display">
 min[i] = Math.max(min[i-1]*nums[i],nums[i])</script><p>在nums[i] &lt; 0 时，我们可以得到转移方程</p>
 <script type="math/tex; mode=display">
 max[i] = Math.max(min[i - 1] * nums[i],nums[i])</script><script type="math/tex; mode=display">
 min[i] = Math.max(max[i-1]*nums[i],nums[i])</script><p>在得到最后的最大值时只需遍历max数组即可。</p>
 <p>在空间上优化：用变量max，min代替数组，每步都获得当前的最大值。</p>
 <script type="math/tex; mode=display">
-cur\_max =Math.max(cur\_max,max)</script><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxProduct_n</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> res = nums[<span class="number">0</span>],max = res,min = res,len = nums.length;</div><div class="line">    <span class="keyword">if</span>(len == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; i++)&#123;</div><div class="line">        <span class="keyword">if</span>(nums[i] &gt; <span class="number">0</span>)&#123;</div><div class="line">            max = Math.max(nums[i] * max, nums[i]);</div><div class="line">            min = Math.min(nums[i] * min, nums[i]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">int</span> temp = max;</div><div class="line">            max = Math.max(min * nums[i],nums[i]);</div><div class="line">            min = Math.min(temp * nums[i],nums[i]);</div><div class="line">        &#125;</div><div class="line">        res = Math.max(res,max);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> res;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+cur\\_max =Math.max(cur\\_max,max)</script><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxProduct_n</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> res = nums[<span class="number">0</span>],max = res,min = res,len = nums.length;</div><div class="line">    <span class="keyword">if</span>(len == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; i++)&#123;</div><div class="line">        <span class="keyword">if</span>(nums[i] &gt; <span class="number">0</span>)&#123;</div><div class="line">            max = Math.max(nums[i] * max, nums[i]);</div><div class="line">            min = Math.min(nums[i] * min, nums[i]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">int</span> temp = max;</div><div class="line">            max = Math.max(min * nums[i],nums[i]);</div><div class="line">            min = Math.min(temp * nums[i],nums[i]);</div><div class="line">        &#125;</div><div class="line">        res = Math.max(res,max);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> res;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>解法二: </p>
 <p>解法一代码简化。</p>
 <p>从上一步我们可以看出，max和min的值是交换的。即在nums &lt;= 0的时候，max和min就会发生互换。因此我们可以加入一个判断</p>
@@ -456,6 +456,10 @@ cur\_max =Math.max(cur\_max,max)</script><figure class="highlight java"><table><
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/18/关于hexo的next主题无法显示latex公式/" rel="prev" title="关于hexo的next主题无法显示latex公式">
+                关于hexo的next主题无法显示latex公式 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -541,7 +545,7 @@ cur\_max =Math.max(cur\_max,max)</script><figure class="highlight java"><table><
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -554,7 +558,7 @@ cur\_max =Math.max(cur\_max,max)</script><figure class="highlight java"><table><
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
