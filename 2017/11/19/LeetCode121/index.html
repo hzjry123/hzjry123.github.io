@@ -81,19 +81,25 @@
 
 
 
-<meta name="description" content="121. Best Time to Buy and Sell Stock1. Description：Say you have an array for which the ith element is the price of a given stock on day i.
-If you were only permitted to complete at most one transactio">
+<meta name="description" content="121. Best Time to Buy and Sell Stock
+1. Description：
+Say you have an array for which the ith element is the price of a given stock on day i.
+If you were only permitted to complete at most one transact">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode121">
 <meta property="og:url" content="https://hzjry123.github.io/2017/11/19/LeetCode121/index.html">
 <meta property="og:site_name" content="金若愚的blog">
-<meta property="og:description" content="121. Best Time to Buy and Sell Stock1. Description：Say you have an array for which the ith element is the price of a given stock on day i.
-If you were only permitted to complete at most one transactio">
+<meta property="og:description" content="121. Best Time to Buy and Sell Stock
+1. Description：
+Say you have an array for which the ith element is the price of a given stock on day i.
+If you were only permitted to complete at most one transact">
 <meta property="og:updated_time" content="2017-11-22T02:51:58.007Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode121">
-<meta name="twitter:description" content="121. Best Time to Buy and Sell Stock1. Description：Say you have an array for which the ith element is the price of a given stock on day i.
-If you were only permitted to complete at most one transactio">
+<meta name="twitter:description" content="121. Best Time to Buy and Sell Stock
+1. Description：
+Say you have an array for which the ith element is the price of a given stock on day i.
+If you were only permitted to complete at most one transact">
 
 
 
@@ -337,7 +343,7 @@ If you were only permitted to complete at most one transactio">
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  291
+                  292
                 </span>
               
 
@@ -374,24 +380,29 @@ If you were only permitted to complete at most one transactio">
       
 
       
-        <h1 id="121-Best-Time-to-Buy-and-Sell-Stock"><a href="#121-Best-Time-to-Buy-and-Sell-Stock" class="headerlink" title="121. Best Time to Buy and Sell Stock"></a>121. Best Time to Buy and Sell Stock</h1><h3 id="1-Description："><a href="#1-Description：" class="headerlink" title="1. Description："></a>1. Description：</h3><p>Say you have an array for which the <em>i</em>th element is the price of a given stock on day <em>i</em>.</p>
+        <h1>121. Best Time to Buy and Sell Stock</h1>
+<h3>1. Description：</h3>
+<p>Say you have an array for which the <em>i</em>th element is the price of a given stock on day <em>i</em>.</p>
 <p>If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit.</p>
 <p><strong>Example 1:</strong></p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">Input</span>: [7, 1, 5, 3, 6, 4]</div><div class="line"><span class="attribute">Output</span>: 5</div><div class="line"></div><div class="line"><span class="lsl">max. difference = <span class="number">6</span><span class="number">-1</span> = <span class="number">5</span> (not <span class="number">7</span><span class="number">-1</span> = <span class="number">6</span>, as selling price needs to be larger than buying price)</span></div></pre></td></tr></table></figure>
+<p><figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">Input</span>: [7, 1, 5, 3, 6, 4]</div><div class="line"><span class="attribute">Output</span>: 5</div><div class="line"></div><div class="line"><span class="lsl">max. difference = <span class="number">6</span><span class="number">-1</span> = <span class="number">5</span> (not <span class="number">7</span><span class="number">-1</span> = <span class="number">6</span>, as selling price needs to be larger than buying price)</span></div></pre></td></tr></table></figure></p>
 <p><strong>Example 2:</strong></p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">Input</span>: [7, 6, 4, 3, 1]</div><div class="line"><span class="attribute">Output</span>: 0</div><div class="line"></div><div class="line"><span class="livescript">In <span class="keyword">this</span> <span class="keyword">case</span>, <span class="literal">no</span> transaction <span class="keyword">is</span> done, i.e. max profit = <span class="number">0.</span></span></div></pre></td></tr></table></figure>
+<p><figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">Input</span>: [7, 6, 4, 3, 1]</div><div class="line"><span class="attribute">Output</span>: 0</div><div class="line"></div><div class="line"><span class="livescript">In <span class="keyword">this</span> <span class="keyword">case</span>, <span class="literal">no</span> transaction <span class="keyword">is</span> done, i.e. max profit = <span class="number">0.</span></span></div></pre></td></tr></table></figure></p>
 <hr>
-<a id="more"></a>
-<h3 id="2-Difficulty"><a href="#2-Difficulty" class="headerlink" title="2. Difficulty:"></a>2. Difficulty:</h3><p>Easy</p>
-<h3 id="3-Relative-Problems"><a href="#3-Relative-Problems" class="headerlink" title="3.  Relative Problems:"></a>3.  Relative Problems:</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">122</span>. <span class="keyword">Best </span>Time to <span class="keyword">Buy </span><span class="keyword">and </span><span class="keyword">Sell </span>Stock II</div><div class="line"><span class="number">123</span>. <span class="keyword">Best </span>Time to <span class="keyword">Buy </span><span class="keyword">and </span><span class="keyword">Sell </span>Stock III</div><div class="line"><span class="number">188</span>. <span class="keyword">Best </span>Time to <span class="keyword">Buy </span><span class="keyword">and </span><span class="keyword">Sell </span>Stock IV</div><div class="line"><span class="number">309</span>. <span class="keyword">Best </span>Time to <span class="keyword">Buy </span><span class="keyword">and </span><span class="keyword">Sell </span>Stock with Cooldown</div></pre></td></tr></table></figure>
-<h3 id="4-Solution"><a href="#4-Solution" class="headerlink" title="4. Solution:"></a>4. Solution:</h3><p><strong>Analysis</strong>: </p>
+<p>&lt;!--more--&gt;</p>
+<h3>2. Difficulty:</h3>
+<p>Easy</p>
+<h3>3.  Relative Problems:</h3>
+<p><figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">122</span>. <span class="keyword">Best </span>Time to <span class="keyword">Buy </span><span class="keyword">and </span><span class="keyword">Sell </span>Stock II</div><div class="line"><span class="number">123</span>. <span class="keyword">Best </span>Time to <span class="keyword">Buy </span><span class="keyword">and </span><span class="keyword">Sell </span>Stock III</div><div class="line"><span class="number">188</span>. <span class="keyword">Best </span>Time to <span class="keyword">Buy </span><span class="keyword">and </span><span class="keyword">Sell </span>Stock IV</div><div class="line"><span class="number">309</span>. <span class="keyword">Best </span>Time to <span class="keyword">Buy </span><span class="keyword">and </span><span class="keyword">Sell </span>Stock with Cooldown</div></pre></td></tr></table></figure></p>
+<h3>4. Solution:</h3>
+<p><strong>Analysis</strong>:</p>
 <p>( 1 ). We should find a day the stock price is lower than next day price.</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">e.g.:</div><div class="line"><span class="number">8</span> <span class="number">1</span> <span class="number">9</span> </div><div class="line">It <span class="keyword">is</span> impossible <span class="keyword">to</span> <span class="keyword">get</span> a higher profit <span class="keyword">if</span> you buy <span class="keyword">at</span> day1 <span class="keyword">and</span> sell <span class="keyword">at</span> day3 <span class="keyword">instead of</span> buying <span class="keyword">at</span> <span class="built_in">day</span> <span class="number">2</span>, selling <span class="keyword">at</span> day3.</div></pre></td></tr></table></figure>
-<p> ( 2 ). If the profit &lt; 0. Choose a new day to buy.</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">e.g.:</div><div class="line"><span class="number">2</span> <span class="number">6</span> <span class="number">1</span> <span class="number">4</span> <span class="number">10</span></div><div class="line">It <span class="keyword">is</span> impossible <span class="keyword">to</span> <span class="keyword">get</span> a higher profit <span class="keyword">if</span> you buy <span class="keyword">at</span> day1 <span class="keyword">and</span> sell <span class="keyword">at</span> day4 <span class="keyword">or</span> day5.</div><div class="line">The best solution <span class="keyword">is</span> buy <span class="keyword">at</span> <span class="built_in">day</span> <span class="number">3</span> sell <span class="keyword">at</span> <span class="built_in">day</span> <span class="number">5.</span></div></pre></td></tr></table></figure>
+<p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">e.g.:</div><div class="line"><span class="number">8</span> <span class="number">1</span> <span class="number">9</span> </div><div class="line">It <span class="keyword">is</span> impossible <span class="keyword">to</span> <span class="keyword">get</span> a higher profit <span class="keyword">if</span> you buy <span class="keyword">at</span> day1 <span class="keyword">and</span> sell <span class="keyword">at</span> day3 <span class="keyword">instead of</span> buying <span class="keyword">at</span> <span class="built_in">day</span> <span class="number">2</span>, selling <span class="keyword">at</span> day3.</div></pre></td></tr></table></figure></p>
+<p>( 2 ). If the profit &lt; 0. Choose a new day to buy.</p>
+<p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">e.g.:</div><div class="line"><span class="number">2</span> <span class="number">6</span> <span class="number">1</span> <span class="number">4</span> <span class="number">10</span></div><div class="line">It <span class="keyword">is</span> impossible <span class="keyword">to</span> <span class="keyword">get</span> a higher profit <span class="keyword">if</span> you buy <span class="keyword">at</span> day1 <span class="keyword">and</span> sell <span class="keyword">at</span> day4 <span class="keyword">or</span> day5.</div><div class="line">The best solution <span class="keyword">is</span> buy <span class="keyword">at</span> <span class="built_in">day</span> <span class="number">3</span> sell <span class="keyword">at</span> <span class="built_in">day</span> <span class="number">5.</span></div></pre></td></tr></table></figure></p>
 <p><strong>Code</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> maxProfit = <span class="number">0</span>;</div><div class="line">   <span class="keyword">int</span> cur = <span class="number">0</span>;</div><div class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; prices.length; i++)&#123;</div><div class="line">       cur = Math.max(<span class="number">0</span>,cur += prices[i] - prices[i - <span class="number">1</span>]);</div><div class="line">       maxProfit = Math.max(maxProfit,cur);</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> maxProfit;</div></pre></td></tr></table></figure>
-<p>It is also called Kadane’s Algorithm.</p>
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> maxProfit = <span class="number">0</span>;</div><div class="line">   <span class="keyword">int</span> cur = <span class="number">0</span>;</div><div class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; prices.length; i++)&#123;</div><div class="line">       cur = Math.max(<span class="number">0</span>,cur += prices[i] - prices[i - <span class="number">1</span>]);</div><div class="line">       maxProfit = Math.max(maxProfit,cur);</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> maxProfit;</div></pre></td></tr></table></figure></p>
+<p>It is also called Kadane's Algorithm.</p>
 
       
     </div>
@@ -601,7 +612,7 @@ If you were only permitted to complete at most one transactio">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#121-Best-Time-to-Buy-and-Sell-Stock"><span class="nav-number">1.</span> <span class="nav-text">121. Best Time to Buy and Sell Stock</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Description："><span class="nav-number">1.0.1.</span> <span class="nav-text">1. Description：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Difficulty"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. Difficulty:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Relative-Problems"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.  Relative Problems:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Solution"><span class="nav-number">1.0.4.</span> <span class="nav-text">4. Solution:</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">121. Best Time to Buy and Sell Stock</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. Description：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. Difficulty:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.  Relative Problems:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.4.</span> <span class="nav-text">4. Solution:</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -944,6 +955,8 @@ If you were only permitted to complete at most one transactio">
   
 
   
+  
+
 
   
 
