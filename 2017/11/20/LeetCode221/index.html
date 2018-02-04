@@ -11,7 +11,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
-
+<meta name="google-site-verification" content="n8fI7GkJ5IrjCKf79CxRk_uBHH7RrQk2gup5_FmwFfs" />
 
 
 
@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="LeetCode,DynamicProgramming," />
+  <meta name="keywords" content="LeetCode," />
 
 
 
@@ -81,19 +81,22 @@
 
 
 
-<meta name="description" content="152.Maximum-Product-SubaArray1. Description:Find the contiguous subarray within an array (containing at least one number) which has the largest product.
-123For example, given the array[2,3,-2,4]`,the">
+<meta name="description" content="221. Maximal SquareReference: https://discuss.leetcode.com/topic/20801/extremely-simple-java-solution
+Thanks jaqenhgar ! Really F**king Genius.
+1. Description:Given a 2D binary matrix filled with 0’s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Maximum Product subarray">
-<meta property="og:url" content="https://hzjry123.github.io/2018/01/17/Maximum-Product-subarray/index.html">
+<meta property="og:title" content="LeetCode221">
+<meta property="og:url" content="https://hzjry123.github.io/2017/11/20/LeetCode221/index.html">
 <meta property="og:site_name" content="金若愚的blog">
-<meta property="og:description" content="152.Maximum-Product-SubaArray1. Description:Find the contiguous subarray within an array (containing at least one number) which has the largest product.
-123For example, given the array[2,3,-2,4]`,the">
-<meta property="og:updated_time" content="2018-01-19T00:49:51.000Z">
+<meta property="og:description" content="221. Maximal SquareReference: https://discuss.leetcode.com/topic/20801/extremely-simple-java-solution
+Thanks jaqenhgar ! Really F**king Genius.
+1. Description:Given a 2D binary matrix filled with 0’s">
+<meta property="og:updated_time" content="2018-01-18T17:48:34.927Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Maximum Product subarray">
-<meta name="twitter:description" content="152.Maximum-Product-SubaArray1. Description:Find the contiguous subarray within an array (containing at least one number) which has the largest product.
-123For example, given the array[2,3,-2,4]`,the">
+<meta name="twitter:title" content="LeetCode221">
+<meta name="twitter:description" content="221. Maximal SquareReference: https://discuss.leetcode.com/topic/20801/extremely-simple-java-solution
+Thanks jaqenhgar ! Really F**king Genius.
+1. Description:Given a 2D binary matrix filled with 0’s">
 
 
 
@@ -123,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://hzjry123.github.io/2018/01/17/Maximum-Product-subarray/"/>
+  <link rel="canonical" href="https://hzjry123.github.io/2017/11/20/LeetCode221/"/>
 
 
 
 
 
-  <title>Maximum Product subarray | 金若愚的blog</title>
+  <title>LeetCode221 | 金若愚的blog</title>
   
 
 
@@ -265,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/01/17/Maximum-Product-subarray/">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2017/11/20/LeetCode221/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="金若愚">
@@ -282,7 +285,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Maximum Product subarray</h2>
+          <h2 class="post-title" itemprop="name headline">LeetCode221</h2>
         
 
         <div class="post-meta">
@@ -294,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-17T23:48:06-05:00">
-                2018-01-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T01:55:32-05:00">
+                2017-11-20
               </time>
             
 
@@ -312,7 +315,7 @@
 
           
           
-             <span id="/2018/01/17/Maximum-Product-subarray/" class="leancloud_visitors" data-flag-title="Maximum Product subarray">
+             <span id="/2017/11/20/LeetCode221/" class="leancloud_visitors" data-flag-title="LeetCode221">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -337,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  858
+                  411
                 </span>
               
 
@@ -353,7 +356,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  3
                 </span>
               
             </div>
@@ -374,47 +377,32 @@
       
 
       
-        <h1 id="152-Maximum-Product-SubaArray"><a href="#152-Maximum-Product-SubaArray" class="headerlink" title="152.Maximum-Product-SubaArray"></a>152.Maximum-Product-SubaArray</h1><h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description:"></a>1. Description:</h2><p>Find the contiguous subarray within an array (containing at least one number) which has the largest product.</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">For example, given the array[<span class="number">2</span>,<span class="number">3</span>,<span class="number">-2</span>,<span class="number">4</span>]`,</div><div class="line"></div><div class="line">the contiguous subarray [<span class="number">2</span>,<span class="number">3</span>] has the largest product = <span class="number">6.</span></div></pre></td></tr></table></figure>
-<h3 id="2-Difficulty"><a href="#2-Difficulty" class="headerlink" title="2. Difficulty:"></a>2. Difficulty:</h3><p>Medium</p>
-<h3 id="3-Solution"><a href="#3-Solution" class="headerlink" title="3. Solution:"></a>3. Solution:</h3><a id="more"></a>
-<p>It remains us of Maximum-Sum-SubArray, but it is more complicated</p>
-<p>First I came up with a brute $O(n^2)$ solution.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxProduct</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> len = nums.length,max = nums[len - <span class="number">1</span>];</div><div class="line">        <span class="keyword">if</span>(len == <span class="number">1</span>)<span class="keyword">return</span> nums[<span class="number">0</span>];</div><div class="line">        <span class="keyword">int</span>[][] product = <span class="keyword">new</span> <span class="keyword">int</span>[len][len];</div><div class="line">        product[len - <span class="number">1</span>][len - <span class="number">1</span>] = nums[len - <span class="number">1</span>];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">            product[i][i] = nums[i];</div><div class="line">            max = Math.max(max,nums[i]);</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</div><div class="line">                product[i][j] = nums[i] * product[i + <span class="number">1</span>][j];</div><div class="line">                max = Math.max(max,product[i][j]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> max;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>But it failed to pass OJ.</p>
-<p>解法一：</p>
-<p>Then I came up with another <strong>Dynamic Programming</strong> Solution.</p>
-<p>我们知道在乘法中，只要乘数不包括0，那么结果在绝对值上也会变大，因此我们要追踪的是当前的最大以及最小值，这两者理论上都有可能在后面变成最大乘积。</p>
-<p>参考Discuss上的一段话</p>
-<blockquote>
-<p>Besides keeping track of the largest product, we also need to keep track of the smallest product. Why? The smallest product, which is the largest in the negative sense could become the maximum when being multiplied by a negative number.</p>
-</blockquote>
-<p>但是我们要保证一点，就是在循环到nums[i]处时，当前步骤的最大值必须是受到nusm[i-1]影响的。在得到最大最小值时，我们要比较的是nums[i]和上一步的最大最小值的乘积以及当前nums[i].</p>
-<p>因此在nums[i] &gt; 0时，我们可以得到转移方程:</p>
-<script type="math/tex; mode=display">
-max[i] = Math.max(max[i - 1] * nums[i],nums[i])</script><script type="math/tex; mode=display">
-min[i] = Math.max(min[i-1]*nums[i],nums[i])</script><p>在nums[i] &lt; 0 时，我们可以得到转移方程</p>
-<script type="math/tex; mode=display">
-max[i] = Math.max(min[i - 1] * nums[i],nums[i])</script><script type="math/tex; mode=display">
-min[i] = Math.max(max[i-1]*nums[i],nums[i])</script><p>在得到最后的最大值时只需遍历max数组即可。</p>
-<p>在空间上优化：用变量max，min代替数组，每步都获得当前的最大值。</p>
-<script type="math/tex; mode=display">
-cur\\_max =Math.max(cur\\_max,max)</script><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxProduct_n</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> res = nums[<span class="number">0</span>],max = res,min = res,len = nums.length;</div><div class="line">    <span class="keyword">if</span>(len == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; i++)&#123;</div><div class="line">        <span class="keyword">if</span>(nums[i] &gt; <span class="number">0</span>)&#123;</div><div class="line">            max = Math.max(nums[i] * max, nums[i]);</div><div class="line">            min = Math.min(nums[i] * min, nums[i]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">int</span> temp = max;</div><div class="line">            max = Math.max(min * nums[i],nums[i]);</div><div class="line">            min = Math.min(temp * nums[i],nums[i]);</div><div class="line">        &#125;</div><div class="line">        res = Math.max(res,max);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> res;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>解法二: </p>
-<p>解法一代码简化。</p>
-<p>从上一步我们可以看出，max和min的值是交换的。即在nums &lt;= 0的时候，max和min就会发生互换。因此我们可以加入一个判断</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(nums[i] =&lt; <span class="number">0</span>) swap(max,min);</div><div class="line"> max = Math.max(nums[i] * max, nums[i]);</div><div class="line">    min = Math.min(nums[i] * min, nums[i]);</div></pre></td></tr></table></figure>
-<p>解法三:</p>
-<p>由于是乘法，考虑没有0的情况，每加入一个新的数，乘积的绝对值都会变大，如果整个数组有n个负数</p>
-<p>若n为偶，则subarray就是全部array。</p>
-<p>若n为奇，则可以得到负数为偶数个的subarray来比较乘积</p>
-<p>头尾是正，如[2,3,-4,1,2]  就是[2,3] 和 [1,2]的比较。</p>
-<p>头尾是负，[-4,1,-2,3,-4]就是[-4,1,-2,3],[1,-2,3,-4]。</p>
-<p>头是正[1,-1,-3,3,-2]就是[1,-1,-3,3]</p>
-<p>尾是正[-1,-1,-3,3,2]就是[-1,-3,3,2]</p>
-<p>由此其实可以直观感觉出，如果有最大值的话，那么最大值一定是会包括头或者尾的。</p>
-<p>故可以遍历两边，从头遍历一遍，从尾遍历一遍</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxProduct_n</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> res = nums[<span class="number">0</span>],len = nums.length,product = <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span>(len == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</div><div class="line">      	product *= nums[i];</div><div class="line">        res = Math.max(res,product);</div><div class="line">      	<span class="keyword">if</span>(nums[i] == <span class="number">0</span>)product = <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">  	product = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = len - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</div><div class="line">      	product *= nums[i];</div><div class="line">        res = Math.max(res,product);</div><div class="line">      	<span class="keyword">if</span>(nums[i] == <span class="number">0</span>)product = <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> res;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h2 id="221-Maximal-Square"><a href="#221-Maximal-Square" class="headerlink" title="221. Maximal Square"></a>221. Maximal Square</h2><p><strong>Reference</strong>: <a href="https://discuss.leetcode.com/topic/20801/extremely-simple-java-solution" target="_blank" rel="external">https://discuss.leetcode.com/topic/20801/extremely-simple-java-solution</a></p>
+<p>Thanks jaqenhgar ! Really F**king Genius.</p>
+<h3 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description:"></a>1. Description:</h3><p>Given a 2D binary matrix filled with 0’s and 1’s, find the largest square containing only 1’s and return its area.</p>
+<p>For example, given the following matrix:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1 0 1 0 0</div><div class="line">1 0 1 1 1</div><div class="line">1 1 1 1 1</div><div class="line">1 0 0 1 0</div></pre></td></tr></table></figure>
+<p>Return 4.</p>
+<a id="more"></a>
+<h3 id="2-Difficulty"><a href="#2-Difficulty" class="headerlink" title="2. Difficulty:"></a>2. Difficulty:</h3><p><strong>Medium</strong></p>
+<h3 id="3-Relative-Problems"><a href="#3-Relative-Problems" class="headerlink" title="3. Relative Problems:"></a>3. Relative Problems:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">84. Largest Rectangle in Histogram</div><div class="line">85. Maximal Rectangle</div></pre></td></tr></table></figure>
+<h3 id="4-Solution"><a href="#4-Solution" class="headerlink" title="4. Solution:"></a>4. Solution:</h3><p>Input 2D <strong>matrix</strong>. Return int <strong>maxArea</strong>.</p>
+<p>Main Idea: Dynamic Programming.</p>
+<p>Cause it is a Dynamic Programming question, we should find the state equation.</p>
+<p>So I create a 2D matrix <strong>edge</strong> to store the length of edge of square.(As the point is in the <strong>bottom right</strong>)</p>
+<p>For an element which = 1, I consider it as a square which edge = 1.</p>
+<p>To find a square, we need to check ( i, j - 1 ) , (i - 1, j) , (i - 1, j - 1). </p>
+<p>If it is all 1, ? = 2.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1 1</div><div class="line">1 ?</div></pre></td></tr></table></figure>
+<p>If it is one element = 0 , ? = 1, we can not get a bigger square!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1 0</div><div class="line">1 ?</div></pre></td></tr></table></figure>
+<p>If it is all 2, ? = 3.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1 1 1</div><div class="line">1 2 2</div><div class="line">1 2 ?</div></pre></td></tr></table></figure>
+<p>You could try this <strong>matrix</strong> to see whether you can get correct <strong>edge</strong>, and it would be much more clear for us to understand !</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1 0 1 0 0</div><div class="line">1 0 1 1 1</div><div class="line">1 1 1 1 1</div><div class="line">1 0 0 1 0</div></pre></td></tr></table></figure>
+<p>For such matrix, we could get <strong>edge</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">0 0 0 0 0 0</div><div class="line">0 1 0 1 0 0</div><div class="line">0 1 0 1 1 1</div><div class="line">0 1 1 1 2 1</div><div class="line">0 1 0 0 1 0</div></pre></td></tr></table></figure>
+<h3 id="6-Code"><a href="#6-Code" class="headerlink" title="6. Code"></a>6. Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(matrix.length == <span class="number">0</span>)</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">  <span class="keyword">int</span>[][] edge = <span class="keyword">new</span> <span class="keyword">int</span>[matrix[<span class="number">0</span>].length + <span class="number">1</span>][matrix.length + <span class="number">1</span>];<span class="comment">//save length of edge</span></div><div class="line">  <span class="keyword">int</span> maxArea = <span class="number">0</span>;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; edge.length; i++)&#123;</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; edge.length; j++)&#123;</div><div class="line">          <span class="keyword">if</span>(matrix[i - <span class="number">1</span>][j - <span class="number">1</span>] == <span class="string">'1'</span>)&#123;</div><div class="line">              edge[i][j] = Math.min(Math.min(edge[i][j - <span class="number">1</span>],edge[i - <span class="number">1</span>][j]),edge[i - <span class="number">1</span>][j - <span class="number">1</span>])+<span class="number">1</span>;</div><div class="line">              <span class="comment">//if matrix[i - 1][j - 1] == 1,length at least = 1.</span></div><div class="line">              <span class="comment">//if left,top,top left is all 1. Then it must be a square which edge = 2!</span></div><div class="line">              <span class="comment">//if left,top,top left square edge is 2. Then it must be a square which edge = 3!</span></div><div class="line">              maxArea = (<span class="keyword">int</span>) Math.max(maxArea,Math.pow(edge[i][j],<span class="number">2</span>));</div><div class="line">          &#125;</div><div class="line">      &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> maxArea;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -434,8 +422,6 @@ cur\\_max =Math.max(cur\\_max,max)</script><figure class="highlight java"><table
           
             <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
           
-            <a href="/tags/DynamicProgramming/" rel="tag"># DynamicProgramming</a>
-          
         </div>
       
 
@@ -447,8 +433,8 @@ cur\\_max =Math.max(cur\\_max,max)</script><figure class="highlight java"><table
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/27/461-Hamming-Distance/" rel="next" title="461. Hamming Distance">
-                <i class="fa fa-chevron-left"></i> 461. Hamming Distance
+              <a href="/2017/11/20/LeetCode121/" rel="next" title="LeetCode121">
+                <i class="fa fa-chevron-left"></i> LeetCode121
               </a>
             
           </div>
@@ -457,8 +443,8 @@ cur\\_max =Math.max(cur\\_max,max)</script><figure class="highlight java"><table
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/18/关于hexo的next主题无法显示latex公式/" rel="prev" title="关于hexo的next主题无法显示latex公式">
-                关于hexo的next主题无法显示latex公式 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/20/Largest-Rectangle-in-Histogram/" rel="prev" title="Largest Rectangle in Histogram">
+                Largest Rectangle in Histogram <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -626,7 +612,7 @@ cur\\_max =Math.max(cur\\_max,max)</script><figure class="highlight java"><table
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#152-Maximum-Product-SubaArray"><span class="nav-number">1.</span> <span class="nav-text">152.Maximum-Product-SubaArray</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Description"><span class="nav-number">1.1.</span> <span class="nav-text">1. Description:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Difficulty"><span class="nav-number">1.1.1.</span> <span class="nav-text">2. Difficulty:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Solution"><span class="nav-number">1.1.2.</span> <span class="nav-text">3. Solution:</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#221-Maximal-Square"><span class="nav-number">1.</span> <span class="nav-text">221. Maximal Square</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Description"><span class="nav-number">1.1.</span> <span class="nav-text">1. Description:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Difficulty"><span class="nav-number">1.2.</span> <span class="nav-text">2. Difficulty:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Relative-Problems"><span class="nav-number">1.3.</span> <span class="nav-text">3. Relative Problems:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Solution"><span class="nav-number">1.4.</span> <span class="nav-text">4. Solution:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Code"><span class="nav-number">1.5.</span> <span class="nav-text">6. Code</span></a></li></ol></li></ol></div>
             
 
           </div>

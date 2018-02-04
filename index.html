@@ -11,7 +11,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
-
+<meta name="google-site-verification" content="n8fI7GkJ5IrjCKf79CxRk_uBHH7RrQk2gup5_FmwFfs" />
 
 
 
@@ -259,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/02/03/GFS-Reading-Note/">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/02/04/GFS-Reading-Note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="金若愚">
@@ -278,7 +278,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/03/GFS-Reading-Note/" itemprop="url">GFS Reading Note</a></h2>
+                <a class="post-title-link" href="/2018/02/04/GFS-Reading-Note/" itemprop="url">GFS Reading Note</a></h2>
         
 
         <div class="post-meta">
@@ -290,7 +290,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T02:26:40+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T15:26:40+08:00">
                 2018-02-04
               </time>
             
@@ -308,7 +308,7 @@
 
           
           
-             <span id="/2018/02/03/GFS-Reading-Note/" class="leancloud_visitors" data-flag-title="GFS Reading Note">
+             <span id="/2018/02/04/GFS-Reading-Note/" class="leancloud_visitors" data-flag-title="GFS Reading Note">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -375,7 +375,7 @@
 <h2 id="1-GFS是什么？"><a href="#1-GFS是什么？" class="headerlink" title="1. GFS是什么？"></a>1. GFS是什么？</h2><p>GFS(Google File System)是一个大规模,具有高拓展性(scalable)的分布式系统，分布式集群是建立在大量的普通硬件上的，有很强的fault tolerance，能够响应大量的客户端。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/03/GFS-Reading-Note/#more" rel="contents">
+            <a class="btn" href="/2018/02/04/GFS-Reading-Note/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -457,8 +457,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-18T19:50:41+08:00">
-                2018-01-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-19T08:50:41+08:00">
+                2018-01-19
               </time>
             
 
@@ -543,7 +543,7 @@
 <p>Thanks 林肯先生</p>
 <p>在next里写latex时发现渲染不出来，查找后发现是说node.js的渲染和markdown渲染的问题。操作半天也不得行。</p>
 <p>但我发现我是什么公式也渲染不出来啊！后来在next的issue里面查找相关问题，发现得先在/themes/next/_config.yml里把third-party-services settings中的math设置为enable</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">mathjax:</span></div><div class="line"><span class="attr">  enable:</span> <span class="literal">true</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mathjax:</div><div class="line">  enable: true</div></pre></td></tr></table></figure>
 <p>感觉被自己蠢到了。</p>
 <p>但是这样设置以后还是不行，参考了”林肯先生”的做法。</p>
 <ol>
@@ -551,7 +551,7 @@
 <li><code>npm install hexo-renderer-kramed --save</code>//安装新的markdown渲染工具</li>
 </ol>
 <p>由于markdown在渲染时”_ “会被认为是下划线，和latex下标的操作一样，会先渲染markdown的，导致latex无法渲染，因此要在里面加\把_转义，到这个时候才和”林肯先生”的问题一样，我有点震惊。</p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$R<span class="string">\_&#123;m</span> <span class="string">\times</span> n&#125; = U<span class="string">\_&#123;m</span> <span class="string">\times</span> m&#125; S<span class="string">\_&#123;m</span> <span class="string">\times</span> n&#125; V<span class="string">\_&#123;n</span> <span class="string">\times</span> n&#125;<span class="string">'$</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$R\_&#123;m \times n&#125; = U\_&#123;m \times m&#125; S\_&#123;m \times n&#125; V\_&#123;n \times n&#125;&apos;$</div></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>很强，但是能用了，饿死了先去吃饭了，如果有哪位朋友知道这该怎么办，请告诉我一下。</p>
 
@@ -602,7 +602,7 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/01/17/Maximum-Product-subarray/">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/01/18/Maximum-Product-subarray/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="金若愚">
@@ -621,7 +621,7 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/17/Maximum-Product-subarray/" itemprop="url">Maximum Product subarray</a></h2>
+                <a class="post-title-link" href="/2018/01/18/Maximum-Product-subarray/" itemprop="url">Maximum Product subarray</a></h2>
         
 
         <div class="post-meta">
@@ -633,8 +633,8 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-18T12:48:06+08:00">
-                2018-01-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-19T01:48:06+08:00">
+                2018-01-19
               </time>
             
 
@@ -651,7 +651,7 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
 
           
           
-             <span id="/2018/01/17/Maximum-Product-subarray/" class="leancloud_visitors" data-flag-title="Maximum Product subarray">
+             <span id="/2018/01/18/Maximum-Product-subarray/" class="leancloud_visitors" data-flag-title="Maximum Product subarray">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -715,12 +715,12 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
       
         
           <h1 id="152-Maximum-Product-SubaArray"><a href="#152-Maximum-Product-SubaArray" class="headerlink" title="152.Maximum-Product-SubaArray"></a>152.Maximum-Product-SubaArray</h1><h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description:"></a>1. Description:</h2><p>Find the contiguous subarray within an array (containing at least one number) which has the largest product.</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">For example, given the array[<span class="number">2</span>,<span class="number">3</span>,<span class="number">-2</span>,<span class="number">4</span>]`,</div><div class="line"></div><div class="line">the contiguous subarray [<span class="number">2</span>,<span class="number">3</span>] has the largest product = <span class="number">6.</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">For example, given the array[2,3,-2,4]`,</div><div class="line"></div><div class="line">the contiguous subarray [2,3] has the largest product = 6.</div></pre></td></tr></table></figure>
 <h3 id="2-Difficulty"><a href="#2-Difficulty" class="headerlink" title="2. Difficulty:"></a>2. Difficulty:</h3><p>Medium</p>
 <h3 id="3-Solution"><a href="#3-Solution" class="headerlink" title="3. Solution:"></a>3. Solution:</h3>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/17/Maximum-Product-subarray/#more" rel="contents">
+            <a class="btn" href="/2018/01/18/Maximum-Product-subarray/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -802,8 +802,8 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T14:03:28+08:00">
-                2017-11-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-28T03:03:28+08:00">
+                2017-11-28
               </time>
             
 
@@ -887,7 +887,7 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
 <p>Given two integers <code>x</code> and <code>y</code>, calculate the Hamming distance.</p>
 <p><strong>Note:</strong><br>0 ≤ <code>x</code>, <code>y</code> &lt; 231.</p>
 <p><strong>Example:</strong></p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">Input</span>: x = 1, y = 4</div><div class="line"></div><div class="line"><span class="http"><span class="attribute">Output</span>: 2</span></div><div class="line"></div><div class="line"><span class="applescript">Explanation:</span></div><div class="line"><span class="number">1</span>   (<span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span>)</div><div class="line"><span class="number">4</span>   (<span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span>)</div><div class="line">       ↑   ↑</div><div class="line"></div><div class="line">The <span class="keyword">above</span> arrows point <span class="keyword">to</span> positions <span class="keyword">where</span> <span class="keyword">the</span> corresponding bits are different.</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Input: x = 1, y = 4</div><div class="line"></div><div class="line">Output: 2</div><div class="line"></div><div class="line">Explanation:</div><div class="line">1   (0 0 0 1)</div><div class="line">4   (0 1 0 0)</div><div class="line">       ↑   ↑</div><div class="line"></div><div class="line">The above arrows point to positions where the corresponding bits are different.</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/11/27/461-Hamming-Distance/#more" rel="contents">
@@ -972,8 +972,8 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T16:08:54+08:00">
-                2017-11-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-21T05:08:54+08:00">
+                2017-11-21
               </time>
             
 
