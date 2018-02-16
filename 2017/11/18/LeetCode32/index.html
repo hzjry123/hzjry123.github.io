@@ -81,19 +81,19 @@
 
 
 
-<meta name="description" content="461. Hamming Distance1. Description:The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
-Given two integers x and y, calculate the Hammin">
+<meta name="description" content="32. Longest Valid Parentheses1. Description：Given a string containing just the characters &amp;#39;(&amp;#39; and &amp;#39;)&amp;#39;, find the length of the longest valid (well-formed) parentheses substring.
+For &amp;qu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="461. Hamming Distance">
-<meta property="og:url" content="https://hzjry123.github.io/2017/11/27/461-Hamming-Distance/index.html">
+<meta property="og:title" content="LeetCode32">
+<meta property="og:url" content="https://hzjry123.github.io/2017/11/18/LeetCode32/index.html">
 <meta property="og:site_name" content="金若愚的blog">
-<meta property="og:description" content="461. Hamming Distance1. Description:The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
-Given two integers x and y, calculate the Hammin">
-<meta property="og:updated_time" content="2018-01-18T17:46:14.701Z">
+<meta property="og:description" content="32. Longest Valid Parentheses1. Description：Given a string containing just the characters &amp;#39;(&amp;#39; and &amp;#39;)&amp;#39;, find the length of the longest valid (well-formed) parentheses substring.
+For &amp;qu">
+<meta property="og:updated_time" content="2017-11-22T02:52:05.294Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="461. Hamming Distance">
-<meta name="twitter:description" content="461. Hamming Distance1. Description:The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
-Given two integers x and y, calculate the Hammin">
+<meta name="twitter:title" content="LeetCode32">
+<meta name="twitter:description" content="32. Longest Valid Parentheses1. Description：Given a string containing just the characters &amp;#39;(&amp;#39; and &amp;#39;)&amp;#39;, find the length of the longest valid (well-formed) parentheses substring.
+For &amp;qu">
 
 
 
@@ -123,13 +123,13 @@ Given two integers x and y, calculate the Hammin">
 
 
 
-  <link rel="canonical" href="https://hzjry123.github.io/2017/11/27/461-Hamming-Distance/"/>
+  <link rel="canonical" href="https://hzjry123.github.io/2017/11/18/LeetCode32/"/>
 
 
 
 
 
-  <title>461. Hamming Distance | 金若愚的blog</title>
+  <title>LeetCode32 | 金若愚的blog</title>
   
 
 
@@ -265,7 +265,7 @@ Given two integers x and y, calculate the Hammin">
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2017/11/27/461-Hamming-Distance/">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2017/11/18/LeetCode32/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="金若愚">
@@ -282,7 +282,7 @@ Given two integers x and y, calculate the Hammin">
 
         
         
-          <h2 class="post-title" itemprop="name headline">461. Hamming Distance</h2>
+          <h2 class="post-title" itemprop="name headline">LeetCode32</h2>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@ Given two integers x and y, calculate the Hammin">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T01:03:28-05:00">
-                2017-11-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-19T01:51:05+08:00">
+                2017-11-19
               </time>
             
 
@@ -312,7 +312,7 @@ Given two integers x and y, calculate the Hammin">
 
           
           
-             <span id="/2017/11/27/461-Hamming-Distance/" class="leancloud_visitors" data-flag-title="461. Hamming Distance">
+             <span id="/2017/11/18/LeetCode32/" class="leancloud_visitors" data-flag-title="LeetCode32">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -337,7 +337,7 @@ Given two integers x and y, calculate the Hammin">
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  785
+                  934
                 </span>
               
 
@@ -353,7 +353,7 @@ Given two integers x and y, calculate the Hammin">
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -374,49 +374,43 @@ Given two integers x and y, calculate the Hammin">
       
 
       
-        <h1 id="461-Hamming-Distance"><a href="#461-Hamming-Distance" class="headerlink" title="461. Hamming Distance"></a>461. Hamming Distance</h1><h3 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description:"></a>1. Description:</h3><p>The <a href="https://en.wikipedia.org/wiki/Hamming_distance" target="_blank" rel="external">Hamming distance</a> between two integers is the number of positions at which the corresponding bits are different.</p>
-<p>Given two integers <code>x</code> and <code>y</code>, calculate the Hamming distance.</p>
-<p><strong>Note:</strong><br>0 ≤ <code>x</code>, <code>y</code> &lt; 231.</p>
-<p><strong>Example:</strong></p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">Input</span>: x = 1, y = 4</div><div class="line"></div><div class="line"><span class="http"><span class="attribute">Output</span>: 2</span></div><div class="line"></div><div class="line"><span class="applescript">Explanation:</span></div><div class="line"><span class="number">1</span>   (<span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span>)</div><div class="line"><span class="number">4</span>   (<span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span>)</div><div class="line">       ↑   ↑</div><div class="line"></div><div class="line">The <span class="keyword">above</span> arrows point <span class="keyword">to</span> positions <span class="keyword">where</span> <span class="keyword">the</span> corresponding bits are different.</div></pre></td></tr></table></figure>
+        <h1 id="32-Longest-Valid-Parentheses"><a href="#32-Longest-Valid-Parentheses" class="headerlink" title="32. Longest Valid Parentheses"></a>32. Longest Valid Parentheses</h1><h3 id="1-Description："><a href="#1-Description：" class="headerlink" title="1. Description："></a>1. Description：</h3><p>Given a string containing just the characters <code>&#39;(&#39;</code> and <code>&#39;)&#39;</code>, find the length of the longest valid (well-formed) parentheses substring.</p>
+<p>For <code>&quot;(()&quot;</code>, the longest valid parentheses substring is <code>&quot;()&quot;</code>, which has length = 2.</p>
+<p>Another example is <code>&quot;)()())&quot;</code>, where the longest valid parentheses substring is <code>&quot;()()&quot;</code>, which has length = 4.</p>
 <a id="more"></a>
-<h3 id="2-Difficulty"><a href="#2-Difficulty" class="headerlink" title="2. Difficulty:"></a>2. Difficulty:</h3><p>Easy</p>
-<h3 id="3-Solution"><a href="#3-Solution" class="headerlink" title="3. Solution:"></a>3. Solution:</h3><h4 id="bit-count"><a href="#bit-count" class="headerlink" title="bit count"></a>bit count</h4><p>What does come to your mind first when you see this sentence <code>&quot;corresponding bits are different&quot;</code>? Yes, <code>XOR</code>! Also, do not forget there is a decent function Java provided: <code>Integer.bitCount()</code> ~~~</p>
-<p>But how does bitcount work?</p>
-<p>Let us look at the source code</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">bitCount</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</div><div class="line">        <span class="comment">// HD, Figure 5-2</span></div><div class="line"><span class="comment">//        java 逐位运算符</span></div><div class="line"><span class="comment">//        逐位或运算符(|),右移运算符(&gt;&gt;)非运算符(~) ,用0补足的右移运算符(&gt;&gt;&gt;)</span></div><div class="line">        i = i - ((i &gt;&gt;&gt; <span class="number">1</span>) &amp; <span class="number">0x55555555</span>);</div><div class="line">        i = (i &amp; <span class="number">0x33333333</span>) + ((i &gt;&gt;&gt; <span class="number">2</span>) &amp; <span class="number">0x33333333</span>);</div><div class="line">        i = (i + (i &gt;&gt;&gt; <span class="number">4</span>)) &amp; <span class="number">0x0f0f0f0f</span>;</div><div class="line">        i = i + (i &gt;&gt;&gt; <span class="number">8</span>);</div><div class="line">        i = i + (i &gt;&gt;&gt; <span class="number">16</span>);</div><div class="line">        <span class="keyword">return</span> i &amp; <span class="number">0x3f</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>hex: 0x55555555, hex 5: 0101</p>
-<p>binary: 101 0101 0101 0101 0101 0101 0101 0101</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">i = i - ((i &gt;&gt;&gt; <span class="number">1</span>) &amp; <span class="number">0x55555555</span>);</div></pre></td></tr></table></figure>
-<p>第一行是计算每两位中的 1 的个数 , 并且用该对应的两位来存储这个个数 ,<br>如 : 01101100 -&gt; 01011000 , 即先把前者每两位分段 01 10 11 00 , 分别有 1 1 2 0 个 1, 用两位二进制数表示为 01 01 10 00, 合起来为 01011000.</p>
-<p>Count the number of 1 in every two digits, and use two digits to store it.</p>
-<p>e.g. 01 10 11 00 store in 01 01 10 00.</p>
-<p>By <code>(i &gt;&gt;&gt; 1)</code>  e.g. <code>01 10 &gt;&gt;&gt; 1</code> = <code>00 11</code> , <code>00 11 &amp; 0x5(01 01)</code> = <code>00 01</code> . We get the number of 1 in high digit in <code>01 10</code> . </p>
-<ul>
-<li>In first two digits<code>01</code>, the number of 1 in high digit is 0.</li>
-</ul>
-<ul>
-<li>In second two digits<code>10</code>, the number of 1 in high digit is 1.</li>
-</ul>
-<p>Then how to get total number of every 2 digits?</p>
-<p>All cases:</p>
-<p> <code>11</code> , <code>i &gt;&gt;&gt; 1</code> = <code>1</code> , <code>1 &amp; 0101</code> = <code>1</code> . We suppose to get <code>10</code> . And  <code>11 - 1</code> = <code>10</code> .</p>
-<p> <code>10</code> , <code>i &gt;&gt;&gt; 1</code> = <code>1</code> , <code>1 &amp; 0101</code> = <code>1</code> . We suppose to get <code>01</code> . And  <code>10 - 1</code> = <code>01</code> .</p>
-<p> <code>01</code> , <code>i &gt;&gt;&gt; 1</code> = <code>0</code> , <code>0 &amp; 0101</code> = <code>0</code> . We suppose to get <code>01</code> . And  <code>01 - 0</code> = <code>01</code> .</p>
-<p> <code>00</code> , <code>i &gt;&gt;&gt; 1</code> = <code>0</code> , <code>0 &amp; 0101</code> = <code>0</code> . We suppose to get <code>00</code> . And  <code>00 - 0</code> = <code>00</code> .</p>
-<p>So <code>i - 00 01</code> = <code>01 10 - 00 01</code> = <code>01 10</code>.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">i = (i &amp; <span class="number">0x33333333</span>) + ((i &gt;&gt;&gt; <span class="number">2</span>) &amp; <span class="number">0x33333333</span>);</div></pre></td></tr></table></figure>
-<p><code>0x33333333</code> = <code>0011 0011 0011…</code></p>
-<p>第二行是计算每四位中的 1 的个数 , 并且用该对应的四位来存储这个个数 .<br>如 : 01101100 经过第一行计算后得 01011000 , 然后把 01011000 每四位分段成 0101 1000 , 段内移位相加 : 前段01+01 =10 , 后段 10+00=10, 分别用四位二进制数表示为 0010 0010, 合起来为 00100010 .</p>
-<p>After counting every two digits. We should count every 4 digits.</p>
-<p>It is quite same like count every two digits. Try it!</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">i = (i + (i &gt;&gt;&gt; <span class="number">4</span>)) &amp; <span class="number">0x0f0f0f0f</span>;</div></pre></td></tr></table></figure>
-<p><code>0f0f0f0f</code> = <code>0000 1111 0000 1111 0000 1111</code></p>
-<p>After count 4 digits. We count 8 digits.</p>
-<p>We still check 16digits and 32 digits.</p>
-<h3 id="other-solution1"><a href="#other-solution1" class="headerlink" title="other solution1:"></a>other solution1:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hammingDistance_2</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line"><span class="comment">//        对于一个正整数如果是偶数，该数的二进制数的最后一位是 0 ，</span></div><div class="line"><span class="comment">// 反之若是奇数，则该数的二进制数的最后一位是 1 。因此，可以考虑利用位移、判断奇偶来实现。</span></div><div class="line">        <span class="keyword">int</span> xor = x ^ y;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span> (xor != <span class="number">0</span>)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>((xor &amp; <span class="number">1</span>) == <span class="number">1</span>)&#123;</div><div class="line">                count++;</div><div class="line">            &#125;</div><div class="line">            xor = xor &gt;&gt;&gt; <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> count;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h4 id="other-solution2"><a href="#other-solution2" class="headerlink" title="other solution2:"></a>other solution2:</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hammingDistance_3</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line"><span class="comment">// 计算 1 的个数，若让算法的运算次数只与“ 1 ”的个数有关，那复杂度就能进一步降低。</span></div><div class="line"><span class="comment">// 思想： x &amp; (x-1) 可以消去 x 二进制数的最后一位 1</span></div><div class="line">        <span class="keyword">int</span> xor = x ^ y;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span> (xor != <span class="number">0</span>)</div><div class="line">        &#123;</div><div class="line">            xor &amp;= xor - <span class="number">1</span>;</div><div class="line">            count++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> count;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p><a href="http://15838341661-139-com.iteye.com/blog/1642525" target="_blank" rel="external">http://15838341661-139-com.iteye.com/blog/1642525</a></p>
+<h3 id="2-Difficulty"><a href="#2-Difficulty" class="headerlink" title="2. Difficulty:"></a>2. Difficulty:</h3><p><strong>Hard</strong>(not that hard)</p>
+<h3 id="3-Some-Tricky-Test-Case"><a href="#3-Some-Tricky-Test-Case" class="headerlink" title="3 .Some Tricky Test Case:"></a>3 .Some Tricky Test Case:</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">()()))))()()(</div><div class="line">()(())</div><div class="line">(()()))</div></pre></td></tr></table></figure>
+<h3 id="4-Relative-Problems"><a href="#4-Relative-Problems" class="headerlink" title="4. Relative Problems:"></a>4. Relative Problems:</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">20. </span>Valid Parentheses (easy)</div><div class="line"><span class="bullet">22. </span>Generate Parentheses(Medium)Solutions:</div></pre></td></tr></table></figure>
+<h3 id="5-Solution"><a href="#5-Solution" class="headerlink" title="5. Solution:"></a>5. Solution:</h3><p>Input: String <strong>s</strong>, return int <strong>longest</strong>.</p>
+<p>(1). use <strong>stack</strong>：</p>
+<p>​    The <strong>main Idea</strong> is that we should put all the elements into stack, check whether there is a Valid Parenthese.</p>
+<p>​    if we get  <strong>s.charAt(i) == ‘(‘</strong> , we should put the <strong>index</strong>  into stack.</p>
+<p>​    if we get <strong>s.charAt(i) == ‘)’</strong>, we should check top of stack, </p>
+<p>​    if the top of the stack is (, pop it out. Everthing goes well, we get a Valid          Parentheses. </p>
+<p>​    But if the top of the stack is ), we should push the <strong>index</strong> into stack.</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">e</span><span class="selector-class">.g</span>. : )()()).</div><div class="line">      <span class="selector-tag">Stack</span>(bottom to top): &#123;<span class="selector-tag">0</span>,<span class="selector-tag">5</span>&#125;</div><div class="line"><span class="selector-tag">e</span><span class="selector-class">.g</span>. : ()()))))()()(.</div><div class="line">true  Stack(bottom to top): &#123;<span class="selector-tag">4</span>,<span class="selector-tag">5</span>,<span class="selector-tag">6</span>,<span class="selector-tag">7</span>,<span class="selector-tag">12</span>&#125;.</div><div class="line">true  <span class="selector-tag">longest</span> <span class="selector-tag">is</span> <span class="selector-tag">4</span>. (<span class="number">12</span> - <span class="number">1</span>) <span class="selector-tag">-</span> <span class="selector-tag">7</span>.</div><div class="line">true   			<span class="selector-tag">4</span>. (<span class="number">4</span> - <span class="number">1</span>) <span class="selector-tag">-</span> ?. <span class="selector-tag">So</span> <span class="selector-tag">I</span> <span class="selector-tag">set</span> <span class="keyword">when</span> the stack is empty. ? = -<span class="number">1</span>.</div></pre></td></tr></table></figure>
+<p>​    As we can see, we get all invalid elements index.</p>
+<p>​    If the stack is <strong>empty</strong>, just need to return <strong>s.length</strong>.</p>
+<p>​    If the stack is <strong>not</strong> <strong>empty</strong>, we need to get <strong>longest</strong> <strong>Valid</strong> <strong>Parenthese</strong>.</p>
+<h3 id="6-Code"><a href="#6-Code" class="headerlink" title="6. Code:"></a>6. Code:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">longestValidParentheses</span><span class="params">(String s)</span> </span>&#123;</div><div class="line">        Stack&lt;Integer&gt; chars = <span class="keyword">new</span> Stack&lt;&gt;();</div><div class="line">        <span class="keyword">int</span> longest = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> pre = s.length();</div><div class="line">        <span class="comment">//push stack</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length();i++)&#123;</div><div class="line">            <span class="comment">//check whether stack is empty.</span></div><div class="line">            <span class="keyword">if</span>(chars.empty()||s.charAt(i) == <span class="string">'('</span>)chars.push(i);<span class="comment">//empty or ( push</span></div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s.charAt(chars.peek()) == <span class="string">'('</span>)<span class="comment">// ) if top is ( pop out</span></div><div class="line">                chars.pop();</div><div class="line">            <span class="keyword">else</span> chars.push(i);<span class="comment">//if top is )</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(chars.empty()) <span class="keyword">return</span> s.length();</div><div class="line">        <span class="keyword">int</span> temp = <span class="number">0</span>;<span class="comment">//just a flag</span></div><div class="line">        <span class="keyword">while</span> (temp != -<span class="number">1</span>) &#123;</div><div class="line">            <span class="comment">//若此时栈空了，那么说明此时的temp就是余下的( or ) return 他的位置，但逻辑就不统一了。</span></div><div class="line">            <span class="comment">//或者pop完 栈空，那么 他的位置就是长度。</span></div><div class="line">            <span class="comment">//else 他的位置长度 - 1 - 上一位。</span></div><div class="line">            temp = chars.empty() ? -<span class="number">1</span> : chars.pop();<span class="comment">//empty temp = -1</span></div><div class="line">            longest = longest &gt; (pre - <span class="number">1</span>) - temp ? longest : (pre - <span class="number">1</span>) - temp;</div><div class="line">            pre = temp;<span class="comment">//previous stack.</span></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> longest;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>(2).  Dynamic Programming:</p>
+<p>​    (()()))如果是（，len[i] = 0;如果是），如果上一个是（，则 len[i]=2    （1）如果上一个是），则要看i - len[i] - 1位的情况 (()())即此时最右边，你得看第5 - 4 - 1 = 0位的情况，    （2）如果是（，那么len[i] = len[i - 1] + 2;但如果是这种情况()(())，同时我们得看上上一位，即我们新加一个），i - len[i - 1] -2处也可以算入最长序列了。()()或者是这样，说明在（1),（2）两种情况时，都可以获得增长，因此我们最后都要加上len[i - len[i - 1] -2]。</p>
+<p>​    <strong>main</strong> idea: use array <strong>len</strong> to store length</p>
+<p>​         if s[i] = ‘(‘, len = 0;</p>
+<p>​         if s[i] = ‘)’, len = the length of <strong>near</strong> Valid Parentheses.</p>
+<p>​    Analysis:         </p>
+<p>​        if, left is ‘(‘, len <strong>at</strong> <strong>least</strong> = <strong>2</strong> , we still need to check <strong>s[i - 2]</strong>. just add len[i - 2]. </p>
+<p>​        if, left is ‘)’, we need to check <strong>i - len[i - 1] -1</strong>, jump to last invalid place to check whether we could get more. if s[i - len[i - 1] - 1] = (; we could get more! </p>
+<p>​        now len[i] = len[i - 1] + 2 + len[i - len[i - 1] - 2]</p>
+<p>​        <strong>check len[i - len[i - 1] - 2] to see whether we can get more!</strong> </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">longestValidParentheses_DP</span><span class="params">(String s)</span></span>&#123;</div><div class="line">        <span class="keyword">int</span>[] len = <span class="keyword">new</span> <span class="keyword">int</span>[s.length()];</div><div class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; s.length(); i++)&#123;</div><div class="line">            <span class="keyword">if</span>(s.charAt(i) == <span class="string">')'</span>)&#123;</div><div class="line">                <span class="keyword">if</span>(s.charAt(i - <span class="number">1</span>) == <span class="string">'('</span>) &#123;</div><div class="line">                    len[i] = <span class="number">2</span>;</div><div class="line">                    len[i] = len[i] + (i - len[i - <span class="number">1</span>] -<span class="number">2</span> &gt;= <span class="number">0</span>? len[i - len[i - <span class="number">1</span>] -<span class="number">2</span>]:<span class="number">0</span>);</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(i - len[i - <span class="number">1</span>] - <span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; s.charAt(i - len[i - <span class="number">1</span>] - <span class="number">1</span>) == <span class="string">'('</span>) &#123;</div><div class="line">                    len[i] = len[i - <span class="number">1</span>] + <span class="number">2</span>;</div><div class="line">                    len[i] = len[i] + (i - len[i - <span class="number">1</span>] -<span class="number">2</span> &gt;= <span class="number">0</span>? len[i - len[i - <span class="number">1</span>] -<span class="number">2</span>]:<span class="number">0</span>);</div><div class="line">                &#125;</div><div class="line">                max = Math.max(len[i],max);</div><div class="line">            &#125;</div><div class="line">        <span class="keyword">return</span> max;</div></pre></td></tr></table></figure>
+<p>那么我们可以观察得到条件可以合并，i-1 == (不再重要，反正大家都要加2，而且i-1 == （，len【i-1】==0加不加无所谓</p>
+<p>Try to observe the if condition, we can get a more concise version!</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(s.charAt(i) == <span class="string">')'</span>&amp;&amp;i - len[i - <span class="number">1</span>] - <span class="number">1</span> &gt;= <span class="number">0</span>&amp;&amp; s.charAt(i - len[i - <span class="number">1</span>] - <span class="number">1</span>) == <span class="string">'('</span>)</div><div class="line">&#123;</div><div class="line">  len[i] = len[i - <span class="number">1</span>] + <span class="number">2</span> + (i - len[i - <span class="number">1</span>] -<span class="number">2</span> &gt;= <span class="number">0</span>? len[i - len[i - <span class="number">1</span>] -<span class="number">2</span>]:<span class="number">0</span>);</div><div class="line">  max = Math.max(len[i],max);</div><div class="line">&#125;<span class="comment">//对于这段程序的理解：如果加入的是)，那么要开始改变的。</span></div><div class="line"><span class="comment">// 我们要找上上个（，在且只可能在i - len[i - 1] - 1，如果是个（，那么长度可以+2</span></div><div class="line"><span class="comment">// 同时看看能不能变的更长。要看上上一个（左边的序列。</span></div></pre></td></tr></table></figure>
+<p>​</p>
+<p>​</p>
+<p>​</p>
+<p>​     </p>
 
       
     </div>
@@ -447,8 +441,8 @@ Given two integers x and y, calculate the Hammin">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/20/Largest-Rectangle-in-Histogram/" rel="next" title="Largest Rectangle in Histogram">
-                <i class="fa fa-chevron-left"></i> Largest Rectangle in Histogram
+              <a href="/2017/01/20/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
@@ -457,8 +451,8 @@ Given two integers x and y, calculate the Hammin">
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/17/Maximum-Product-subarray/" rel="prev" title="Maximum Product subarray">
-                Maximum Product subarray <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/19/LeetCode121/" rel="prev" title="LeetCode121">
+                LeetCode121 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -626,7 +620,7 @@ Given two integers x and y, calculate the Hammin">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#461-Hamming-Distance"><span class="nav-number">1.</span> <span class="nav-text">461. Hamming Distance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Description"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. Description:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Difficulty"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. Difficulty:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Solution"><span class="nav-number">1.0.3.</span> <span class="nav-text">3. Solution:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#bit-count"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">bit count</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#other-solution1"><span class="nav-number">1.0.4.</span> <span class="nav-text">other solution1:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#other-solution2"><span class="nav-number">1.0.4.1.</span> <span class="nav-text">other solution2:</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#32-Longest-Valid-Parentheses"><span class="nav-number">1.</span> <span class="nav-text">32. Longest Valid Parentheses</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Description："><span class="nav-number">1.0.1.</span> <span class="nav-text">1. Description：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Difficulty"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. Difficulty:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Some-Tricky-Test-Case"><span class="nav-number">1.0.3.</span> <span class="nav-text">3 .Some Tricky Test Case:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Relative-Problems"><span class="nav-number">1.0.4.</span> <span class="nav-text">4. Relative Problems:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Solution"><span class="nav-number">1.0.5.</span> <span class="nav-text">5. Solution:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Code"><span class="nav-number">1.0.6.</span> <span class="nav-text">6. Code:</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

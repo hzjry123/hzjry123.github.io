@@ -259,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/02/04/GFS-Reading-Note/">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/02/15/google-cloud-configuration/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="金若愚">
@@ -278,7 +278,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/04/GFS-Reading-Note/" itemprop="url">GFS Reading Note</a></h2>
+                <a class="post-title-link" href="/2018/02/15/google-cloud-configuration/" itemprop="url">google cloud configuration</a></h2>
         
 
         <div class="post-meta">
@@ -290,7 +290,211 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T15:26:40+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-16T01:28:32+08:00">
+                2018-02-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/02/15/google-cloud-configuration/" class="leancloud_visitors" data-flag-title="google cloud configuration">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,187
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="配置-免费使用谷歌云-Jupyter"><a href="#配置-免费使用谷歌云-Jupyter" class="headerlink" title="配置:免费使用谷歌云+Jupyter"></a>配置:免费使用谷歌云+Jupyter</h1><h2 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h2><p>最近学习了机器学习的算法基础，也实践过很多小数据的数据分析，因此对大数据的分析产生了兴趣，想部署一个spark集群去学习大数据，发现aws虽然免费但是挺坑的，只有1g memory。偶然了解到google cloud，听说google cloud给注册用户赠送有效期为一年的300刀抵用券，而且在google cloud上部署hadoop集群或者高性能机器都很方便。</p>
+<p>jupyter notebook + pyspark: spark上提供了很多机器学习的算法，而且支持集群计算。加上jupyter notebook这种直观的可视化界面，更加方便。而且jupyter notebook作为一个web application，完全可以在google cloud上运行，将端口映射到本机后，用户则可以直接使用高性能集群上的jupyter notebook可以直接关注算法本身而不用去考虑集群的配置，可以说是数据分析的神器了。</p>
+<h2 id="Google-cloud网页配置"><a href="#Google-cloud网页配置" class="headerlink" title="Google cloud网页配置"></a>Google cloud网页配置</h2><p>Google cloud基于google cloud sdk，可以下载cloud sdk在本机上使用命令<code>gcloud</code>，同时google cloud也提供了网页版的shell，也很方便。</p>
+<p>推荐大家先在网页上注册google cloud，填写支付信息（必须有可以支付美元的信用卡）然后按照流程去走一遍（创建自己的instance，部署一个app，看谷歌炫技）。过程中会创建自己的project，记下id。</p>
+<h3 id="下载google-cloud-sdk"><a href="#下载google-cloud-sdk" class="headerlink" title="下载google cloud sdk"></a>下载google cloud sdk</h3><p><a href="https://cloud.google.com/sdk/downloads" target="_blank" rel="external">https://cloud.google.com/sdk/downloads</a></p>
+<p>按照网页上的步骤安装就可以了，十分方便。安装成功会让你登陆谷歌账号和配置一些instance的环境。</p>
+<h2 id="配置集群和jupyter"><a href="#配置集群和jupyter" class="headerlink" title="配置集群和jupyter"></a>配置集群和jupyter</h2><p>这一步是在本机上执行</p>
+<p>然后就可以配置你的hadoop cluster了。我推荐在本地的terminal里配置。输入如下命令（创建cluster并配置安装jupyter）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">gcloud dataproc clusters create cluster-name \</div><div class="line">    --project project-id \</div><div class="line">    --master-machine-type n1-standard-2 \</div><div class="line">    --worker-machine-type n1-standard-2 \</div><div class="line">    --initialization-actions \</div><div class="line">        gs://dataproc-initialization-actions/jupyter/jupyter.sh</div></pre></td></tr></table></figure>
+<p>其中\是换行标志，— 后面跟的是属性，在这里我标注了使用的Master和salve的型号，如果不标注则无法运行，（因为默认的配置会使你的钱包溢出了）。这里配置好了待会也可以去网页上更改配置，因为这里是500g的硬盘，一般用不了这么大。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gs:<span class="regexp">//</span>dataproc-initialization-actions<span class="regexp">/jupyter/</span>jupyter.sh</div></pre></td></tr></table></figure>
+<p>gs：github shell，执行GitHub的shell，这是按照jupyter、anaconda和spark的脚本。</p>
+<h3 id="Pip版本升级"><a href="#Pip版本升级" class="headerlink" title="Pip版本升级"></a>Pip版本升级</h3><p>这一步是在网页上的Master的shell里执行。（master的ssh）</p>
+<p>pip是python里包下载工具，最好升级一下不然会出现很多怪错误。</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">conda update pip</span></div></pre></td></tr></table></figure>
+<h2 id="连接jupyter"><a href="#连接jupyter" class="headerlink" title="连接jupyter"></a>连接jupyter</h2><p>这一步确实有很多坑啊，参考了很多命令才得以使用。</p>
+<h3 id="防火墙设置"><a href="#防火墙设置" class="headerlink" title="防火墙设置"></a>防火墙设置</h3><p>可以直接在google cloud的搜索栏里搜firewall rules。</p>
+<p>再去里面创建firewall rules。填写如下配置</p>
+<p><img src="/2018/02/15/google-cloud-configuration/fire_wall.detail.png" alt=""></p>
+<p>其中的tcp:5000是声明通过ipv6连接cluster，同时这个5000也是我们启动jupyter的端口，接下来本机要通过映射去得到这个5000端口。</p>
+<h3 id="jupyter的启动"><a href="#jupyter的启动" class="headerlink" title="jupyter的启动"></a>jupyter的启动</h3><p>这一步是在网页上的Master后ssh的terminal里执行。</p>
+<p>对于jupyter的一些概念，在哪个路径下启动jupyter notebook，打开的默认位置就是那个路径。有点类似于先选定project的位置，再打开编译器。</p>
+<p>我们最好不要直接在根目录下启动jupyter，会产生一些怪问题，最好是找到自己用户的路径然后自己mkdir一个路径去做jupyter，5000是刚设置的端口。</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">jupyter</span><span class="literal">-</span><span class="comment">notebook</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">no</span><span class="literal">-</span><span class="comment">browser</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">port=5000</span></div></pre></td></tr></table></figure>
+<p>会产生一个token给你，</p>
+<h3 id="本地映射服务器端口"><a href="#本地映射服务器端口" class="headerlink" title="本地映射服务器端口"></a>本地映射服务器端口</h3><p>这一步是在本机terminal执行</p>
+<p>在这一步确实会有很多幺蛾子。先说我的方法吧：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcloud compute ssh <span class="tag">&lt;<span class="name">master</span>&gt;</span> -- -L <span class="tag">&lt;<span class="name">your</span> <span class="attr">port</span>&gt;</span>:127.0.0.1:<span class="tag">&lt;<span class="name">jupyter</span> <span class="attr">port</span>&gt;</span> -N -n <span class="tag">&lt;<span class="name">master</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>example</p>
+<p>我是映射到了本机的1024端口，这个是看心情的，只要那里没有端口占用就行了</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">gcloud</span> <span class="selector-tag">compute</span> <span class="selector-tag">ssh</span> <span class="selector-tag">tianchi-m</span> <span class="selector-tag">--</span> <span class="selector-tag">-L</span> 1024<span class="selector-pseudo">:127.0.0.1</span><span class="selector-pseudo">:5000</span> <span class="selector-tag">-N</span> <span class="selector-tag">-n</span> <span class="selector-tag">tianchi-m</span></div></pre></td></tr></table></figure>
+<p>记得Master后面都跟一个-m的，也就是clustername-m。</p>
+<p>然后登陆<code>localhost:1024</code>就可以看见我们的jupyter了。第一次登陆一般要输入token。在网页上的terminal里有，复制过来输入就好。</p>
+<p><img src="/2018/02/15/google-cloud-configuration/token.png" alt=""></p>
+<p>成功启动：</p>
+<p><img src="/2018/02/15/google-cloud-configuration/jupyter.png" alt=""></p>
+<p>官方的办法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcloud compute ssh cluster-name-m -- -L 1080:cluster-name-m:8088 -N -n</div></pre></td></tr></table></figure>
+<p>这是我第一次成功的方法，但是自从我把cluster关了几天以后这办法就不行了。。</p>
+<p>别的连接/参考方法链接:</p>
+<p><a href="https://cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces" target="_blank" rel="external">https://cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces</a></p>
+<p><a href="https://cloud.google.com/blog/big-data/2017/02/google-cloud-platform-for-data-scientists-using-jupyter-notebooks-with-apache-spark-on-google-cloud" target="_blank" rel="external">https://cloud.google.com/blog/big-data/2017/02/google-cloud-platform-for-data-scientists-using-jupyter-notebooks-with-apache-spark-on-google-cloud</a></p>
+<p><a href="https://towardsdatascience.com/running-jupyter-notebook-in-google-cloud-platform-in-15-min-61e16da34d52" target="_blank" rel="external">https://towardsdatascience.com/running-jupyter-notebook-in-google-cloud-platform-in-15-min-61e16da34d52</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/02/03/GFS-Reading-Note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="金若愚">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金若愚的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/03/GFS-Reading-Note/" itemprop="url">GFS Reading Note</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T02:26:40+08:00">
                 2018-02-04
               </time>
             
@@ -308,7 +512,7 @@
 
           
           
-             <span id="/2018/02/04/GFS-Reading-Note/" class="leancloud_visitors" data-flag-title="GFS Reading Note">
+             <span id="/2018/02/03/GFS-Reading-Note/" class="leancloud_visitors" data-flag-title="GFS Reading Note">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -375,7 +579,7 @@
 <h2 id="1-GFS是什么？"><a href="#1-GFS是什么？" class="headerlink" title="1. GFS是什么？"></a>1. GFS是什么？</h2><p>GFS(Google File System)是一个大规模,具有高拓展性(scalable)的分布式系统，分布式集群是建立在大量的普通硬件上的，有很强的fault tolerance，能够响应大量的客户端。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/04/GFS-Reading-Note/#more" rel="contents">
+            <a class="btn" href="/2018/02/03/GFS-Reading-Note/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -457,8 +661,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-19T08:50:41+08:00">
-                2018-01-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-18T19:50:41+08:00">
+                2018-01-18
               </time>
             
 
@@ -543,7 +747,7 @@
 <p>Thanks 林肯先生</p>
 <p>在next里写latex时发现渲染不出来，查找后发现是说node.js的渲染和markdown渲染的问题。操作半天也不得行。</p>
 <p>但我发现我是什么公式也渲染不出来啊！后来在next的issue里面查找相关问题，发现得先在/themes/next/_config.yml里把third-party-services settings中的math设置为enable</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mathjax:</div><div class="line">  enable: true</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">mathjax:</span></div><div class="line"><span class="attr">  enable:</span> <span class="literal">true</span></div></pre></td></tr></table></figure>
 <p>感觉被自己蠢到了。</p>
 <p>但是这样设置以后还是不行，参考了”林肯先生”的做法。</p>
 <ol>
@@ -551,7 +755,7 @@
 <li><code>npm install hexo-renderer-kramed --save</code>//安装新的markdown渲染工具</li>
 </ol>
 <p>由于markdown在渲染时”_ “会被认为是下划线，和latex下标的操作一样，会先渲染markdown的，导致latex无法渲染，因此要在里面加\把_转义，到这个时候才和”林肯先生”的问题一样，我有点震惊。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$R\_&#123;m \times n&#125; = U\_&#123;m \times m&#125; S\_&#123;m \times n&#125; V\_&#123;n \times n&#125;&apos;$</div></pre></td></tr></table></figure>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$R<span class="string">\_&#123;m</span> <span class="string">\times</span> n&#125; = U<span class="string">\_&#123;m</span> <span class="string">\times</span> m&#125; S<span class="string">\_&#123;m</span> <span class="string">\times</span> n&#125; V<span class="string">\_&#123;n</span> <span class="string">\times</span> n&#125;<span class="string">'$</span></div></pre></td></tr></table></figure>
 <script type="math/tex; mode=display">
 R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>很强，但是能用了，饿死了先去吃饭了，如果有哪位朋友知道这该怎么办，请告诉我一下。</p>
 
@@ -602,7 +806,7 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/01/18/Maximum-Product-subarray/">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/01/17/Maximum-Product-subarray/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="金若愚">
@@ -621,7 +825,7 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/01/18/Maximum-Product-subarray/" itemprop="url">Maximum Product subarray</a></h2>
+                <a class="post-title-link" href="/2018/01/17/Maximum-Product-subarray/" itemprop="url">Maximum Product subarray</a></h2>
         
 
         <div class="post-meta">
@@ -633,8 +837,8 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-19T01:48:06+08:00">
-                2018-01-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-18T12:48:06+08:00">
+                2018-01-18
               </time>
             
 
@@ -651,7 +855,7 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
 
           
           
-             <span id="/2018/01/18/Maximum-Product-subarray/" class="leancloud_visitors" data-flag-title="Maximum Product subarray">
+             <span id="/2018/01/17/Maximum-Product-subarray/" class="leancloud_visitors" data-flag-title="Maximum Product subarray">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -715,12 +919,12 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
       
         
           <h1 id="152-Maximum-Product-SubaArray"><a href="#152-Maximum-Product-SubaArray" class="headerlink" title="152.Maximum-Product-SubaArray"></a>152.Maximum-Product-SubaArray</h1><h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description:"></a>1. Description:</h2><p>Find the contiguous subarray within an array (containing at least one number) which has the largest product.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">For example, given the array[2,3,-2,4]`,</div><div class="line"></div><div class="line">the contiguous subarray [2,3] has the largest product = 6.</div></pre></td></tr></table></figure>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">For example, given the array[<span class="number">2</span>,<span class="number">3</span>,<span class="number">-2</span>,<span class="number">4</span>]`,</div><div class="line"></div><div class="line">the contiguous subarray [<span class="number">2</span>,<span class="number">3</span>] has the largest product = <span class="number">6.</span></div></pre></td></tr></table></figure>
 <h3 id="2-Difficulty"><a href="#2-Difficulty" class="headerlink" title="2. Difficulty:"></a>2. Difficulty:</h3><p>Medium</p>
 <h3 id="3-Solution"><a href="#3-Solution" class="headerlink" title="3. Solution:"></a>3. Solution:</h3>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/01/18/Maximum-Product-subarray/#more" rel="contents">
+            <a class="btn" href="/2018/01/17/Maximum-Product-subarray/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -802,8 +1006,8 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-28T03:03:28+08:00">
-                2017-11-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T14:03:28+08:00">
+                2017-11-27
               </time>
             
 
@@ -887,181 +1091,10 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
 <p>Given two integers <code>x</code> and <code>y</code>, calculate the Hamming distance.</p>
 <p><strong>Note:</strong><br>0 ≤ <code>x</code>, <code>y</code> &lt; 231.</p>
 <p><strong>Example:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Input: x = 1, y = 4</div><div class="line"></div><div class="line">Output: 2</div><div class="line"></div><div class="line">Explanation:</div><div class="line">1   (0 0 0 1)</div><div class="line">4   (0 1 0 0)</div><div class="line">       ↑   ↑</div><div class="line"></div><div class="line">The above arrows point to positions where the corresponding bits are different.</div></pre></td></tr></table></figure>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">Input</span>: x = 1, y = 4</div><div class="line"></div><div class="line"><span class="http"><span class="attribute">Output</span>: 2</span></div><div class="line"></div><div class="line"><span class="applescript">Explanation:</span></div><div class="line"><span class="number">1</span>   (<span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span>)</div><div class="line"><span class="number">4</span>   (<span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span>)</div><div class="line">       ↑   ↑</div><div class="line"></div><div class="line">The <span class="keyword">above</span> arrows point <span class="keyword">to</span> positions <span class="keyword">where</span> <span class="keyword">the</span> corresponding bits are different.</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/11/27/461-Hamming-Distance/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2017/11/20/Largest-Rectangle-in-Histogram/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="金若愚">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="金若愚的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/20/Largest-Rectangle-in-Histogram/" itemprop="url">Largest Rectangle in Histogram</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-21T05:08:54+08:00">
-                2017-11-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/11/20/Largest-Rectangle-in-Histogram/" class="leancloud_visitors" data-flag-title="Largest Rectangle in Histogram">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,071
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  6
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="84-Largest-Rectangle-in-Histogram"><a href="#84-Largest-Rectangle-in-Histogram" class="headerlink" title="84. Largest Rectangle in Histogram"></a>84. Largest Rectangle in Histogram</h1><p><strong>Reference</strong>: <a href="http://www.geeksforgeeks.org/largest-rectangle-under-histogram/">http://www.geeksforgeeks.org/largest-rectangle-under-histogram/</a></p>
-<h3 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description:"></a><strong>1</strong>. Description:</h3><p>Given <em>n</em> non-negative integers representing the histogram’s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.</p>
-<p><img src="https://leetcode.com/static/images/problemset/histogram.png" alt="img"></p>
-<p>Above is a histogram where width of each bar is 1, given height = <code>[2,1,5,6,2,3]</code>.</p>
-<p><img src="https://leetcode.com/static/images/problemset/histogram_area.png" alt="img"></p>
-<p>The largest rectangle is shown in the shaded area, which has area = <code>10</code> unit.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/20/Largest-Rectangle-in-Histogram/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1153,7 +1186,7 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1166,7 +1199,7 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

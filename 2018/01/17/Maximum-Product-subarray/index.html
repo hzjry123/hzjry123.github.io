@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="LeetCode," />
+  <meta name="keywords" content="LeetCode,DynamicProgramming," />
 
 
 
@@ -81,19 +81,19 @@
 
 
 
-<meta name="description" content="461. Hamming Distance1. Description:The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
-Given two integers x and y, calculate the Hammin">
+<meta name="description" content="152.Maximum-Product-SubaArray1. Description:Find the contiguous subarray within an array (containing at least one number) which has the largest product.
+123For example, given the array[2,3,-2,4]`,the">
 <meta property="og:type" content="article">
-<meta property="og:title" content="461. Hamming Distance">
-<meta property="og:url" content="https://hzjry123.github.io/2017/11/27/461-Hamming-Distance/index.html">
+<meta property="og:title" content="Maximum Product subarray">
+<meta property="og:url" content="https://hzjry123.github.io/2018/01/17/Maximum-Product-subarray/index.html">
 <meta property="og:site_name" content="金若愚的blog">
-<meta property="og:description" content="461. Hamming Distance1. Description:The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
-Given two integers x and y, calculate the Hammin">
-<meta property="og:updated_time" content="2018-01-18T17:46:14.701Z">
+<meta property="og:description" content="152.Maximum-Product-SubaArray1. Description:Find the contiguous subarray within an array (containing at least one number) which has the largest product.
+123For example, given the array[2,3,-2,4]`,the">
+<meta property="og:updated_time" content="2018-01-19T00:49:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="461. Hamming Distance">
-<meta name="twitter:description" content="461. Hamming Distance1. Description:The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
-Given two integers x and y, calculate the Hammin">
+<meta name="twitter:title" content="Maximum Product subarray">
+<meta name="twitter:description" content="152.Maximum-Product-SubaArray1. Description:Find the contiguous subarray within an array (containing at least one number) which has the largest product.
+123For example, given the array[2,3,-2,4]`,the">
 
 
 
@@ -123,13 +123,13 @@ Given two integers x and y, calculate the Hammin">
 
 
 
-  <link rel="canonical" href="https://hzjry123.github.io/2017/11/27/461-Hamming-Distance/"/>
+  <link rel="canonical" href="https://hzjry123.github.io/2018/01/17/Maximum-Product-subarray/"/>
 
 
 
 
 
-  <title>461. Hamming Distance | 金若愚的blog</title>
+  <title>Maximum Product subarray | 金若愚的blog</title>
   
 
 
@@ -265,7 +265,7 @@ Given two integers x and y, calculate the Hammin">
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2017/11/27/461-Hamming-Distance/">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/01/17/Maximum-Product-subarray/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="金若愚">
@@ -282,7 +282,7 @@ Given two integers x and y, calculate the Hammin">
 
         
         
-          <h2 class="post-title" itemprop="name headline">461. Hamming Distance</h2>
+          <h2 class="post-title" itemprop="name headline">Maximum Product subarray</h2>
         
 
         <div class="post-meta">
@@ -294,8 +294,8 @@ Given two integers x and y, calculate the Hammin">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T01:03:28-05:00">
-                2017-11-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-18T12:48:06+08:00">
+                2018-01-18
               </time>
             
 
@@ -312,7 +312,7 @@ Given two integers x and y, calculate the Hammin">
 
           
           
-             <span id="/2017/11/27/461-Hamming-Distance/" class="leancloud_visitors" data-flag-title="461. Hamming Distance">
+             <span id="/2018/01/17/Maximum-Product-subarray/" class="leancloud_visitors" data-flag-title="Maximum Product subarray">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -337,7 +337,7 @@ Given two integers x and y, calculate the Hammin">
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  785
+                  858
                 </span>
               
 
@@ -374,49 +374,47 @@ Given two integers x and y, calculate the Hammin">
       
 
       
-        <h1 id="461-Hamming-Distance"><a href="#461-Hamming-Distance" class="headerlink" title="461. Hamming Distance"></a>461. Hamming Distance</h1><h3 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description:"></a>1. Description:</h3><p>The <a href="https://en.wikipedia.org/wiki/Hamming_distance" target="_blank" rel="external">Hamming distance</a> between two integers is the number of positions at which the corresponding bits are different.</p>
-<p>Given two integers <code>x</code> and <code>y</code>, calculate the Hamming distance.</p>
-<p><strong>Note:</strong><br>0 ≤ <code>x</code>, <code>y</code> &lt; 231.</p>
-<p><strong>Example:</strong></p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">Input</span>: x = 1, y = 4</div><div class="line"></div><div class="line"><span class="http"><span class="attribute">Output</span>: 2</span></div><div class="line"></div><div class="line"><span class="applescript">Explanation:</span></div><div class="line"><span class="number">1</span>   (<span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">1</span>)</div><div class="line"><span class="number">4</span>   (<span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span>)</div><div class="line">       ↑   ↑</div><div class="line"></div><div class="line">The <span class="keyword">above</span> arrows point <span class="keyword">to</span> positions <span class="keyword">where</span> <span class="keyword">the</span> corresponding bits are different.</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="2-Difficulty"><a href="#2-Difficulty" class="headerlink" title="2. Difficulty:"></a>2. Difficulty:</h3><p>Easy</p>
-<h3 id="3-Solution"><a href="#3-Solution" class="headerlink" title="3. Solution:"></a>3. Solution:</h3><h4 id="bit-count"><a href="#bit-count" class="headerlink" title="bit count"></a>bit count</h4><p>What does come to your mind first when you see this sentence <code>&quot;corresponding bits are different&quot;</code>? Yes, <code>XOR</code>! Also, do not forget there is a decent function Java provided: <code>Integer.bitCount()</code> ~~~</p>
-<p>But how does bitcount work?</p>
-<p>Let us look at the source code</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">bitCount</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</div><div class="line">        <span class="comment">// HD, Figure 5-2</span></div><div class="line"><span class="comment">//        java 逐位运算符</span></div><div class="line"><span class="comment">//        逐位或运算符(|),右移运算符(&gt;&gt;)非运算符(~) ,用0补足的右移运算符(&gt;&gt;&gt;)</span></div><div class="line">        i = i - ((i &gt;&gt;&gt; <span class="number">1</span>) &amp; <span class="number">0x55555555</span>);</div><div class="line">        i = (i &amp; <span class="number">0x33333333</span>) + ((i &gt;&gt;&gt; <span class="number">2</span>) &amp; <span class="number">0x33333333</span>);</div><div class="line">        i = (i + (i &gt;&gt;&gt; <span class="number">4</span>)) &amp; <span class="number">0x0f0f0f0f</span>;</div><div class="line">        i = i + (i &gt;&gt;&gt; <span class="number">8</span>);</div><div class="line">        i = i + (i &gt;&gt;&gt; <span class="number">16</span>);</div><div class="line">        <span class="keyword">return</span> i &amp; <span class="number">0x3f</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>hex: 0x55555555, hex 5: 0101</p>
-<p>binary: 101 0101 0101 0101 0101 0101 0101 0101</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">i = i - ((i &gt;&gt;&gt; <span class="number">1</span>) &amp; <span class="number">0x55555555</span>);</div></pre></td></tr></table></figure>
-<p>第一行是计算每两位中的 1 的个数 , 并且用该对应的两位来存储这个个数 ,<br>如 : 01101100 -&gt; 01011000 , 即先把前者每两位分段 01 10 11 00 , 分别有 1 1 2 0 个 1, 用两位二进制数表示为 01 01 10 00, 合起来为 01011000.</p>
-<p>Count the number of 1 in every two digits, and use two digits to store it.</p>
-<p>e.g. 01 10 11 00 store in 01 01 10 00.</p>
-<p>By <code>(i &gt;&gt;&gt; 1)</code>  e.g. <code>01 10 &gt;&gt;&gt; 1</code> = <code>00 11</code> , <code>00 11 &amp; 0x5(01 01)</code> = <code>00 01</code> . We get the number of 1 in high digit in <code>01 10</code> . </p>
-<ul>
-<li>In first two digits<code>01</code>, the number of 1 in high digit is 0.</li>
-</ul>
-<ul>
-<li>In second two digits<code>10</code>, the number of 1 in high digit is 1.</li>
-</ul>
-<p>Then how to get total number of every 2 digits?</p>
-<p>All cases:</p>
-<p> <code>11</code> , <code>i &gt;&gt;&gt; 1</code> = <code>1</code> , <code>1 &amp; 0101</code> = <code>1</code> . We suppose to get <code>10</code> . And  <code>11 - 1</code> = <code>10</code> .</p>
-<p> <code>10</code> , <code>i &gt;&gt;&gt; 1</code> = <code>1</code> , <code>1 &amp; 0101</code> = <code>1</code> . We suppose to get <code>01</code> . And  <code>10 - 1</code> = <code>01</code> .</p>
-<p> <code>01</code> , <code>i &gt;&gt;&gt; 1</code> = <code>0</code> , <code>0 &amp; 0101</code> = <code>0</code> . We suppose to get <code>01</code> . And  <code>01 - 0</code> = <code>01</code> .</p>
-<p> <code>00</code> , <code>i &gt;&gt;&gt; 1</code> = <code>0</code> , <code>0 &amp; 0101</code> = <code>0</code> . We suppose to get <code>00</code> . And  <code>00 - 0</code> = <code>00</code> .</p>
-<p>So <code>i - 00 01</code> = <code>01 10 - 00 01</code> = <code>01 10</code>.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">i = (i &amp; <span class="number">0x33333333</span>) + ((i &gt;&gt;&gt; <span class="number">2</span>) &amp; <span class="number">0x33333333</span>);</div></pre></td></tr></table></figure>
-<p><code>0x33333333</code> = <code>0011 0011 0011…</code></p>
-<p>第二行是计算每四位中的 1 的个数 , 并且用该对应的四位来存储这个个数 .<br>如 : 01101100 经过第一行计算后得 01011000 , 然后把 01011000 每四位分段成 0101 1000 , 段内移位相加 : 前段01+01 =10 , 后段 10+00=10, 分别用四位二进制数表示为 0010 0010, 合起来为 00100010 .</p>
-<p>After counting every two digits. We should count every 4 digits.</p>
-<p>It is quite same like count every two digits. Try it!</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">i = (i + (i &gt;&gt;&gt; <span class="number">4</span>)) &amp; <span class="number">0x0f0f0f0f</span>;</div></pre></td></tr></table></figure>
-<p><code>0f0f0f0f</code> = <code>0000 1111 0000 1111 0000 1111</code></p>
-<p>After count 4 digits. We count 8 digits.</p>
-<p>We still check 16digits and 32 digits.</p>
-<h3 id="other-solution1"><a href="#other-solution1" class="headerlink" title="other solution1:"></a>other solution1:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hammingDistance_2</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line"><span class="comment">//        对于一个正整数如果是偶数，该数的二进制数的最后一位是 0 ，</span></div><div class="line"><span class="comment">// 反之若是奇数，则该数的二进制数的最后一位是 1 。因此，可以考虑利用位移、判断奇偶来实现。</span></div><div class="line">        <span class="keyword">int</span> xor = x ^ y;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span> (xor != <span class="number">0</span>)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>((xor &amp; <span class="number">1</span>) == <span class="number">1</span>)&#123;</div><div class="line">                count++;</div><div class="line">            &#125;</div><div class="line">            xor = xor &gt;&gt;&gt; <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> count;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h4 id="other-solution2"><a href="#other-solution2" class="headerlink" title="other solution2:"></a>other solution2:</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hammingDistance_3</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line"><span class="comment">// 计算 1 的个数，若让算法的运算次数只与“ 1 ”的个数有关，那复杂度就能进一步降低。</span></div><div class="line"><span class="comment">// 思想： x &amp; (x-1) 可以消去 x 二进制数的最后一位 1</span></div><div class="line">        <span class="keyword">int</span> xor = x ^ y;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">        <span class="keyword">while</span> (xor != <span class="number">0</span>)</div><div class="line">        &#123;</div><div class="line">            xor &amp;= xor - <span class="number">1</span>;</div><div class="line">            count++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> count;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p><a href="http://15838341661-139-com.iteye.com/blog/1642525" target="_blank" rel="external">http://15838341661-139-com.iteye.com/blog/1642525</a></p>
+        <h1 id="152-Maximum-Product-SubaArray"><a href="#152-Maximum-Product-SubaArray" class="headerlink" title="152.Maximum-Product-SubaArray"></a>152.Maximum-Product-SubaArray</h1><h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description:"></a>1. Description:</h2><p>Find the contiguous subarray within an array (containing at least one number) which has the largest product.</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">For example, given the array[<span class="number">2</span>,<span class="number">3</span>,<span class="number">-2</span>,<span class="number">4</span>]`,</div><div class="line"></div><div class="line">the contiguous subarray [<span class="number">2</span>,<span class="number">3</span>] has the largest product = <span class="number">6.</span></div></pre></td></tr></table></figure>
+<h3 id="2-Difficulty"><a href="#2-Difficulty" class="headerlink" title="2. Difficulty:"></a>2. Difficulty:</h3><p>Medium</p>
+<h3 id="3-Solution"><a href="#3-Solution" class="headerlink" title="3. Solution:"></a>3. Solution:</h3><a id="more"></a>
+<p>It remains us of Maximum-Sum-SubArray, but it is more complicated</p>
+<p>First I came up with a brute $O(n^2)$ solution.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxProduct</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> len = nums.length,max = nums[len - <span class="number">1</span>];</div><div class="line">        <span class="keyword">if</span>(len == <span class="number">1</span>)<span class="keyword">return</span> nums[<span class="number">0</span>];</div><div class="line">        <span class="keyword">int</span>[][] product = <span class="keyword">new</span> <span class="keyword">int</span>[len][len];</div><div class="line">        product[len - <span class="number">1</span>][len - <span class="number">1</span>] = nums[len - <span class="number">1</span>];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">            product[i][i] = nums[i];</div><div class="line">            max = Math.max(max,nums[i]);</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</div><div class="line">                product[i][j] = nums[i] * product[i + <span class="number">1</span>][j];</div><div class="line">                max = Math.max(max,product[i][j]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> max;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>But it failed to pass OJ.</p>
+<p>解法一：</p>
+<p>Then I came up with another <strong>Dynamic Programming</strong> Solution.</p>
+<p>我们知道在乘法中，只要乘数不包括0，那么结果在绝对值上也会变大，因此我们要追踪的是当前的最大以及最小值，这两者理论上都有可能在后面变成最大乘积。</p>
+<p>参考Discuss上的一段话</p>
+<blockquote>
+<p>Besides keeping track of the largest product, we also need to keep track of the smallest product. Why? The smallest product, which is the largest in the negative sense could become the maximum when being multiplied by a negative number.</p>
+</blockquote>
+<p>但是我们要保证一点，就是在循环到nums[i]处时，当前步骤的最大值必须是受到nusm[i-1]影响的。在得到最大最小值时，我们要比较的是nums[i]和上一步的最大最小值的乘积以及当前nums[i].</p>
+<p>因此在nums[i] &gt; 0时，我们可以得到转移方程:</p>
+<script type="math/tex; mode=display">
+max[i] = Math.max(max[i - 1] * nums[i],nums[i])</script><script type="math/tex; mode=display">
+min[i] = Math.max(min[i-1]*nums[i],nums[i])</script><p>在nums[i] &lt; 0 时，我们可以得到转移方程</p>
+<script type="math/tex; mode=display">
+max[i] = Math.max(min[i - 1] * nums[i],nums[i])</script><script type="math/tex; mode=display">
+min[i] = Math.max(max[i-1]*nums[i],nums[i])</script><p>在得到最后的最大值时只需遍历max数组即可。</p>
+<p>在空间上优化：用变量max，min代替数组，每步都获得当前的最大值。</p>
+<script type="math/tex; mode=display">
+cur\\_max =Math.max(cur\\_max,max)</script><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxProduct_n</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> res = nums[<span class="number">0</span>],max = res,min = res,len = nums.length;</div><div class="line">    <span class="keyword">if</span>(len == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; i++)&#123;</div><div class="line">        <span class="keyword">if</span>(nums[i] &gt; <span class="number">0</span>)&#123;</div><div class="line">            max = Math.max(nums[i] * max, nums[i]);</div><div class="line">            min = Math.min(nums[i] * min, nums[i]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">int</span> temp = max;</div><div class="line">            max = Math.max(min * nums[i],nums[i]);</div><div class="line">            min = Math.min(temp * nums[i],nums[i]);</div><div class="line">        &#125;</div><div class="line">        res = Math.max(res,max);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> res;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>解法二: </p>
+<p>解法一代码简化。</p>
+<p>从上一步我们可以看出，max和min的值是交换的。即在nums &lt;= 0的时候，max和min就会发生互换。因此我们可以加入一个判断</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(nums[i] =&lt; <span class="number">0</span>) swap(max,min);</div><div class="line"> max = Math.max(nums[i] * max, nums[i]);</div><div class="line">    min = Math.min(nums[i] * min, nums[i]);</div></pre></td></tr></table></figure>
+<p>解法三:</p>
+<p>由于是乘法，考虑没有0的情况，每加入一个新的数，乘积的绝对值都会变大，如果整个数组有n个负数</p>
+<p>若n为偶，则subarray就是全部array。</p>
+<p>若n为奇，则可以得到负数为偶数个的subarray来比较乘积</p>
+<p>头尾是正，如[2,3,-4,1,2]  就是[2,3] 和 [1,2]的比较。</p>
+<p>头尾是负，[-4,1,-2,3,-4]就是[-4,1,-2,3],[1,-2,3,-4]。</p>
+<p>头是正[1,-1,-3,3,-2]就是[1,-1,-3,3]</p>
+<p>尾是正[-1,-1,-3,3,2]就是[-1,-3,3,2]</p>
+<p>由此其实可以直观感觉出，如果有最大值的话，那么最大值一定是会包括头或者尾的。</p>
+<p>故可以遍历两边，从头遍历一遍，从尾遍历一遍</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxProduct_n</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> res = nums[<span class="number">0</span>],len = nums.length,product = <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span>(len == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</div><div class="line">      	product *= nums[i];</div><div class="line">        res = Math.max(res,product);</div><div class="line">      	<span class="keyword">if</span>(nums[i] == <span class="number">0</span>)product = <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">  	product = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = len - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</div><div class="line">      	product *= nums[i];</div><div class="line">        res = Math.max(res,product);</div><div class="line">      	<span class="keyword">if</span>(nums[i] == <span class="number">0</span>)product = <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> res;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -436,6 +434,8 @@ Given two integers x and y, calculate the Hammin">
           
             <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
           
+            <a href="/tags/DynamicProgramming/" rel="tag"># DynamicProgramming</a>
+          
         </div>
       
 
@@ -447,8 +447,8 @@ Given two integers x and y, calculate the Hammin">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/20/Largest-Rectangle-in-Histogram/" rel="next" title="Largest Rectangle in Histogram">
-                <i class="fa fa-chevron-left"></i> Largest Rectangle in Histogram
+              <a href="/2017/11/27/461-Hamming-Distance/" rel="next" title="461. Hamming Distance">
+                <i class="fa fa-chevron-left"></i> 461. Hamming Distance
               </a>
             
           </div>
@@ -457,8 +457,8 @@ Given two integers x and y, calculate the Hammin">
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/17/Maximum-Product-subarray/" rel="prev" title="Maximum Product subarray">
-                Maximum Product subarray <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/18/关于hexo的next主题无法显示latex公式/" rel="prev" title="关于hexo的next主题无法显示latex公式">
+                关于hexo的next主题无法显示latex公式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -626,7 +626,7 @@ Given two integers x and y, calculate the Hammin">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#461-Hamming-Distance"><span class="nav-number">1.</span> <span class="nav-text">461. Hamming Distance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Description"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. Description:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Difficulty"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. Difficulty:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Solution"><span class="nav-number">1.0.3.</span> <span class="nav-text">3. Solution:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#bit-count"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">bit count</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#other-solution1"><span class="nav-number">1.0.4.</span> <span class="nav-text">other solution1:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#other-solution2"><span class="nav-number">1.0.4.1.</span> <span class="nav-text">other solution2:</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#152-Maximum-Product-SubaArray"><span class="nav-number">1.</span> <span class="nav-text">152.Maximum-Product-SubaArray</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Description"><span class="nav-number">1.1.</span> <span class="nav-text">1. Description:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Difficulty"><span class="nav-number">1.1.1.</span> <span class="nav-text">2. Difficulty:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Solution"><span class="nav-number">1.1.2.</span> <span class="nav-text">3. Solution:</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
