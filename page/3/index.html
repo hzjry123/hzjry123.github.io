@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="LeetCode,DynamicProgramming," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -81,19 +81,12 @@
 
 
 
-<meta name="description" content="152.Maximum-Product-SubaArray1. Description:Find the contiguous subarray within an array (containing at least one number) which has the largest product.
-123For example, given the array[2,3,-2,4]`,the">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Maximum Product subarray">
-<meta property="og:url" content="https://hzjry123.github.io/2018/01/18/Maximum-Product-subarray/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="金若愚的blog">
+<meta property="og:url" content="https://hzjry123.github.io/page/3/index.html">
 <meta property="og:site_name" content="金若愚的blog">
-<meta property="og:description" content="152.Maximum-Product-SubaArray1. Description:Find the contiguous subarray within an array (containing at least one number) which has the largest product.
-123For example, given the array[2,3,-2,4]`,the">
-<meta property="og:updated_time" content="2018-01-19T00:49:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Maximum Product subarray">
-<meta name="twitter:description" content="152.Maximum-Product-SubaArray1. Description:Find the contiguous subarray within an array (containing at least one number) which has the largest product.
-123For example, given the array[2,3,-2,4]`,the">
+<meta name="twitter:title" content="金若愚的blog">
 
 
 
@@ -123,13 +116,13 @@
 
 
 
-  <link rel="canonical" href="https://hzjry123.github.io/2018/01/18/Maximum-Product-subarray/"/>
+  <link rel="canonical" href="https://hzjry123.github.io/page/3/"/>
 
 
 
 
 
-  <title>Maximum Product subarray | 金若愚的blog</title>
+  <title>金若愚的blog</title>
   
 
 
@@ -157,7 +150,8 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -250,9 +244,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -265,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/01/18/Maximum-Product-subarray/">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2017/11/18/LeetCode32/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="金若愚">
@@ -282,7 +276,9 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Maximum Product subarray</h2>
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/18/LeetCode32/" itemprop="url">LeetCode32</a></h2>
         
 
         <div class="post-meta">
@@ -294,8 +290,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-18T12:48:06-05:00">
-                2018-01-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-19T01:51:05+08:00">
+                2017-11-19
               </time>
             
 
@@ -312,7 +308,7 @@
 
           
           
-             <span id="/2018/01/18/Maximum-Product-subarray/" class="leancloud_visitors" data-flag-title="Maximum Product subarray">
+             <span id="/2017/11/18/LeetCode32/" class="leancloud_visitors" data-flag-title="LeetCode32">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -337,7 +333,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  858
+                  934
                 </span>
               
 
@@ -353,7 +349,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -374,48 +370,18 @@
       
 
       
-        <h1 id="152-Maximum-Product-SubaArray"><a href="#152-Maximum-Product-SubaArray" class="headerlink" title="152.Maximum-Product-SubaArray"></a>152.Maximum-Product-SubaArray</h1><h2 id="1-Description"><a href="#1-Description" class="headerlink" title="1. Description:"></a>1. Description:</h2><p>Find the contiguous subarray within an array (containing at least one number) which has the largest product.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">For example, given the array[2,3,-2,4]`,</div><div class="line"></div><div class="line">the contiguous subarray [2,3] has the largest product = 6.</div></pre></td></tr></table></figure>
-<h3 id="2-Difficulty"><a href="#2-Difficulty" class="headerlink" title="2. Difficulty:"></a>2. Difficulty:</h3><p>Medium</p>
-<h3 id="3-Solution"><a href="#3-Solution" class="headerlink" title="3. Solution:"></a>3. Solution:</h3><a id="more"></a>
-<p>It remains us of Maximum-Sum-SubArray, but it is more complicated</p>
-<p>First I came up with a brute $O(n^2)$ solution.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxProduct</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> len = nums.length,max = nums[len - <span class="number">1</span>];</div><div class="line">        <span class="keyword">if</span>(len == <span class="number">1</span>)<span class="keyword">return</span> nums[<span class="number">0</span>];</div><div class="line">        <span class="keyword">int</span>[][] product = <span class="keyword">new</span> <span class="keyword">int</span>[len][len];</div><div class="line">        product[len - <span class="number">1</span>][len - <span class="number">1</span>] = nums[len - <span class="number">1</span>];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = len - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">            product[i][i] = nums[i];</div><div class="line">            max = Math.max(max,nums[i]);</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</div><div class="line">                product[i][j] = nums[i] * product[i + <span class="number">1</span>][j];</div><div class="line">                max = Math.max(max,product[i][j]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> max;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>But it failed to pass OJ.</p>
-<p>解法一：</p>
-<p>Then I came up with another <strong>Dynamic Programming</strong> Solution.</p>
-<p>我们知道在乘法中，只要乘数不包括0，那么结果在绝对值上也会变大，因此我们要追踪的是当前的最大以及最小值，这两者理论上都有可能在后面变成最大乘积。</p>
-<p>参考Discuss上的一段话</p>
-<blockquote>
-<p>Besides keeping track of the largest product, we also need to keep track of the smallest product. Why? The smallest product, which is the largest in the negative sense could become the maximum when being multiplied by a negative number.</p>
-</blockquote>
-<p>但是我们要保证一点，就是在循环到nums[i]处时，当前步骤的最大值必须是受到nusm[i-1]影响的。在得到最大最小值时，我们要比较的是nums[i]和上一步的最大最小值的乘积以及当前nums[i].</p>
-<p>因此在nums[i] &gt; 0时，我们可以得到转移方程:</p>
-<script type="math/tex; mode=display">
-max[i] = Math.max(max[i - 1] * nums[i],nums[i])</script><script type="math/tex; mode=display">
-min[i] = Math.max(min[i-1]*nums[i],nums[i])</script><p>在nums[i] &lt; 0 时，我们可以得到转移方程</p>
-<script type="math/tex; mode=display">
-max[i] = Math.max(min[i - 1] * nums[i],nums[i])</script><script type="math/tex; mode=display">
-min[i] = Math.max(max[i-1]*nums[i],nums[i])</script><p>在得到最后的最大值时只需遍历max数组即可。</p>
-<p>在空间上优化：用变量max，min代替数组，每步都获得当前的最大值。</p>
-<script type="math/tex; mode=display">
-cur\\_max =Math.max(cur\\_max,max)</script><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxProduct_n</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> res = nums[<span class="number">0</span>],max = res,min = res,len = nums.length;</div><div class="line">    <span class="keyword">if</span>(len == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; i++)&#123;</div><div class="line">        <span class="keyword">if</span>(nums[i] &gt; <span class="number">0</span>)&#123;</div><div class="line">            max = Math.max(nums[i] * max, nums[i]);</div><div class="line">            min = Math.min(nums[i] * min, nums[i]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">int</span> temp = max;</div><div class="line">            max = Math.max(min * nums[i],nums[i]);</div><div class="line">            min = Math.min(temp * nums[i],nums[i]);</div><div class="line">        &#125;</div><div class="line">        res = Math.max(res,max);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> res;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>解法二: </p>
-<p>解法一代码简化。</p>
-<p>从上一步我们可以看出，max和min的值是交换的。即在nums &lt;= 0的时候，max和min就会发生互换。因此我们可以加入一个判断</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(nums[i] =&lt; <span class="number">0</span>) swap(max,min);</div><div class="line"> max = Math.max(nums[i] * max, nums[i]);</div><div class="line">    min = Math.min(nums[i] * min, nums[i]);</div></pre></td></tr></table></figure>
-<p>解法三:</p>
-<p>由于是乘法，考虑没有0的情况，每加入一个新的数，乘积的绝对值都会变大，如果整个数组有n个负数</p>
-<p>若n为偶，则subarray就是全部array。</p>
-<p>若n为奇，则可以得到负数为偶数个的subarray来比较乘积</p>
-<p>头尾是正，如[2,3,-4,1,2]  就是[2,3] 和 [1,2]的比较。</p>
-<p>头尾是负，[-4,1,-2,3,-4]就是[-4,1,-2,3],[1,-2,3,-4]。</p>
-<p>头是正[1,-1,-3,3,-2]就是[1,-1,-3,3]</p>
-<p>尾是正[-1,-1,-3,3,2]就是[-1,-3,3,2]</p>
-<p>由此其实可以直观感觉出，如果有最大值的话，那么最大值一定是会包括头或者尾的。</p>
-<p>故可以遍历两边，从头遍历一遍，从尾遍历一遍</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">maxProduct_n</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> res = nums[<span class="number">0</span>],len = nums.length,product = <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span>(len == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</div><div class="line">      	product *= nums[i];</div><div class="line">        res = Math.max(res,product);</div><div class="line">      	<span class="keyword">if</span>(nums[i] == <span class="number">0</span>)product = <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">  	product = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = len - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</div><div class="line">      	product *= nums[i];</div><div class="line">        res = Math.max(res,product);</div><div class="line">      	<span class="keyword">if</span>(nums[i] == <span class="number">0</span>)product = <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> res;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
+        
+          <h1 id="32-Longest-Valid-Parentheses"><a href="#32-Longest-Valid-Parentheses" class="headerlink" title="32. Longest Valid Parentheses"></a>32. Longest Valid Parentheses</h1><h3 id="1-Description："><a href="#1-Description：" class="headerlink" title="1. Description："></a>1. Description：</h3><p>Given a string containing just the characters <code>&#39;(&#39;</code> and <code>&#39;)&#39;</code>, find the length of the longest valid (well-formed) parentheses substring.</p>
+<p>For <code>&quot;(()&quot;</code>, the longest valid parentheses substring is <code>&quot;()&quot;</code>, which has length = 2.</p>
+<p>Another example is <code>&quot;)()())&quot;</code>, where the longest valid parentheses substring is <code>&quot;()()&quot;</code>, which has length = 4.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/18/LeetCode32/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
       
     </div>
     
@@ -430,42 +396,14 @@ cur\\_max =Math.max(cur\\_max,max)</script><figure class="highlight java"><table
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
-          
-            <a href="/tags/DynamicProgramming/" rel="tag"># DynamicProgramming</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/11/27/461-Hamming-Distance/" rel="next" title="461. Hamming Distance">
-                <i class="fa fa-chevron-left"></i> 461. Hamming Distance
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/18/关于hexo的next主题无法显示latex公式/" rel="prev" title="关于hexo的next主题无法显示latex公式">
-                关于hexo的next主题无法显示latex公式 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -475,11 +413,184 @@ cur\\_max =Math.max(cur\\_max,max)</script><figure class="highlight java"><table
   </article>
 
 
+    
+      
 
-    <div class="post-spread">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2017/01/20/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="金若愚">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金若愚的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/20/hello-world/" itemprop="url">Hello World</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-21T01:05:22+08:00">
+                2017-01-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/01/20/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  78
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+          
+        
       
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
 
 
           </div>
@@ -487,15 +598,6 @@ cur\\_max =Math.max(cur\\_max,max)</script><figure class="highlight java"><table
 
 
           
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTk0OC84NTEy"></div>
-    </div>
-
-  
-
-
 
         </div>
         
@@ -516,17 +618,8 @@ cur\\_max =Math.max(cur\\_max,max)</script><figure class="highlight java"><table
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -545,7 +638,7 @@ cur\\_max =Math.max(cur\\_max,max)</script><figure class="highlight java"><table
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -558,7 +651,7 @@ cur\\_max =Math.max(cur\\_max,max)</script><figure class="highlight java"><table
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -616,22 +709,6 @@ cur\\_max =Math.max(cur\\_max,max)</script><figure class="highlight java"><table
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#152-Maximum-Product-SubaArray"><span class="nav-number">1.</span> <span class="nav-text">152.Maximum-Product-SubaArray</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Description"><span class="nav-number">1.1.</span> <span class="nav-text">1. Description:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Difficulty"><span class="nav-number">1.1.1.</span> <span class="nav-text">2. Difficulty:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Solution"><span class="nav-number">1.1.2.</span> <span class="nav-text">3. Solution:</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -779,10 +856,6 @@ cur\\_max =Math.max(cur\\_max,max)</script><figure class="highlight java"><table
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
-
-
 
   
 
@@ -803,17 +876,6 @@ cur\\_max =Math.max(cur\\_max,max)</script><figure class="highlight java"><table
 
 
 
-  
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
   
 
 

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="LeetCode," />
+  <meta name="keywords" content="机器学习," />
 
 
 
@@ -81,19 +81,28 @@
 
 
 
-<meta name="description" content="32. Longest Valid Parentheses1. Description：Given a string containing just the characters &amp;#39;(&amp;#39; and &amp;#39;)&amp;#39;, find the length of the longest valid (well-formed) parentheses substring.
-For &amp;qu">
+<meta name="description" content="统计方法三要素在《统计学方法》一书中，作者将统计学算法表达为如下公式（1）
+其中模型就是所要学习的条件概率分布或决策函数。
+策略就是用损失函数（cost function/loss function）来度量预测错误程度算法就是求解过程
+
+方法=策略+模型+算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode32">
-<meta property="og:url" content="https://hzjry123.github.io/2017/11/19/LeetCode32/index.html">
+<meta property="og:title" content="three elements">
+<meta property="og:url" content="https://hzjry123.github.io/2018/01/19/three-elements/index.html">
 <meta property="og:site_name" content="金若愚的blog">
-<meta property="og:description" content="32. Longest Valid Parentheses1. Description：Given a string containing just the characters &amp;#39;(&amp;#39; and &amp;#39;)&amp;#39;, find the length of the longest valid (well-formed) parentheses substring.
-For &amp;qu">
-<meta property="og:updated_time" content="2017-11-22T02:52:05.294Z">
+<meta property="og:description" content="统计方法三要素在《统计学方法》一书中，作者将统计学算法表达为如下公式（1）
+其中模型就是所要学习的条件概率分布或决策函数。
+策略就是用损失函数（cost function/loss function）来度量预测错误程度算法就是求解过程
+
+方法=策略+模型+算法">
+<meta property="og:updated_time" content="2018-02-22T06:04:52.370Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode32">
-<meta name="twitter:description" content="32. Longest Valid Parentheses1. Description：Given a string containing just the characters &amp;#39;(&amp;#39; and &amp;#39;)&amp;#39;, find the length of the longest valid (well-formed) parentheses substring.
-For &amp;qu">
+<meta name="twitter:title" content="three elements">
+<meta name="twitter:description" content="统计方法三要素在《统计学方法》一书中，作者将统计学算法表达为如下公式（1）
+其中模型就是所要学习的条件概率分布或决策函数。
+策略就是用损失函数（cost function/loss function）来度量预测错误程度算法就是求解过程
+
+方法=策略+模型+算法">
 
 
 
@@ -123,13 +132,13 @@ For &amp;qu">
 
 
 
-  <link rel="canonical" href="https://hzjry123.github.io/2017/11/19/LeetCode32/"/>
+  <link rel="canonical" href="https://hzjry123.github.io/2018/01/19/three-elements/"/>
 
 
 
 
 
-  <title>LeetCode32 | 金若愚的blog</title>
+  <title>three elements | 金若愚的blog</title>
   
 
 
@@ -265,7 +274,7 @@ For &amp;qu">
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2017/11/19/LeetCode32/">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/01/19/three-elements/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="金若愚">
@@ -282,7 +291,7 @@ For &amp;qu">
 
         
         
-          <h2 class="post-title" itemprop="name headline">LeetCode32</h2>
+          <h2 class="post-title" itemprop="name headline">three elements</h2>
         
 
         <div class="post-meta">
@@ -294,8 +303,8 @@ For &amp;qu">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-19T01:51:05-05:00">
-                2017-11-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-19T07:10:49-05:00">
+                2018-01-19
               </time>
             
 
@@ -312,7 +321,7 @@ For &amp;qu">
 
           
           
-             <span id="/2017/11/19/LeetCode32/" class="leancloud_visitors" data-flag-title="LeetCode32">
+             <span id="/2018/01/19/three-elements/" class="leancloud_visitors" data-flag-title="three elements">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -337,7 +346,7 @@ For &amp;qu">
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  931
+                  84
                 </span>
               
 
@@ -353,7 +362,7 @@ For &amp;qu">
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  1
                 </span>
               
             </div>
@@ -374,44 +383,11 @@ For &amp;qu">
       
 
       
-        <h1 id="32-Longest-Valid-Parentheses"><a href="#32-Longest-Valid-Parentheses" class="headerlink" title="32. Longest Valid Parentheses"></a>32. Longest Valid Parentheses</h1><h3 id="1-Description："><a href="#1-Description：" class="headerlink" title="1. Description："></a>1. Description：</h3><p>Given a string containing just the characters <code>&#39;(&#39;</code> and <code>&#39;)&#39;</code>, find the length of the longest valid (well-formed) parentheses substring.</p>
-<p>For <code>&quot;(()&quot;</code>, the longest valid parentheses substring is <code>&quot;()&quot;</code>, which has length = 2.</p>
-<p>Another example is <code>&quot;)()())&quot;</code>, where the longest valid parentheses substring is <code>&quot;()()&quot;</code>, which has length = 4.</p>
-<a id="more"></a>
-<h3 id="2-Difficulty"><a href="#2-Difficulty" class="headerlink" title="2. Difficulty:"></a>2. Difficulty:</h3><p><strong>Hard</strong>(not that hard)</p>
-<h3 id="3-Some-Tricky-Test-Case"><a href="#3-Some-Tricky-Test-Case" class="headerlink" title="3 .Some Tricky Test Case:"></a>3 .Some Tricky Test Case:</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">()()))))()()(</div><div class="line">()(())</div><div class="line">(()()))</div></pre></td></tr></table></figure>
-<h3 id="4-Relative-Problems"><a href="#4-Relative-Problems" class="headerlink" title="4. Relative Problems:"></a>4. Relative Problems:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">20. Valid Parentheses (easy)</div><div class="line">22. Generate Parentheses(Medium)Solutions:</div></pre></td></tr></table></figure>
-<h3 id="5-Solution"><a href="#5-Solution" class="headerlink" title="5. Solution:"></a>5. Solution:</h3><p>Input: String <strong>s</strong>, return int <strong>longest</strong>.</p>
-<p>(1). use <strong>stack</strong>：</p>
-<p>​    The <strong>main Idea</strong> is that we should put all the elements into stack, check whether there is a Valid Parenthese.</p>
-<p>​    if we get  <strong>s.charAt(i) == ‘(‘</strong> , we should put the <strong>index</strong>  into stack.</p>
-<p>​    if we get <strong>s.charAt(i) == ‘)’</strong>, we should check top of stack, </p>
-<p>​    if the top of the stack is (, pop it out. Everthing goes well, we get a Valid          Parentheses. </p>
-<p>​    But if the top of the stack is ), we should push the <strong>index</strong> into stack.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">e.g. : )()()).</div><div class="line">      Stack(bottom to top): &#123;0,5&#125;</div><div class="line">e.g. : ()()))))()()(.</div><div class="line">	  Stack(bottom to top): &#123;4,5,6,7,12&#125;.</div><div class="line">	  longest is 4. (12 - 1) - 7.</div><div class="line">	   			4. (4 - 1) - ?. So I set when the stack is empty. ? = -1.</div></pre></td></tr></table></figure>
-<p>​    As we can see, we get all invalid elements index.</p>
-<p>​    If the stack is <strong>empty</strong>, just need to return <strong>s.length</strong>.</p>
-<p>​    If the stack is <strong>not</strong> <strong>empty</strong>, we need to get <strong>longest</strong> <strong>Valid</strong> <strong>Parenthese</strong>.</p>
-<h3 id="6-Code"><a href="#6-Code" class="headerlink" title="6. Code:"></a>6. Code:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">longestValidParentheses</span><span class="params">(String s)</span> </span>&#123;</div><div class="line">        Stack&lt;Integer&gt; chars = <span class="keyword">new</span> Stack&lt;&gt;();</div><div class="line">        <span class="keyword">int</span> longest = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> pre = s.length();</div><div class="line">        <span class="comment">//push stack</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length();i++)&#123;</div><div class="line">            <span class="comment">//check whether stack is empty.</span></div><div class="line">            <span class="keyword">if</span>(chars.empty()||s.charAt(i) == <span class="string">'('</span>)chars.push(i);<span class="comment">//empty or ( push</span></div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s.charAt(chars.peek()) == <span class="string">'('</span>)<span class="comment">// ) if top is ( pop out</span></div><div class="line">                chars.pop();</div><div class="line">            <span class="keyword">else</span> chars.push(i);<span class="comment">//if top is )</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(chars.empty()) <span class="keyword">return</span> s.length();</div><div class="line">        <span class="keyword">int</span> temp = <span class="number">0</span>;<span class="comment">//just a flag</span></div><div class="line">        <span class="keyword">while</span> (temp != -<span class="number">1</span>) &#123;</div><div class="line">            <span class="comment">//若此时栈空了，那么说明此时的temp就是余下的( or ) return 他的位置，但逻辑就不统一了。</span></div><div class="line">            <span class="comment">//或者pop完 栈空，那么 他的位置就是长度。</span></div><div class="line">            <span class="comment">//else 他的位置长度 - 1 - 上一位。</span></div><div class="line">            temp = chars.empty() ? -<span class="number">1</span> : chars.pop();<span class="comment">//empty temp = -1</span></div><div class="line">            longest = longest &gt; (pre - <span class="number">1</span>) - temp ? longest : (pre - <span class="number">1</span>) - temp;</div><div class="line">            pre = temp;<span class="comment">//previous stack.</span></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> longest;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>(2).  Dynamic Programming:</p>
-<p>​    (()()))如果是（，len[i] = 0;如果是），如果上一个是（，则 len[i]=2    （1）如果上一个是），则要看i - len[i] - 1位的情况 (()())即此时最右边，你得看第5 - 4 - 1 = 0位的情况，    （2）如果是（，那么len[i] = len[i - 1] + 2;但如果是这种情况()(())，同时我们得看上上一位，即我们新加一个），i - len[i - 1] -2处也可以算入最长序列了。()()或者是这样，说明在（1),（2）两种情况时，都可以获得增长，因此我们最后都要加上len[i - len[i - 1] -2]。</p>
-<p>​    <strong>main</strong> idea: use array <strong>len</strong> to store length</p>
-<p>​         if s[i] = ‘(‘, len = 0;</p>
-<p>​         if s[i] = ‘)’, len = the length of <strong>near</strong> Valid Parentheses.</p>
-<p>​    Analysis:         </p>
-<p>​        if, left is ‘(‘, len <strong>at</strong> <strong>least</strong> = <strong>2</strong> , we still need to check <strong>s[i - 2]</strong>. just add len[i - 2]. </p>
-<p>​        if, left is ‘)’, we need to check <strong>i - len[i - 1] -1</strong>, jump to last invalid place to check whether we could get more. if s[i - len[i - 1] - 1] = (; we could get more! </p>
-<p>​        now len[i] = len[i - 1] + 2 + len[i - len[i - 1] - 2]</p>
-<p>​        <strong>check len[i - len[i - 1] - 2] to see whether we can get more!</strong> </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">longestValidParentheses_DP</span><span class="params">(String s)</span></span>&#123;</div><div class="line">        <span class="keyword">int</span>[] len = <span class="keyword">new</span> <span class="keyword">int</span>[s.length()];</div><div class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; s.length(); i++)&#123;</div><div class="line">            <span class="keyword">if</span>(s.charAt(i) == <span class="string">')'</span>)&#123;</div><div class="line">                <span class="keyword">if</span>(s.charAt(i - <span class="number">1</span>) == <span class="string">'('</span>) &#123;</div><div class="line">                    len[i] = <span class="number">2</span>;</div><div class="line">                    len[i] = len[i] + (i - len[i - <span class="number">1</span>] -<span class="number">2</span> &gt;= <span class="number">0</span>? len[i - len[i - <span class="number">1</span>] -<span class="number">2</span>]:<span class="number">0</span>);</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(i - len[i - <span class="number">1</span>] - <span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; s.charAt(i - len[i - <span class="number">1</span>] - <span class="number">1</span>) == <span class="string">'('</span>) &#123;</div><div class="line">                    len[i] = len[i - <span class="number">1</span>] + <span class="number">2</span>;</div><div class="line">                    len[i] = len[i] + (i - len[i - <span class="number">1</span>] -<span class="number">2</span> &gt;= <span class="number">0</span>? len[i - len[i - <span class="number">1</span>] -<span class="number">2</span>]:<span class="number">0</span>);</div><div class="line">                &#125;</div><div class="line">                max = Math.max(len[i],max);</div><div class="line">            &#125;</div><div class="line">        <span class="keyword">return</span> max;</div></pre></td></tr></table></figure>
-<p>那么我们可以观察得到条件可以合并，i-1 == (不再重要，反正大家都要加2，而且i-1 == （，len【i-1】==0加不加无所谓</p>
-<p>Try to observe the if condition, we can get a more concise version!</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(s.charAt(i) == <span class="string">')'</span>&amp;&amp;i - len[i - <span class="number">1</span>] - <span class="number">1</span> &gt;= <span class="number">0</span>&amp;&amp; s.charAt(i - len[i - <span class="number">1</span>] - <span class="number">1</span>) == <span class="string">'('</span>)</div><div class="line">&#123;</div><div class="line">  len[i] = len[i - <span class="number">1</span>] + <span class="number">2</span> + (i - len[i - <span class="number">1</span>] -<span class="number">2</span> &gt;= <span class="number">0</span>? len[i - len[i - <span class="number">1</span>] -<span class="number">2</span>]:<span class="number">0</span>);</div><div class="line">  max = Math.max(len[i],max);</div><div class="line">&#125;<span class="comment">//对于这段程序的理解：如果加入的是)，那么要开始改变的。</span></div><div class="line"><span class="comment">// 我们要找上上个（，在且只可能在i - len[i - 1] - 1，如果是个（，那么长度可以+2</span></div><div class="line"><span class="comment">// 同时看看能不能变的更长。要看上上一个（左边的序列。</span></div></pre></td></tr></table></figure>
-<p>​</p>
-<p>​</p>
-<p>​</p>
-<p>​     </p>
-
+        <h1 id="统计方法三要素"><a href="#统计方法三要素" class="headerlink" title="统计方法三要素"></a>统计方法三要素</h1><p>在《统计学方法》一书中，作者将统计学算法表达为如下公式（1）</p>
+<p>其中模型就是所要学习的条件概率分布或决策函数。</p>
+<p>策略就是用损失函数（cost function/loss function）来度量预测错误程度算法就是求解过程</p>
+<script type="math/tex; mode=display">
+方法=策略+模型+算法</script>
       
     </div>
     
@@ -428,7 +404,7 @@ For &amp;qu">
       
         <div class="post-tags">
           
-            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
           
         </div>
       
@@ -441,8 +417,8 @@ For &amp;qu">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/20/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/01/18/关于hexo的next主题无法显示latex公式/" rel="next" title="关于hexo的next主题无法显示latex公式">
+                <i class="fa fa-chevron-left"></i> 关于hexo的next主题无法显示latex公式
               </a>
             
           </div>
@@ -451,8 +427,8 @@ For &amp;qu">
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/20/LeetCode121/" rel="prev" title="LeetCode121">
-                LeetCode121 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/19/cost-function/" rel="prev" title="cost function">
+                cost function <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -539,7 +515,7 @@ For &amp;qu">
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -552,7 +528,7 @@ For &amp;qu">
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -620,7 +596,7 @@ For &amp;qu">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#32-Longest-Valid-Parentheses"><span class="nav-number">1.</span> <span class="nav-text">32. Longest Valid Parentheses</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Description："><span class="nav-number">1.0.1.</span> <span class="nav-text">1. Description：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Difficulty"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. Difficulty:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Some-Tricky-Test-Case"><span class="nav-number">1.0.3.</span> <span class="nav-text">3 .Some Tricky Test Case:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Relative-Problems"><span class="nav-number">1.0.4.</span> <span class="nav-text">4. Relative Problems:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Solution"><span class="nav-number">1.0.5.</span> <span class="nav-text">5. Solution:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Code"><span class="nav-number">1.0.6.</span> <span class="nav-text">6. Code:</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#统计方法三要素"><span class="nav-number">1.</span> <span class="nav-text">统计方法三要素</span></a></li></ol></div>
             
 
           </div>
