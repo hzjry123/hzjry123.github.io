@@ -81,28 +81,18 @@
 
 
 
-<meta name="description" content="统计方法三要素在《统计学方法》一书中，作者将统计学算法表达为如下公式（1）
-其中模型就是所要学习的条件概率分布或决策函数。
-策略就是用损失函数（cost function/loss function）来度量预测错误程度算法就是求解过程
-
-方法=策略+模型+算法">
+<meta name="description" content="统计方法三要素在《统计学方法》一书中，作者将统计学算法表达为如下公式（1） 其中  模型就是所要学习的条件概率分布或决策函数。 策略就是用损失函数（cost function/loss function）来度量预测错误程度算法就是求解过程 算法就是求解模型的办法。   方法=模型+策略+算法按照我的理解：  模型：找到一个合适的预测函数$h(\theta)$，用来预测输入的数据的判断结果，需要到数">
+<meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="three elements">
 <meta property="og:url" content="https://hzjry123.github.io/2018/01/19/three-elements/index.html">
 <meta property="og:site_name" content="金若愚的blog">
-<meta property="og:description" content="统计方法三要素在《统计学方法》一书中，作者将统计学算法表达为如下公式（1）
-其中模型就是所要学习的条件概率分布或决策函数。
-策略就是用损失函数（cost function/loss function）来度量预测错误程度算法就是求解过程
-
-方法=策略+模型+算法">
-<meta property="og:updated_time" content="2018-02-22T06:04:52.370Z">
+<meta property="og:description" content="统计方法三要素在《统计学方法》一书中，作者将统计学算法表达为如下公式（1） 其中  模型就是所要学习的条件概率分布或决策函数。 策略就是用损失函数（cost function/loss function）来度量预测错误程度算法就是求解过程 算法就是求解模型的办法。   方法=模型+策略+算法按照我的理解：  模型：找到一个合适的预测函数$h(\theta)$，用来预测输入的数据的判断结果，需要到数">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-03T05:10:24.899Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="three elements">
-<meta name="twitter:description" content="统计方法三要素在《统计学方法》一书中，作者将统计学算法表达为如下公式（1）
-其中模型就是所要学习的条件概率分布或决策函数。
-策略就是用损失函数（cost function/loss function）来度量预测错误程度算法就是求解过程
-
-方法=策略+模型+算法">
+<meta name="twitter:description" content="统计方法三要素在《统计学方法》一书中，作者将统计学算法表达为如下公式（1） 其中  模型就是所要学习的条件概率分布或决策函数。 策略就是用损失函数（cost function/loss function）来度量预测错误程度算法就是求解过程 算法就是求解模型的办法。   方法=模型+策略+算法按照我的理解：  模型：找到一个合适的预测函数$h(\theta)$，用来预测输入的数据的判断结果，需要到数">
 
 
 
@@ -346,7 +336,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  84
+                  264
                 </span>
               
 
@@ -384,10 +374,20 @@
 
       
         <h1 id="统计方法三要素"><a href="#统计方法三要素" class="headerlink" title="统计方法三要素"></a>统计方法三要素</h1><p>在《统计学方法》一书中，作者将统计学算法表达为如下公式（1）</p>
-<p>其中模型就是所要学习的条件概率分布或决策函数。</p>
-<p>策略就是用损失函数（cost function/loss function）来度量预测错误程度算法就是求解过程</p>
+<p>其中</p>
+<ol>
+<li>模型就是所要学习的条件概率分布或决策函数。</li>
+<li>策略就是用损失函数（cost function/loss function）来度量预测错误程度算法就是求解过程</li>
+<li>算法就是求解模型的办法。</li>
+</ol>
 <script type="math/tex; mode=display">
-方法=策略+模型+算法</script>
+方法=模型+策略+算法</script><p>按照我的理解：</p>
+<ol>
+<li>模型：找到一个合适的预测函数$h(\theta)$，用来预测输入的数据的判断结果，需要到数据和结果有一个分析和了解，明确问题，知道$h(\theta)$的大概形式。</li>
+<li>构造一个损失函数$J(\theta)$，表示预测$\hat y$与训练数据的真实值$y$的偏差。可以是求差值或者是求对数损失。综合考虑所有训练数据的损失，</li>
+<li>显然，$J(\theta)$的值越小，$h(\theta)$的越准确，所以我们显然要找到$J(\theta)$的最小值。我们一般使用的方法有梯度下降。</li>
+</ol>
+
       
     </div>
     
@@ -515,7 +515,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

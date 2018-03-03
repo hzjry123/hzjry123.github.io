@@ -82,11 +82,13 @@
 
 
 <meta name="description" content="Cost Function与Gradient Descent1. 定义为了在假设空间中选取最优的模型，引入了损失函数和风险函数，损失函数度量模型一次预测的好坏，风险函数度量了平均意义下模型预测的好坏。">
+<meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cost function">
 <meta property="og:url" content="https://hzjry123.github.io/2018/01/19/cost-function/index.html">
 <meta property="og:site_name" content="金若愚的blog">
 <meta property="og:description" content="Cost Function与Gradient Descent1. 定义为了在假设空间中选取最优的模型，引入了损失函数和风险函数，损失函数度量模型一次预测的好坏，风险函数度量了平均意义下模型预测的好坏。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://hzjry123.github.io/2018/01/19/cost-function/linear.png">
 <meta property="og:image" content="https://hzjry123.github.io/2018/01/19/cost-function/损失函数解释.png">
 <meta property="og:image" content="https://hzjry123.github.io/2018/01/19/cost-function/bow.png">
@@ -96,7 +98,7 @@
 <meta property="og:image" content="https://hzjry123.github.io/2018/01/19/cost-function/步长小.png">
 <meta property="og:image" content="https://hzjry123.github.io/2018/01/19/cost-function/gradient.png">
 <meta property="og:image" content="https://hzjry123.github.io/2018/01/19/cost-function/gradient2.png">
-<meta property="og:updated_time" content="2018-02-22T06:05:54.415Z">
+<meta property="og:updated_time" content="2018-03-03T06:26:37.677Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cost function">
 <meta name="twitter:description" content="Cost Function与Gradient Descent1. 定义为了在假设空间中选取最优的模型，引入了损失函数和风险函数，损失函数度量模型一次预测的好坏，风险函数度量了平均意义下模型预测的好坏。">
@@ -457,7 +459,7 @@ J=\frac{14(\theta_1-1)^2}{6}</script><p>通过简单的计算我们可以得知$
 <p><strong>训练数据大小对于梯度下降的影响：</strong>在这种梯度下降的方法(batch Gradient Descent)中，我们使用所有的训练数据去进行每次计算，因此如果训练数据过大，即m过大，计算时间很长。</p>
 <p>因此有人提出了一个梯度下降算法的改进版SGD(随机梯度下降)。重点在随机上，该算法在每次计算梯度的时候只随机选取部分数据来计算，涉及参数miniBatchSize，定义了抽样的数据比例，为了保证所有数据都参与了计算，miniBatchSize * iteration最好 &gt; 1.</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>损失函数是用来度量在某组参数下，模型的好坏程度，反过来也是我们用来选择参数的方法，而这个参数的选择是无限种可能的，因此我们必须选择一种理性的方法去得到最优的参数—— 梯度下降。梯度下降中参数会往损失函数减小的方向改变，直到到达local minimum为止。</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p> <a href="https://www.jianshu.com/p/1e7558e18e73" target="_blank" rel="external">https://www.jianshu.com/p/1e7558e18e73</a></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p> <a href="https://www.jianshu.com/p/1e7558e18e73" target="_blank" rel="noopener">https://www.jianshu.com/p/1e7558e18e73</a></p>
 <p>Andrew Ng. Machine Learning.</p>
 <p>李航《统计方法学》.</p>
 
@@ -588,7 +590,7 @@ J=\frac{14(\theta_1-1)^2}{6}</script><p>通过简单的计算我们可以得知$
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

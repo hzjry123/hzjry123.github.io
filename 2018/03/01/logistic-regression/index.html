@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="机器学习," />
 
 
 
@@ -81,18 +81,23 @@
 
 
 
-<meta name="description" content="reference: http://2wildkids.com/2016/10/06/%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86Hexo%E5%92%8CMathJax%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/#%E5%B0%8F%E7%BB%93 Thanks 林肯先生 在next里写latex时发现渲染不出来，查找">
-<meta name="keywords" content="hexo">
+<meta name="description" content="逻辑回归构造过程 方法=模型+策略+算法回顾之前的方法三要素，我们知道我们的方法要包括模型，策略，算法。即  假设函数$h(\theta)$ 损失函数$J(\theta)$ 求解方法梯度下降。  假设函数$h(\theta)$简单介绍：当我们在针对二分类问题的时候，预测邮件是否为垃圾邮件，肿瘤是否为良性等等，由于我们的预测结果只有0，1，因此这种分类问题我们无法使用线性回归再去预测。 原因：  线">
+<meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于hexo的next主题无法显示latex公式">
-<meta property="og:url" content="https://hzjry123.github.io/2018/01/18/关于hexo的next主题无法显示latex公式/index.html">
+<meta property="og:title" content="logistic regression">
+<meta property="og:url" content="https://hzjry123.github.io/2018/03/01/logistic-regression/index.html">
 <meta property="og:site_name" content="金若愚的blog">
-<meta property="og:description" content="reference: http://2wildkids.com/2016/10/06/%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86Hexo%E5%92%8CMathJax%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/#%E5%B0%8F%E7%BB%93 Thanks 林肯先生 在next里写latex时发现渲染不出来，查找">
+<meta property="og:description" content="逻辑回归构造过程 方法=模型+策略+算法回顾之前的方法三要素，我们知道我们的方法要包括模型，策略，算法。即  假设函数$h(\theta)$ 损失函数$J(\theta)$ 求解方法梯度下降。  假设函数$h(\theta)$简单介绍：当我们在针对二分类问题的时候，预测邮件是否为垃圾邮件，肿瘤是否为良性等等，由于我们的预测结果只有0，1，因此这种分类问题我们无法使用线性回归再去预测。 原因：  线">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-19T01:15:24.252Z">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/01/logistic-regression/sigmoid.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/01/logistic-regression/convex.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/01/logistic-regression/y=0.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/01/logistic-regression/tuidao.png">
+<meta property="og:updated_time" content="2018-03-03T07:55:57.636Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于hexo的next主题无法显示latex公式">
-<meta name="twitter:description" content="reference: http://2wildkids.com/2016/10/06/%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86Hexo%E5%92%8CMathJax%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/#%E5%B0%8F%E7%BB%93 Thanks 林肯先生 在next里写latex时发现渲染不出来，查找">
+<meta name="twitter:title" content="logistic regression">
+<meta name="twitter:description" content="逻辑回归构造过程 方法=模型+策略+算法回顾之前的方法三要素，我们知道我们的方法要包括模型，策略，算法。即  假设函数$h(\theta)$ 损失函数$J(\theta)$ 求解方法梯度下降。  假设函数$h(\theta)$简单介绍：当我们在针对二分类问题的时候，预测邮件是否为垃圾邮件，肿瘤是否为良性等等，由于我们的预测结果只有0，1，因此这种分类问题我们无法使用线性回归再去预测。 原因：  线">
+<meta name="twitter:image" content="https://hzjry123.github.io/2018/03/01/logistic-regression/sigmoid.png">
 
 
 
@@ -122,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://hzjry123.github.io/2018/01/18/关于hexo的next主题无法显示latex公式/"/>
+  <link rel="canonical" href="https://hzjry123.github.io/2018/03/01/logistic-regression/"/>
 
 
 
 
 
-  <title>关于hexo的next主题无法显示latex公式 | 金若愚的blog</title>
+  <title>logistic regression | 金若愚的blog</title>
   
 
 
@@ -264,7 +269,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/01/18/关于hexo的next主题无法显示latex公式/">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/03/01/logistic-regression/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="金若愚">
@@ -281,7 +286,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">关于hexo的next主题无法显示latex公式</h2>
+          <h2 class="post-title" itemprop="name headline">logistic regression</h2>
         
 
         <div class="post-meta">
@@ -293,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-18T06:50:41-05:00">
-                2018-01-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-01T22:57:53-05:00">
+                2018-03-02
               </time>
             
 
@@ -311,7 +316,7 @@
 
           
           
-             <span id="/2018/01/18/关于hexo的next主题无法显示latex公式/" class="leancloud_visitors" data-flag-title="关于hexo的next主题无法显示latex公式">
+             <span id="/2018/03/01/logistic-regression/" class="leancloud_visitors" data-flag-title="logistic regression">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -336,7 +341,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  330
+                  896
                 </span>
               
 
@@ -352,7 +357,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -373,21 +378,67 @@
       
 
       
-        <p>reference: <a href="http://2wildkids.com/2016/10/06/%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86Hexo%E5%92%8CMathJax%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/#%E5%B0%8F%E7%BB%93" target="_blank" rel="noopener">http://2wildkids.com/2016/10/06/%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86Hexo%E5%92%8CMathJax%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/#%E5%B0%8F%E7%BB%93</a></p>
-<p>Thanks 林肯先生</p>
-<p>在next里写latex时发现渲染不出来，查找后发现是说node.js的渲染和markdown渲染的问题。操作半天也不得行。</p>
-<p>但我发现我是什么公式也渲染不出来啊！后来在next的issue里面查找相关问题，发现得先在/themes/next/_config.yml里把third-party-services settings中的math设置为enable</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mathjax:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>感觉被自己蠢到了。</p>
-<p>但是这样设置以后还是不行，参考了”林肯先生”的做法。</p>
+        <h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><h2 id="构造过程"><a href="#构造过程" class="headerlink" title="构造过程"></a>构造过程</h2><script type="math/tex; mode=display">
+方法=模型+策略+算法</script><p>回顾之前的方法三要素，我们知道我们的方法要包括模型，策略，算法。即</p>
 <ol>
-<li><code>npm uninstall hexo-renderer-marked --save</code>//先删除原先的markdown渲染工具</li>
-<li><code>npm install hexo-renderer-kramed --save</code>//安装新的markdown渲染工具</li>
+<li>假设函数$h(\theta)$</li>
+<li>损失函数$J(\theta)$</li>
+<li>求解方法梯度下降。</li>
 </ol>
-<p>由于markdown在渲染时”_ “会被认为是下划线，和latex下标的操作一样，会先渲染markdown的，导致latex无法渲染，因此要在里面加\把_转义，到这个时候才和”林肯先生”的问题一样，我有点震惊。</p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$R<span class="string">\_&#123;m</span> <span class="string">\times</span> n&#125; = U<span class="string">\_&#123;m</span> <span class="string">\times</span> m&#125; S<span class="string">\_&#123;m</span> <span class="string">\times</span> n&#125; V<span class="string">\_&#123;n</span> <span class="string">\times</span> n&#125;<span class="string">'$</span></span><br></pre></td></tr></table></figure>
+<h2 id="假设函数-h-theta"><a href="#假设函数-h-theta" class="headerlink" title="假设函数$h(\theta)$"></a>假设函数$h(\theta)$</h2><h3 id="简单介绍："><a href="#简单介绍：" class="headerlink" title="简单介绍："></a>简单介绍：</h3><p>当我们在针对二分类问题的时候，预测邮件是否为垃圾邮件，肿瘤是否为良性等等，由于我们的预测结果只有0，1，因此这种分类问题我们无法使用线性回归再去预测。</p>
+<p>原因：</p>
+<ol>
+<li>线性回归要求数据符合正态分布，逻辑回归要求数据符合0，1分布。</li>
+<li>线性回归要求$x,y$符合线性关系，逻辑回归则没有要求。</li>
+<li>线性回归预测的是分析的是$x,y$的关系，而逻辑回归是分析$y$取某个值的概率与自变量的关系。</li>
+<li>线性回归要求$y$是连续变量，逻辑回归要求$y$是离散变量。</li>
+</ol>
+<a id="more"></a>
+<h3 id="h-theta"><a href="#h-theta" class="headerlink" title="$h(\theta)$"></a>$h(\theta)$</h3><p>逻辑回归的模型是sigmoid function(logistic function)</p>
 <script type="math/tex; mode=display">
-R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>很强，但是能用了，饿死了先去吃饭了，如果有哪位朋友知道这该怎么办，请告诉我一下。</p>
+h_\theta (x) = g(\theta ^T x)=P(y=1|x,\theta)</script><script type="math/tex; mode=display">
+g(z) =\frac{1}{1+e^{-z}}</script><p><img src="/2018/03/01/logistic-regression/sigmoid.png" alt=""></p>
+<p>我们假设大于0.5时预测值为1，小于0.5时预测值为0。</p>
+<script type="math/tex; mode=display">
+P(y=1|x,\theta) =h_\theta (x)</script><script type="math/tex; mode=display">
+P(y=0|x,\theta)=1-h_\theta (x)</script><h2 id="损失函数-J-theta"><a href="#损失函数-J-theta" class="headerlink" title="损失函数$J(\theta)$"></a>损失函数$J(\theta)$</h2><p>在上一步中我们得到了如下的公式：</p>
+<script type="math/tex; mode=display">
+h_\theta (x)=\frac{1}{1+e^{-\theta^Tx}}</script><p>那么我们要怎么去得到$\theta$呢？</p>
+<p>在线性回归中我们得到了一个损失函数，即平方差损失函数</p>
+<script type="math/tex; mode=display">
+J(\theta) = \dfrac {1}{2m} \displaystyle \sum _{i=1}^m \left ( \hat{y}_{i}- y_{i} \right)^2 = \dfrac {1}{2m} \displaystyle \sum _{i=1}^m \left (h_\theta (x_{i}) - y_{i} \right)^2</script><p>但是这种损失函数应用在逻辑回归里会得到non-convex的结果。</p>
+<p><img src="/2018/03/01/logistic-regression/convex.png" alt=""></p>
+<p>有多个local optimal, 这显然不合理啊。我们期待得到的是一个convex的函数，有global minimum。因此这个不得行，逻辑回归选择了对数损失函数</p>
+<script type="math/tex; mode=display">
+\begin{align*}& J(\theta) = \dfrac{1}{m} \sum_{i=1}^m \mathrm{Cost}(h_\theta(x^{(i)}),y^{(i)}) \newline & \mathrm{Cost}(h_\theta(x),y) = -\log(h_\theta(x)) \; & \text{if y = 1} \newline & \mathrm{Cost}(h_\theta(x),y) = -\log(1-h_\theta(x)) \; & \text{if y = 0}\end{align*}</script><p>画出图像如下:</p>
+<p><img src="/2018/03/01/logistic-regression/y=0.png" alt=""></p>
+<p>intuition：在y=1时，$h(\theta)$越接近1，损失值越小，当$h(\theta)$接近0时，损失值接近无穷。</p>
+<p>在y=0时，$h(\theta)$越接近0，损失值越大，当$h(\theta)$接近1时，损失值接近无穷。</p>
+<script type="math/tex; mode=display">
+\begin{align*}& \mathrm{Cost}(h_\theta(x),y) = 0 \text{ if } h_\theta(x) = y \newline & \mathrm{Cost}(h_\theta(x),y) \rightarrow \infty \text{ if } y = 0 \; \mathrm{and} \; h_\theta(x) \rightarrow 1 \newline & \mathrm{Cost}(h_\theta(x),y) \rightarrow \infty \text{ if } y = 1 \; \mathrm{and} \; h_\theta(x) \rightarrow 0 \newline \end{align*}</script><script type="math/tex; mode=display">
+J(\theta) = - \frac{1}{m} \displaystyle \sum_{i=1}^m [y^{(i)}\log (h_\theta (x^{(i)})) + (1 - y^{(i)})\log (1 - h_\theta(x^{(i)}))]</script><p>从结果看是很好，很能符合逻辑回归的特点那我们是怎么知道要用这个形式的损失函数的呢？</p>
+<h3 id="J-theta-推导过程"><a href="#J-theta-推导过程" class="headerlink" title="$J(\theta)$推导过程"></a>$J(\theta)$推导过程</h3><script type="math/tex; mode=display">
+P(y=1|x,\theta) =h_\theta (x) \\P(y=0|x,\theta)=1-h_\theta (x)</script><p>对公式(9)来说，我们可以写成</p>
+<script type="math/tex; mode=display">
+P(y|x;\theta)=(h_\theta(x))^y(1-h_\theta(x))^{1-y}</script><p>intuition：y=1时，预测函数取1的概率，y=0时，预测函数取0的概率。当然这个值我们希望越大越好。</p>
+<p>因此取似然函数为，做最大似然估计：</p>
+<script type="math/tex; mode=display">
+L(\theta)=\prod ^m_{i=1}(h_\theta(x^i))^{y^{i}}(1-h_\theta(x^i))^{1-y^{i}}</script><p>难以求解，取对数</p>
+<script type="math/tex; mode=display">
+l(\theta)=logL(\theta)=\sum ^m _{i=1}(y^i\ logh_\theta (x^i) + (1-y^i)log(1-h_\theta(x^i))</script><p>对比公式(8)，我们发现缺少了1/m，这个好理解，平滑损失值。但是出现了一个负号。这个负号在线性回归的损失函数里是没有的：</p>
+<script type="math/tex; mode=display">
+J(\theta) = \dfrac {1}{2m} \displaystyle \sum _{i=1}^m \left ( \hat{y}_{i}- y_{i} \right)^2 = \dfrac {1}{2m} \displaystyle \sum _{i=1}^m \left (h_\theta (x_{i}) - y_{i} \right)^2</script><p>其实也可以这么用，不用取负号，使用梯度向上法求解。但是Andrew Ng是加了负号。</p>
+<p>个人理解：因为在最大似然函数里，我们求的是使公式值最大的$\theta$的值，但是在损失函数里，我们求得是损失最小值，为了方便我们理解损失函数以及梯度下降，Andrew取了负号。但是本质已经和线性回归不一样了。</p>
+<p>于是可得到</p>
+<script type="math/tex; mode=display">
+\begin{align*}& J(\theta) = \dfrac{1}{m} \sum_{i=1}^m \mathrm{Cost}(h_\theta(x^{(i)}),y^{(i)}) \newline & \mathrm{Cost}(h_\theta(x),y) = -\log(h_\theta(x)) \; & \text{if y = 1} \newline & \mathrm{Cost}(h_\theta(x),y) = -\log(1-h_\theta(x)) \; & \text{if y = 0}\end{align*}</script><script type="math/tex; mode=display">
+J(\theta) = - \frac{1}{m} \displaystyle \sum_{i=1}^m [y^{(i)}\log (h_\theta (x^{(i)})) + (1 - y^{(i)})\log (1 - h_\theta(x^{(i)}))]</script><h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><script type="math/tex; mode=display">
+\theta:=\theta-\alpha \frac{d}{d\theta} J(\theta)</script><h3 id="求偏导部分-alpha-frac-d-d-theta-J-theta-："><a href="#求偏导部分-alpha-frac-d-d-theta-J-theta-：" class="headerlink" title="求偏导部分$\alpha \frac{d}{d\theta} J(\theta)$："></a>求偏导部分$\alpha \frac{d}{d\theta} J(\theta)$：</h3><p><img src="/2018/03/01/logistic-regression/tuidao.png" alt=""></p>
+<p>因此参数更新：</p>
+<script type="math/tex; mode=display">
+\theta_j := \theta_j - \alpha \frac{1}{m} \sum_{i=1}^m{ \left(\frac{1}{1 + e^{-\theta^T x^{(i)}}} - y^{(i)}\right) x_j^{(i)}}(simultaneously \ update \ for \ all \ j)</script><p>对比线性回归，两个方程是一样的，差别在$(h_\theta(x^{(i)})$.</p>
+<script type="math/tex; mode=display">
+\theta_j := \theta_j - \alpha \frac{1}{m} \sum_{i=1}^m{ (h_\theta(x^{(i)}) - y^{(i)}) x^{(i)}_j} (simultaneously \ update \ for \ all \ j).</script><h2 id="Python实现"><a href="#Python实现" class="headerlink" title="Python实现"></a>Python实现</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmoid</span><span class="params">(inX)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1.0</span>/(<span class="number">1</span>+exp(inX))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gradDesc</span><span class="params">(dataMatIn, classLabels)</span>:</span></span><br><span class="line">    dataMatrix = mat(dataMatIn)</span><br><span class="line">    labelMat = mat(classLabels).transpose()</span><br><span class="line">    m,n = shape(dataMatrix)</span><br><span class="line">    alpha = <span class="number">0.001</span></span><br><span class="line">    maxCycles = <span class="number">500</span></span><br><span class="line">    thetas = ones((n,<span class="number">1</span>))</span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> range(maxCycles):</span><br><span class="line">        h = sigmoid(dataMatrix * thetas)</span><br><span class="line">        error = h - labels</span><br><span class="line">        thetas = thetas - alpha * dataMatrix.tranpose()*error</span><br><span class="line">    <span class="keyword">return</span> thetas</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -405,7 +456,7 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
           
         </div>
       
@@ -418,8 +469,8 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/17/Maximum-Product-subarray/" rel="next" title="Maximum Product subarray">
-                <i class="fa fa-chevron-left"></i> Maximum Product subarray
+              <a href="/2018/02/23/openmp/" rel="next" title="openmp">
+                <i class="fa fa-chevron-left"></i> openmp
               </a>
             
           </div>
@@ -428,8 +479,8 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/19/three-elements/" rel="prev" title="three elements">
-                three elements <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/02/python-filter/" rel="prev" title="python filter">
+                python filter <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -487,8 +538,17 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -578,6 +638,22 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑回归"><span class="nav-number">1.</span> <span class="nav-text">逻辑回归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造过程"><span class="nav-number">1.1.</span> <span class="nav-text">构造过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#假设函数-h-theta"><span class="nav-number">1.2.</span> <span class="nav-text">假设函数$h(\theta)$</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单介绍："><span class="nav-number">1.2.1.</span> <span class="nav-text">简单介绍：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#h-theta"><span class="nav-number">1.2.2.</span> <span class="nav-text">$h(\theta)$</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#损失函数-J-theta"><span class="nav-number">1.3.</span> <span class="nav-text">损失函数$J(\theta)$</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#J-theta-推导过程"><span class="nav-number">1.3.1.</span> <span class="nav-text">$J(\theta)$推导过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降"><span class="nav-number">1.4.</span> <span class="nav-text">梯度下降</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#求偏导部分-alpha-frac-d-d-theta-J-theta-："><span class="nav-number">1.4.1.</span> <span class="nav-text">求偏导部分$\alpha \frac{d}{d\theta} J(\theta)$：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python实现"><span class="nav-number">1.5.</span> <span class="nav-text">Python实现</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
