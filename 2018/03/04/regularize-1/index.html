@@ -100,7 +100,7 @@
 <meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cwidetilde%7B%5Cbf%7B%5Cbeta%7D%7D">
 <meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Chat%7B%5Cbf%7B%5Cbeta%7D%7D">
 <meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cwidetilde%7B%5Cbf%7B%5Cbeta%7D%7D">
-<meta property="og:updated_time" content="2018-03-06T01:30:33.150Z">
+<meta property="og:updated_time" content="2018-03-06T01:35:10.231Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="regularize">
 <meta name="twitter:description" content="正则化正则化定义在数据量很少，特征很多的时候，模型往往会表现的过于复杂。bias(训练误差)会降低，但是variance(测试误差)会升高，会产生过拟合的情况。 过拟合为什么不好比如我们想预测匹兹堡市的年收入情况，但是我们只采访了匹兹堡大学周围的人，没有采访别的人，我们在用这部分数据预测的时候，预测匹兹堡大学周围的生日当然是可以的，但是想预测整个匹兹堡的收入呢？自然不行。数据并没有代表性，或者说数">
@@ -388,6 +388,7 @@
         <h1 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h1><h2 id="正则化定义"><a href="#正则化定义" class="headerlink" title="正则化定义"></a>正则化定义</h2><p>在数据量很少，特征很多的时候，模型往往会表现的过于复杂。bias(训练误差)会降低，但是variance(测试误差)会升高，会产生过拟合的情况。</p>
 <h3 id="过拟合为什么不好"><a href="#过拟合为什么不好" class="headerlink" title="过拟合为什么不好"></a>过拟合为什么不好</h3><p>比如我们想预测匹兹堡市的年收入情况，但是我们只采访了匹兹堡大学周围的人，没有采访别的人，我们在用这部分数据预测的时候，预测匹兹堡大学周围的生日当然是可以的，但是想预测整个匹兹堡的收入呢？自然不行。数据并没有代表性，或者说数据的有些维度在测试集是可以帮助达到global optimal，但是在unseen dataset中并没有卵用，导致了模型没有泛化能力。</p>
 <p><img src="/2018/03/04/regularize-1/overfitting.png" alt=""></p>
+<a id="more"></a>
 <p>P为特征数，n为样本数。样本数太少，可能造成过拟合</p>
 <p>因此我们要在bias和variance之间找一个tradeoff。</p>
 <p><img src="/2018/03/04/regularize-1/tradeoff.png" alt=""></p>
