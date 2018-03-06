@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="先序遍历: Divide &amp;amp; Conquer    12345678910public List&amp;lt;Integer&amp;gt; preorderTraversal(TreeNode root) &amp;#123;        List&amp;lt;Integer&amp;gt; result = new ArrayList&amp;lt;&amp;gt;();        if(root == null) return">
+<meta name="description" content="本文总结了关于二叉树的相关题目。 先序遍历: Divide &amp;amp; Conquer    12345678910public List&amp;lt;Integer&amp;gt; preorderTraversal(TreeNode root) &amp;#123;        List&amp;lt;Integer&amp;gt; result = new ArrayList&amp;lt;&amp;gt;();        if(root">
 <meta name="keywords" content="Tree,Algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="binary tree">
 <meta property="og:url" content="https://hzjry123.github.io/2018/02/01/binary-tree/index.html">
 <meta property="og:site_name" content="金若愚的blog">
-<meta property="og:description" content="先序遍历: Divide &amp;amp; Conquer    12345678910public List&amp;lt;Integer&amp;gt; preorderTraversal(TreeNode root) &amp;#123;        List&amp;lt;Integer&amp;gt; result = new ArrayList&amp;lt;&amp;gt;();        if(root == null) return">
+<meta property="og:description" content="本文总结了关于二叉树的相关题目。 先序遍历: Divide &amp;amp; Conquer    12345678910public List&amp;lt;Integer&amp;gt; preorderTraversal(TreeNode root) &amp;#123;        List&amp;lt;Integer&amp;gt; result = new ArrayList&amp;lt;&amp;gt;();        if(root">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-06T07:33:26.779Z">
+<meta property="og:updated_time" content="2018-03-06T07:35:51.371Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="binary tree">
-<meta name="twitter:description" content="先序遍历: Divide &amp;amp; Conquer    12345678910public List&amp;lt;Integer&amp;gt; preorderTraversal(TreeNode root) &amp;#123;        List&amp;lt;Integer&amp;gt; result = new ArrayList&amp;lt;&amp;gt;();        if(root == null) return">
+<meta name="twitter:description" content="本文总结了关于二叉树的相关题目。 先序遍历: Divide &amp;amp; Conquer    12345678910public List&amp;lt;Integer&amp;gt; preorderTraversal(TreeNode root) &amp;#123;        List&amp;lt;Integer&amp;gt; result = new ArrayList&amp;lt;&amp;gt;();        if(root">
 
 
 
@@ -336,7 +336,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,416
+                  1,431
                 </span>
               
 
@@ -373,7 +373,8 @@
       
 
       
-        <h4 id="先序遍历"><a href="#先序遍历" class="headerlink" title="先序遍历:"></a>先序遍历:</h4><ol>
+        <p>本文总结了关于二叉树的相关题目。</p>
+<h4 id="先序遍历"><a href="#先序遍历" class="headerlink" title="先序遍历:"></a>先序遍历:</h4><ol>
 <li>Divide &amp; Conquer  </li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">preorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span>) <span class="keyword">return</span> result;</span><br><span class="line">        result.add(root.val);</span><br><span class="line">        List&lt;Integer&gt; left = preorderTraversal(root.left);</span><br><span class="line">        List&lt;Integer&gt; right = preorderTraversal(root.right);</span><br><span class="line">        result.addAll(left);</span><br><span class="line">        result.addAll(right);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
@@ -381,6 +382,7 @@
 <li>Traverse  </li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ArrayList&lt;Integer&gt; <span class="title">preorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;Integer&gt; result = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        traverse(root, result);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">traverse</span><span class="params">(TreeNode root, ArrayList&lt;Integer&gt; result)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        result.add(root.val);</span><br><span class="line">        traverse(root.left, result);</span><br><span class="line">        traverse(root.right, result);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>比较分治法和遍历的区别：</p>
 <p>遍历是没有返回值的，使用一个全局变量去记录数据。一个人拿本子去走</p>
 <p>而分治法是有返回值的，分左右治之，再把左右值加进去。一个人去布置任务。</p>
