@@ -4,6 +4,55 @@
 
     
   <url>
+    <loc>https://hzjry123.github.io/2018/03/04/regularize-1/</loc>
+    <lastmod>2018-03-06T01:30:33.150Z</lastmod>
+    <data>
+        <display>
+        <title>regularize</title>
+        <pubTime>2018-03-05T02:29:43.000Z</pubTime>
+        
+        <tag>机器学习</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzjry123.github.io/2018/02/15/google-cloud-configuration/</loc>
+    <lastmod>2018-03-06T01:18:25.232Z</lastmod>
+    <data>
+        <display>
+        <title>google cloud configuration</title>
+        <pubTime>2018-02-15T17:28:32.000Z</pubTime>
+        
+        <tag>机器学习</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzjry123.github.io/2018/03/05/SVM/</loc>
+    <lastmod>2018-03-05T22:57:27.727Z</lastmod>
+    <data>
+        <display>
+        <title>SVM</title>
+        <pubTime>2018-03-05T09:57:27.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hzjry123.github.io/2018/03/01/logistic-regression/</loc>
     <lastmod>2018-03-03T07:55:57.636Z</lastmod>
     <data>
@@ -44,23 +93,6 @@
         <display>
         <title>three elements</title>
         <pubTime>2018-01-19T12:10:49.000Z</pubTime>
-        
-        <tag>机器学习</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzjry123.github.io/2018/02/15/google-cloud-configuration/</loc>
-    <lastmod>2018-03-02T20:10:43.950Z</lastmod>
-    <data>
-        <display>
-        <title>google cloud configuration</title>
-        <pubTime>2018-02-15T17:28:32.000Z</pubTime>
         
         <tag>机器学习</tag>
          
