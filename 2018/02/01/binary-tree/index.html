@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Tree,Algorithm," />
 
 
 
@@ -81,13 +81,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="金若愚的blog">
-<meta property="og:url" content="https://hzjry123.github.io/page/2/index.html">
+<meta name="description" content="先序遍历: Divide &amp;amp; Conquer    12345678910public List&amp;lt;Integer&amp;gt; preorderTraversal(TreeNode root) &amp;#123;        List&amp;lt;Integer&amp;gt; result = new ArrayList&amp;lt;&amp;gt;();        if(root == null) return">
+<meta name="keywords" content="Tree,Algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="binary tree">
+<meta property="og:url" content="https://hzjry123.github.io/2018/02/01/binary-tree/index.html">
 <meta property="og:site_name" content="金若愚的blog">
+<meta property="og:description" content="先序遍历: Divide &amp;amp; Conquer    12345678910public List&amp;lt;Integer&amp;gt; preorderTraversal(TreeNode root) &amp;#123;        List&amp;lt;Integer&amp;gt; result = new ArrayList&amp;lt;&amp;gt;();        if(root == null) return">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-06T07:33:26.779Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="金若愚的blog">
+<meta name="twitter:title" content="binary tree">
+<meta name="twitter:description" content="先序遍历: Divide &amp;amp; Conquer    12345678910public List&amp;lt;Integer&amp;gt; preorderTraversal(TreeNode root) &amp;#123;        List&amp;lt;Integer&amp;gt; result = new ArrayList&amp;lt;&amp;gt;();        if(root == null) return">
 
 
 
@@ -117,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://hzjry123.github.io/page/2/"/>
+  <link rel="canonical" href="https://hzjry123.github.io/2018/02/01/binary-tree/"/>
 
 
 
 
 
-  <title>金若愚的blog</title>
+  <title>binary tree | 金若愚的blog</title>
   
 
 
@@ -151,8 +156,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
-  page-home">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -245,514 +249,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/02/15/google-cloud-configuration/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="金若愚">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="金若愚的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/15/google-cloud-configuration/" itemprop="url">google cloud configuration</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-16T01:28:32+08:00">
-                2018-02-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/02/15/google-cloud-configuration/" class="leancloud_visitors" data-flag-title="google cloud configuration">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,192
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="配置-免费使用谷歌云-Jupyter"><a href="#配置-免费使用谷歌云-Jupyter" class="headerlink" title="配置:免费使用谷歌云+Jupyter"></a>配置:免费使用谷歌云+Jupyter</h1><h2 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h2><p>最近学习了机器学习的算法基础，也实践过很多小数据的数据分析，因此对大数据的分析产生了兴趣，想部署一个spark集群去学习大数据，发现aws虽然免费但是挺坑的，只有1g memory。偶然了解到google cloud，听说google cloud给注册用户赠送有效期为一年的300刀抵用券，而且在google cloud上部署hadoop集群或者高性能机器都很方便。</p>
-<p>jupyter notebook + pyspark: spark上提供了很多机器学习的算法，而且支持集群计算。加上jupyter notebook这种直观的可视化界面，更加方便。而且jupyter notebook作为一个web application，完全可以在google cloud上运行，将端口映射到本机后，用户则可以直接使用高性能集群上的jupyter notebook可以直接关注算法本身而不用去考虑集群的配置，可以说是数据分析的神器了。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/15/google-cloud-configuration/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/02/03/GFS-Reading-Note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="金若愚">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="金若愚的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/03/GFS-Reading-Note/" itemprop="url">GFS Reading Note</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T02:26:40+08:00">
-                2018-02-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/02/03/GFS-Reading-Note/" class="leancloud_visitors" data-flag-title="GFS Reading Note">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  3,259
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  12
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="GFS-阅读笔记"><a href="#GFS-阅读笔记" class="headerlink" title="GFS 阅读笔记"></a>GFS 阅读笔记</h1><p>GFS这篇paper可以说十分经典，在云计算课程上，老师要求我们去阅读这篇论文，由于GFS的篇幅很长、涵盖的面很多，我参考了网上许多的阅读笔记和原文，做了如下的记录和总结。</p>
-<h2 id="1-GFS是什么？"><a href="#1-GFS是什么？" class="headerlink" title="1. GFS是什么？"></a>1. GFS是什么？</h2><p>GFS(Google File System)是一个大规模,具有高拓展性(scalable)的分布式系统，分布式集群是建立在大量的普通硬件上的，有很强的fault tolerance，能够响应大量的客户端。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/03/GFS-Reading-Note/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/02/02/linkedlist-and-array/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="金若愚">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="金若愚的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/02/linkedlist-and-array/" itemprop="url">linkedlist and array</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-02T23:20:00+08:00">
-                2018-02-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/02/02/linkedlist-and-array/" class="leancloud_visitors" data-flag-title="linkedlist and array">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  791
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="存取效率"><a href="#存取效率" class="headerlink" title="存取效率"></a>存取效率</h2><p>Array &gt; LinkedList</p>
-<p>LinkedList要从头开始移动指针而Array是randomaccess</p>
-<p>插入元素：LinkedList更灵活</p>
-<h2 id="LinkedList练习"><a href="#LinkedList练习" class="headerlink" title="LinkedList练习"></a>LinkedList练习</h2><h3 id="Reverse-LinkedList"><a href="#Reverse-LinkedList" class="headerlink" title="Reverse LinkedList"></a>Reverse LinkedList</h3><p>翻转LinkedList</p>
-<p>1-&gt;2-&gt;3-&gt;4-&gt;null</p>
-<p>4-&gt;3-&gt;2-&gt;1-&gt;null</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/02/linkedlist-and-array/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -782,9 +281,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/01/binary-tree/" itemprop="url">binary tree</a></h2>
+          <h2 class="post-title" itemprop="name headline">binary tree</h2>
         
 
         <div class="post-meta">
@@ -796,7 +293,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-02T02:31:53+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-01T13:31:53-05:00">
                 2018-02-02
               </time>
             
@@ -876,9 +373,7 @@
       
 
       
-        
-          
-            <h4 id="先序遍历"><a href="#先序遍历" class="headerlink" title="先序遍历:"></a>先序遍历:</h4><ol>
+        <h4 id="先序遍历"><a href="#先序遍历" class="headerlink" title="先序遍历:"></a>先序遍历:</h4><ol>
 <li>Divide &amp; Conquer  </li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">preorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span>) <span class="keyword">return</span> result;</span><br><span class="line">        result.add(root.val);</span><br><span class="line">        List&lt;Integer&gt; left = preorderTraversal(root.left);</span><br><span class="line">        List&lt;Integer&gt; right = preorderTraversal(root.right);</span><br><span class="line">        result.addAll(left);</span><br><span class="line">        result.addAll(right);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
@@ -950,8 +445,6 @@
 <p>如果右空左不空，那么左边是有A或者B或者两个都有。</p>
 <p>如果两个都空，那么这颗树没有A或者B.则返回不了咯。</p>
 
-          
-        
       
     </div>
     
@@ -966,180 +459,42 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/01/19/cost-function/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="金若愚">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="金若愚的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/19/cost-function/" itemprop="url">cost function</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-20T11:03:37+08:00">
-                2018-01-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/Tree/" rel="tag"># Tree</a>
           
-            
+            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
           
-
-          
-          
-             <span id="/2018/01/19/cost-function/" class="leancloud_visitors" data-flag-title="cost function">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,440
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5
-                </span>
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h1 id="Cost-Function与Gradient-Descent"><a href="#Cost-Function与Gradient-Descent" class="headerlink" title="Cost Function与Gradient Descent"></a>Cost Function与Gradient Descent</h1><h2 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h2><p>为了在假设空间中选取最优的模型，引入了损失函数和风险函数，损失函数度量模型一次预测的好坏，风险函数度量了平均意义下模型预测的好坏。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/19/cost-function/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/19/cost-function/" rel="next" title="cost function">
+                <i class="fa fa-chevron-left"></i> cost function
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/02/linkedlist-and-array/" rel="prev" title="linkedlist and array">
+                linkedlist and array <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1149,14 +504,11 @@
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -1164,6 +516,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTk0OC84NTEy"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1184,8 +545,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1275,6 +645,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#先序遍历"><span class="nav-number">1.</span> <span class="nav-text">先序遍历:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Maximum-Depth-of-Binary-Tree"><span class="nav-number">2.</span> <span class="nav-text">Maximum Depth of Binary Tree **</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Binary-Tree-Paths"><span class="nav-number">3.</span> <span class="nav-text">Binary Tree Paths **</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Minimum-Subtree"><span class="nav-number">4.</span> <span class="nav-text">Minimum Subtree **:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Balanced-Binary-Tree"><span class="nav-number">5.</span> <span class="nav-text">Balanced Binary Tree **</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Subtree-with-Maximum-Average"><span class="nav-number">6.</span> <span class="nav-text">Subtree with Maximum Average **</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Lowest-Common-Ancestor"><span class="nav-number">7.</span> <span class="nav-text">Lowest Common Ancestor **</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1422,6 +808,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
@@ -1442,6 +832,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

@@ -4,14 +4,16 @@
 
     
   <url>
-    <loc>https://hzjry123.github.io/2018/02/23/openmp/</loc>
-    <lastmod>2018-03-06T01:41:14.489Z</lastmod>
+    <loc>https://hzjry123.github.io/2018/02/01/binary-tree/</loc>
+    <lastmod>2018-03-06T07:33:26.779Z</lastmod>
     <data>
         <display>
-        <title>OpenMP</title>
-        <pubTime>2018-02-23T13:13:20.000Z</pubTime>
+        <title>binary tree</title>
+        <pubTime>2018-02-01T18:31:53.000Z</pubTime>
         
-        <tag>并行编程</tag>
+        <tag>Tree</tag>
+         
+        <tag>Algorithm</tag>
          
          
            
@@ -21,14 +23,52 @@
 
     
   <url>
-    <loc>https://hzjry123.github.io/2018/02/04/regularize-1/</loc>
-    <lastmod>2018-03-06T01:40:27.832Z</lastmod>
+    <loc>https://hzjry123.github.io/2018/02/23/regularize-1/</loc>
+    <lastmod>2018-03-06T07:29:43.288Z</lastmod>
     <data>
         <display>
         <title>正则化</title>
-        <pubTime>2018-02-05T02:29:43.000Z</pubTime>
+        <pubTime>2018-02-24T02:29:43.000Z</pubTime>
         
         <tag>机器学习</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzjry123.github.io/2018/02/02/linkedlist-and-array/</loc>
+    <lastmod>2018-03-06T07:28:25.539Z</lastmod>
+    <data>
+        <display>
+        <title>linkedlist and array</title>
+        <pubTime>2018-02-02T15:20:00.000Z</pubTime>
+        
+        <tag>Algorithm</tag>
+         
+        <tag>LinkedList</tag>
+         
+        <tag>Array</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzjry123.github.io/2018/02/23/openmp/</loc>
+    <lastmod>2018-03-06T01:41:14.489Z</lastmod>
+    <data>
+        <display>
+        <title>OpenMP</title>
+        <pubTime>2018-02-23T13:13:20.000Z</pubTime>
+        
+        <tag>并行编程</tag>
          
          
            

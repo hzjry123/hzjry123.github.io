@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hzjry123.github.io/2018/02/23/openmp/</loc>
+    <loc>https://hzjry123.github.io/2018/02/01/binary-tree/</loc>
     
-    <lastmod>2018-03-06T01:41:14.489Z</lastmod>
+    <lastmod>2018-03-06T07:33:26.779Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hzjry123.github.io/2018/02/04/regularize-1/</loc>
+    <loc>https://hzjry123.github.io/2018/02/23/regularize-1/</loc>
     
-    <lastmod>2018-03-06T01:40:27.832Z</lastmod>
+    <lastmod>2018-03-06T07:29:43.288Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hzjry123.github.io/2018/02/02/linkedlist-and-array/</loc>
+    
+    <lastmod>2018-03-06T07:28:25.539Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hzjry123.github.io/2018/02/23/openmp/</loc>
+    
+    <lastmod>2018-03-06T01:41:14.489Z</lastmod>
     
   </url>
   
