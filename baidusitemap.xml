@@ -4,12 +4,29 @@
 
     
   <url>
-    <loc>https://hzjry123.github.io/2018/03/04/regularize-1/</loc>
-    <lastmod>2018-03-06T01:35:10.231Z</lastmod>
+    <loc>https://hzjry123.github.io/2018/02/23/openmp/</loc>
+    <lastmod>2018-03-06T01:41:14.489Z</lastmod>
     <data>
         <display>
-        <title>regularize</title>
-        <pubTime>2018-03-05T02:29:43.000Z</pubTime>
+        <title>OpenMP</title>
+        <pubTime>2018-02-23T13:13:20.000Z</pubTime>
+        
+        <tag>并行编程</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzjry123.github.io/2018/02/04/regularize-1/</loc>
+    <lastmod>2018-03-06T01:40:27.832Z</lastmod>
+    <data>
+        <display>
+        <title>正则化</title>
+        <pubTime>2018-02-05T02:29:43.000Z</pubTime>
         
         <tag>机器学习</tag>
          
@@ -111,23 +128,6 @@
         <title>python filter</title>
         <pubTime>2018-03-02T06:16:48.000Z</pubTime>
         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzjry123.github.io/2018/02/23/openmp/</loc>
-    <lastmod>2018-02-25T20:16:09.455Z</lastmod>
-    <data>
-        <display>
-        <title>openmp</title>
-        <pubTime>2018-02-23T13:13:20.000Z</pubTime>
-        
-        <tag>并行编程</tag>
-         
          
            
         </display>

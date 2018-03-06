@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hzjry123.github.io/2018/03/04/regularize-1/</loc>
+    <loc>https://hzjry123.github.io/2018/02/23/openmp/</loc>
     
-    <lastmod>2018-03-06T01:35:10.231Z</lastmod>
+    <lastmod>2018-03-06T01:41:14.489Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hzjry123.github.io/2018/02/04/regularize-1/</loc>
+    
+    <lastmod>2018-03-06T01:40:27.832Z</lastmod>
     
   </url>
   
@@ -47,13 +54,6 @@
     <loc>https://hzjry123.github.io/2018/03/02/python-filter/</loc>
     
     <lastmod>2018-03-02T19:16:48.070Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hzjry123.github.io/2018/02/23/openmp/</loc>
-    
-    <lastmod>2018-02-25T20:16:09.455Z</lastmod>
     
   </url>
   

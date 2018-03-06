@@ -81,20 +81,20 @@
 
 
 
-<meta name="description" content="OpenMPDesigned for a shared memory system. Every process can access to all avaiable memory.  12345678910#include&amp;lt;omp.h&amp;gt;int main()&amp;#123; printf(&quot;The output:\n&quot;);#pragma omp parallel num_threads(3">
+<meta name="description" content="OpenMPDesigned for a shared memory system. Every process can access to all avaiable memory.">
 <meta name="keywords" content="并行编程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="openmp">
+<meta property="og:title" content="OpenMP">
 <meta property="og:url" content="https://hzjry123.github.io/2018/02/23/openmp/index.html">
 <meta property="og:site_name" content="金若愚的blog">
-<meta property="og:description" content="OpenMPDesigned for a shared memory system. Every process can access to all avaiable memory.  12345678910#include&amp;lt;omp.h&amp;gt;int main()&amp;#123; printf(&quot;The output:\n&quot;);#pragma omp parallel num_threads(3">
+<meta property="og:description" content="OpenMPDesigned for a shared memory system. Every process can access to all avaiable memory.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://hzjry123.github.io/2018/02/23/openmp/share.png">
 <meta property="og:image" content="https://hzjry123.github.io/2018/02/23/openmp/dp.png">
-<meta property="og:updated_time" content="2018-02-25T20:16:09.455Z">
+<meta property="og:updated_time" content="2018-03-06T01:41:14.489Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="openmp">
-<meta name="twitter:description" content="OpenMPDesigned for a shared memory system. Every process can access to all avaiable memory.  12345678910#include&amp;lt;omp.h&amp;gt;int main()&amp;#123; printf(&quot;The output:\n&quot;);#pragma omp parallel num_threads(3">
+<meta name="twitter:title" content="OpenMP">
+<meta name="twitter:description" content="OpenMPDesigned for a shared memory system. Every process can access to all avaiable memory.">
 <meta name="twitter:image" content="https://hzjry123.github.io/2018/02/23/openmp/share.png">
 
 
@@ -131,7 +131,7 @@
 
 
 
-  <title>openmp | 金若愚的blog</title>
+  <title>OpenMP | 金若愚的blog</title>
   
 
 
@@ -284,7 +284,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">openmp</h2>
+          <h2 class="post-title" itemprop="name headline">OpenMP</h2>
         
 
         <div class="post-meta">
@@ -314,7 +314,7 @@
 
           
           
-             <span id="/2018/02/23/openmp/" class="leancloud_visitors" data-flag-title="openmp">
+             <span id="/2018/02/23/openmp/" class="leancloud_visitors" data-flag-title="OpenMP">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -379,6 +379,7 @@
         <h1 id="OpenMP"><a href="#OpenMP" class="headerlink" title="OpenMP"></a>OpenMP</h1><p>Designed for a shared memory system.</p>
 <p>Every process can access to all avaiable memory.</p>
 <p><img src="/2018/02/23/openmp/share.png" alt=""></p>
+<a id="more"></a>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;omp.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">"The output:\n"</span>);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> omp parallel num_threads(3)</span></span><br><span class="line"> &#123;</span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">/* Resume Serial section*/</span></span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">"Done\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>编译器会把OpenMP代码编译为pthread</p>
 <p>有一个Master thread, 创建一系列slaves</p>
