@@ -4,16 +4,31 @@
 
     
   <url>
-    <loc>https://hzjry123.github.io/2018/02/01/binary-tree/</loc>
-    <lastmod>2018-03-06T07:35:51.371Z</lastmod>
+    <loc>https://hzjry123.github.io/2018/03/05/SVM/</loc>
+    <lastmod>2018-03-20T05:19:02.773Z</lastmod>
     <data>
         <display>
-        <title>binary tree</title>
-        <pubTime>2018-02-01T18:31:53.000Z</pubTime>
+        <title>SVM理解与推导 (一)</title>
+        <pubTime>2018-03-05T09:57:27.000Z</pubTime>
         
-        <tag>Tree</tag>
+        <tag>机器学习</tag>
          
-        <tag>Algorithm</tag>
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzjry123.github.io/2018/02/15/google-cloud-configuration/</loc>
+    <lastmod>2018-03-16T17:36:38.423Z</lastmod>
+    <data>
+        <display>
+        <title>google cloud configuration and jupyter</title>
+        <pubTime>2018-02-15T17:28:32.000Z</pubTime>
+        
+        <tag>机器学习</tag>
          
          
            
@@ -24,13 +39,66 @@
     
   <url>
     <loc>https://hzjry123.github.io/2018/02/23/regularize-1/</loc>
-    <lastmod>2018-03-06T07:29:43.288Z</lastmod>
+    <lastmod>2018-03-13T19:08:05.922Z</lastmod>
     <data>
         <display>
         <title>正则化</title>
         <pubTime>2018-02-24T02:29:43.000Z</pubTime>
         
         <tag>机器学习</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzjry123.github.io/2018/03/11/ir-review/</loc>
+    <lastmod>2018-03-12T07:30:27.435Z</lastmod>
+    <data>
+        <display>
+        <title>Infromation Mid Term Review</title>
+        <pubTime>2018-03-11T13:28:39.000Z</pubTime>
+        
+        <tag>Information Retrieval</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzjry123.github.io/2018/03/01/k-means/</loc>
+    <lastmod>2018-03-09T17:14:40.186Z</lastmod>
+    <data>
+        <display>
+        <title>K-Means</title>
+        <pubTime>2018-03-02T04:14:10.000Z</pubTime>
+        
+        <tag>机器学习</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzjry123.github.io/2018/02/01/binary-tree/</loc>
+    <lastmod>2018-03-06T07:35:51.371Z</lastmod>
+    <data>
+        <display>
+        <title>binary tree</title>
+        <pubTime>2018-02-01T18:31:53.000Z</pubTime>
+        
+        <tag>Tree</tag>
+         
+        <tag>Algorithm</tag>
          
          
            
@@ -70,38 +138,6 @@
         
         <tag>并行编程</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzjry123.github.io/2018/02/15/google-cloud-configuration/</loc>
-    <lastmod>2018-03-06T01:18:25.232Z</lastmod>
-    <data>
-        <display>
-        <title>google cloud configuration</title>
-        <pubTime>2018-02-15T17:28:32.000Z</pubTime>
-        
-        <tag>机器学习</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzjry123.github.io/2018/03/05/SVM/</loc>
-    <lastmod>2018-03-05T22:57:27.727Z</lastmod>
-    <data>
-        <display>
-        <title>SVM</title>
-        <pubTime>2018-03-05T09:57:27.000Z</pubTime>
-        
          
            
         </display>

@@ -81,21 +81,22 @@
 
 
 
-<meta name="description" content="配置:免费使用谷歌云+Jupyter简介：最近学习了机器学习的算法基础，也实践过很多小数据的数据分析，因此对大数据的分析产生了兴趣，想部署一个spark集群去学习大数据，发现aws虽然免费但是挺坑的，只有1g memory。偶然了解到google cloud，听说google cloud给注册用户赠送有效期为一年的300刀抵用券，而且在google cloud上部署hadoop集群或者高性能机器都">
+<meta name="description" content="简介：最近学习了机器学习的算法基础，也实践过很多小数据的数据分析，因此对大数据的分析产生了兴趣，想部署一个spark集群去学习大数据，发现aws虽然免费但是挺坑的，只有1g memory。偶然了解到google cloud，听说google cloud给注册用户赠送有效期为一年的300刀抵用券，而且在google cloud上部署hadoop集群或者高性能机器都很方便。 jupyter noteb">
 <meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="google cloud configuration">
+<meta property="og:title" content="google cloud configuration and jupyter">
 <meta property="og:url" content="https://hzjry123.github.io/2018/02/15/google-cloud-configuration/index.html">
 <meta property="og:site_name" content="金若愚的blog">
-<meta property="og:description" content="配置:免费使用谷歌云+Jupyter简介：最近学习了机器学习的算法基础，也实践过很多小数据的数据分析，因此对大数据的分析产生了兴趣，想部署一个spark集群去学习大数据，发现aws虽然免费但是挺坑的，只有1g memory。偶然了解到google cloud，听说google cloud给注册用户赠送有效期为一年的300刀抵用券，而且在google cloud上部署hadoop集群或者高性能机器都">
+<meta property="og:description" content="简介：最近学习了机器学习的算法基础，也实践过很多小数据的数据分析，因此对大数据的分析产生了兴趣，想部署一个spark集群去学习大数据，发现aws虽然免费但是挺坑的，只有1g memory。偶然了解到google cloud，听说google cloud给注册用户赠送有效期为一年的300刀抵用券，而且在google cloud上部署hadoop集群或者高性能机器都很方便。 jupyter noteb">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://hzjry123.github.io/2018/02/15/google-cloud-configuration/fire_wall.detail.png">
 <meta property="og:image" content="https://hzjry123.github.io/2018/02/15/google-cloud-configuration/token.png">
 <meta property="og:image" content="https://hzjry123.github.io/2018/02/15/google-cloud-configuration/jupyter.png">
-<meta property="og:updated_time" content="2018-03-06T01:18:25.232Z">
+<meta property="og:image" content="https://hzjry123.github.io/2018/02/15/google-cloud-configuration/spark.png">
+<meta property="og:updated_time" content="2018-03-16T17:36:38.423Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="google cloud configuration">
-<meta name="twitter:description" content="配置:免费使用谷歌云+Jupyter简介：最近学习了机器学习的算法基础，也实践过很多小数据的数据分析，因此对大数据的分析产生了兴趣，想部署一个spark集群去学习大数据，发现aws虽然免费但是挺坑的，只有1g memory。偶然了解到google cloud，听说google cloud给注册用户赠送有效期为一年的300刀抵用券，而且在google cloud上部署hadoop集群或者高性能机器都">
+<meta name="twitter:title" content="google cloud configuration and jupyter">
+<meta name="twitter:description" content="简介：最近学习了机器学习的算法基础，也实践过很多小数据的数据分析，因此对大数据的分析产生了兴趣，想部署一个spark集群去学习大数据，发现aws虽然免费但是挺坑的，只有1g memory。偶然了解到google cloud，听说google cloud给注册用户赠送有效期为一年的300刀抵用券，而且在google cloud上部署hadoop集群或者高性能机器都很方便。 jupyter noteb">
 <meta name="twitter:image" content="https://hzjry123.github.io/2018/02/15/google-cloud-configuration/fire_wall.detail.png">
 
 
@@ -132,7 +133,7 @@
 
 
 
-  <title>google cloud configuration | 金若愚的blog</title>
+  <title>google cloud configuration and jupyter | 金若愚的blog</title>
   
 
 
@@ -285,7 +286,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">google cloud configuration</h2>
+          <h2 class="post-title" itemprop="name headline">google cloud configuration and jupyter</h2>
         
 
         <div class="post-meta">
@@ -315,7 +316,7 @@
 
           
           
-             <span id="/2018/02/15/google-cloud-configuration/" class="leancloud_visitors" data-flag-title="google cloud configuration">
+             <span id="/2018/02/15/google-cloud-configuration/" class="leancloud_visitors" data-flag-title="google cloud configuration and jupyter">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -340,7 +341,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,192
+                  1,506
                 </span>
               
 
@@ -356,7 +357,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  7
                 </span>
               
             </div>
@@ -377,12 +378,12 @@
       
 
       
-        <h1 id="配置-免费使用谷歌云-Jupyter"><a href="#配置-免费使用谷歌云-Jupyter" class="headerlink" title="配置:免费使用谷歌云+Jupyter"></a>配置:免费使用谷歌云+Jupyter</h1><h2 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h2><p>最近学习了机器学习的算法基础，也实践过很多小数据的数据分析，因此对大数据的分析产生了兴趣，想部署一个spark集群去学习大数据，发现aws虽然免费但是挺坑的，只有1g memory。偶然了解到google cloud，听说google cloud给注册用户赠送有效期为一年的300刀抵用券，而且在google cloud上部署hadoop集群或者高性能机器都很方便。</p>
-<p>jupyter notebook + pyspark: spark上提供了很多机器学习的算法，而且支持集群计算。加上jupyter notebook这种直观的可视化界面，更加方便。而且jupyter notebook作为一个web application，完全可以在google cloud上运行，将端口映射到本机后，用户则可以直接使用高性能集群上的jupyter notebook可以直接关注算法本身而不用去考虑集群的配置，可以说是数据分析的神器了。</p>
+        <h1 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h1><p>最近学习了机器学习的算法基础，也实践过很多小数据的数据分析，因此对大数据的分析产生了兴趣，想部署一个spark集群去学习大数据，发现aws虽然免费但是挺坑的，只有1g memory。偶然了解到google cloud，听说google cloud给注册用户赠送有效期为一年的300刀抵用券，而且在google cloud上部署hadoop集群或者高性能机器都很方便。</p>
+<p>jupyter notebook + pyspark: spark上提供了很多机器学习的算法，而且支持集群计算。加上jupyter notebook这种直观的可视化界面，更加方便。而且jupyter notebook作为一个web application，完全可以在google cloud上运行，将端口映射到本机后，用户则可以直接使用高性能集群上的jupyter notebook可以直接关注算法本身而不用去考虑集群的配置，可以说是数据分析的很好的工具了。</p>
 <a id="more"></a>
-<h2 id="Google-cloud网页配置"><a href="#Google-cloud网页配置" class="headerlink" title="Google cloud网页配置"></a>Google cloud网页配置</h2><p>Google cloud基于google cloud sdk，可以下载cloud sdk在本机上使用命令<code>gcloud</code>，同时google cloud也提供了网页版的shell，也很方便。</p>
+<h1 id="Google-cloud网页配置"><a href="#Google-cloud网页配置" class="headerlink" title="Google cloud网页配置"></a>Google cloud网页配置</h1><p>Google cloud基于google cloud sdk，可以下载cloud sdk在本机上使用命令<code>gcloud</code>，同时google cloud也提供了网页版的shell，也很方便。</p>
 <p>推荐大家先在网页上注册google cloud，填写支付信息（必须有可以支付美元的信用卡）然后按照流程去走一遍（创建自己的instance，部署一个app，看谷歌炫技）。过程中会创建自己的project，记下id。</p>
-<h3 id="下载google-cloud-sdk"><a href="#下载google-cloud-sdk" class="headerlink" title="下载google cloud sdk"></a>下载google cloud sdk</h3><p><a href="https://cloud.google.com/sdk/downloads" target="_blank" rel="noopener">https://cloud.google.com/sdk/downloads</a></p>
+<h2 id="下载google-cloud-sdk"><a href="#下载google-cloud-sdk" class="headerlink" title="下载google cloud sdk"></a>下载google cloud sdk</h2><p><a href="https://cloud.google.com/sdk/downloads" target="_blank" rel="noopener">https://cloud.google.com/sdk/downloads</a></p>
 <p>按照网页上的步骤安装就可以了，十分方便。安装成功会让你登陆谷歌账号和配置一些instance的环境。</p>
 <h2 id="配置集群和jupyter"><a href="#配置集群和jupyter" class="headerlink" title="配置集群和jupyter"></a>配置集群和jupyter</h2><p>这一步是在本机上执行</p>
 <p>然后就可以配置你的hadoop cluster了。我推荐在本地的terminal里配置。输入如下命令（创建cluster并配置安装jupyter）：</p>
@@ -390,25 +391,25 @@
 <p>其中\是换行标志，— 后面跟的是属性，在这里我标注了使用的Master和salve的型号，如果不标注则无法运行，（因为默认的配置会使你的钱包溢出了）。这里配置好了待会也可以去网页上更改配置，因为这里是500g的硬盘，一般用不了这么大。</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gs:<span class="regexp">//</span>dataproc-initialization-actions<span class="regexp">/jupyter/</span>jupyter.sh</span><br></pre></td></tr></table></figure>
 <p>gs：github shell，执行GitHub的shell，这是按照jupyter、anaconda和spark的脚本。</p>
-<h3 id="Pip版本升级"><a href="#Pip版本升级" class="headerlink" title="Pip版本升级"></a>Pip版本升级</h3><p>这一步是在网页上的Master的shell里执行。（master的ssh）</p>
+<h2 id="Pip版本升级"><a href="#Pip版本升级" class="headerlink" title="Pip版本升级"></a>Pip版本升级</h2><p>这一步是在网页上的Master的shell里执行。（master的ssh）</p>
 <p>pip是python里包下载工具，最好升级一下不然会出现很多怪错误。</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">conda update pip</span></span><br></pre></td></tr></table></figure>
 <h2 id="连接jupyter"><a href="#连接jupyter" class="headerlink" title="连接jupyter"></a>连接jupyter</h2><p>这一步确实有很多坑啊，参考了很多命令才得以使用。</p>
-<h3 id="防火墙设置"><a href="#防火墙设置" class="headerlink" title="防火墙设置"></a>防火墙设置</h3><p>可以直接在google cloud的搜索栏里搜firewall rules。</p>
+<h2 id="防火墙设置"><a href="#防火墙设置" class="headerlink" title="防火墙设置"></a>防火墙设置</h2><p>可以直接在google cloud的搜索栏里搜firewall rules。</p>
 <p>再去里面创建firewall rules。填写如下配置</p>
 <p><img src="/2018/02/15/google-cloud-configuration/fire_wall.detail.png" alt=""></p>
 <p>其中的tcp:5000是声明通过ipv6连接cluster，同时这个5000也是我们启动jupyter的端口，接下来本机要通过映射去得到这个5000端口。</p>
-<h3 id="jupyter的启动"><a href="#jupyter的启动" class="headerlink" title="jupyter的启动"></a>jupyter的启动</h3><p>这一步是在网页上的Master后ssh的terminal里执行。</p>
+<h2 id="jupyter的启动"><a href="#jupyter的启动" class="headerlink" title="jupyter的启动"></a>jupyter的启动</h2><p>这一步是在网页上的Master后ssh的terminal里执行。</p>
 <p>对于jupyter的一些概念，在哪个路径下启动jupyter notebook，打开的默认位置就是那个路径。有点类似于先选定project的位置，再打开编译器。</p>
 <p>我们最好不要直接在根目录下启动jupyter，会产生一些怪问题，最好是找到自己用户的路径然后自己mkdir一个路径去做jupyter，5000是刚设置的端口。</p>
 <figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">jupyter</span><span class="literal">-</span><span class="comment">notebook</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">no</span><span class="literal">-</span><span class="comment">browser</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">port=5000</span></span><br></pre></td></tr></table></figure>
 <p>会产生一个token给你，</p>
-<h3 id="本地映射服务器端口"><a href="#本地映射服务器端口" class="headerlink" title="本地映射服务器端口"></a>本地映射服务器端口</h3><p>这一步是在本机terminal执行</p>
+<h1 id="本机terminal配置"><a href="#本机terminal配置" class="headerlink" title="本机terminal配置"></a>本机terminal配置</h1><h2 id="本地映射服务器端口"><a href="#本地映射服务器端口" class="headerlink" title="本地映射服务器端口"></a>本地映射服务器端口</h2><p>这一步是在本机terminal执行</p>
 <p>在这一步确实会有很多幺蛾子。先说我的方法吧：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcloud compute ssh <span class="tag">&lt;<span class="name">master</span>&gt;</span> -- -L <span class="tag">&lt;<span class="name">your</span> <span class="attr">port</span>&gt;</span>:127.0.0.1:<span class="tag">&lt;<span class="name">jupyter</span> <span class="attr">port</span>&gt;</span> -N -n <span class="tag">&lt;<span class="name">master</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>example</p>
-<p>我是映射到了本机的1024端口，这个是看心情的，只要那里没有端口占用就行了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcloud compute ssh tianchi-m -- -L 1024:127.0.0.1:5000 -N -n tianchi-m</span><br></pre></td></tr></table></figure>
+<p>我是映射到了本机的1024端口，只要那里没有端口占用就行了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcloud compute ssh tianchi-m -- -L 1024:127.0.0.1:5001 -N -n tianchi-m</span><br></pre></td></tr></table></figure>
 <p>记得Master后面都跟一个-m的，也就是clustername-m。</p>
 <p>然后登陆<code>localhost:1024</code>就可以看见我们的jupyter了。第一次登陆一般要输入token。在网页上的terminal里有，复制过来输入就好。</p>
 <p><img src="/2018/02/15/google-cloud-configuration/token.png" alt=""></p>
@@ -416,9 +417,48 @@
 <p><img src="/2018/02/15/google-cloud-configuration/jupyter.png" alt=""></p>
 <p>官方的办法:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcloud compute ssh cluster-name-m -- -L 1080:cluster-name-m:8088 -N -n</span><br></pre></td></tr></table></figure>
-<p>这是我第一次成功的方法，但是自从我把cluster关了几天以后这办法就不行了。。</p>
-<p>别的连接/参考方法链接:</p>
-<p><a href="https://cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces" target="_blank" rel="noopener">https://cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces</a></p>
+<h2 id="SSH-Tunel"><a href="#SSH-Tunel" class="headerlink" title="SSH Túnel"></a>SSH Túnel</h2><p>还有一种方法是开一个ssh tunel, 再启动有代理的chrome，这样的好处是可以看全部的webui。包括jupyter，spark，hadoop。</p>
+<h3 id="开启Tunel"><a href="#开启Tunel" class="headerlink" title="开启Tunel"></a>开启Tunel</h3><p>规范：</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gcloud compute ssh --zone=master-host-zone master-host-name -- \</span><br><span class="line">  -D <span class="number">1080</span> -<span class="built_in">N</span> -<span class="built_in">n</span></span><br><span class="line">  -D表示动态ip，<span class="number">1080</span>是本地端口，—<span class="built_in">N</span>是不开启远程shell？ -<span class="built_in">n</span>是std标准输出</span><br></pre></td></tr></table></figure>
+<p>我的</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">gcloud</span> <span class="comment">compute</span> <span class="comment">ssh</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">zone=us</span><span class="literal">-</span><span class="comment">east1</span><span class="literal">-</span><span class="comment">c</span> <span class="comment">tianchi</span><span class="literal">-</span><span class="comment">m</span> <span class="literal">-</span><span class="literal">-</span> <span class="comment">\</span></span><br><span class="line"><span class="comment"></span>  <span class="literal">-</span><span class="comment">D</span> <span class="comment">1080</span> <span class="literal">-</span><span class="comment">N</span> <span class="literal">-</span><span class="comment">n</span></span><br></pre></td></tr></table></figure>
+<h3 id="设置chrome的代理"><a href="#设置chrome的代理" class="headerlink" title="设置chrome的代理"></a>设置chrome的代理</h3><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Google Chrome executable path \</span><br><span class="line">  -<span class="ruby">-proxy-server=<span class="string">"socks5://localhost:1080"</span> \</span></span><br><span class="line"><span class="ruby">  --host-resolver-rules=<span class="string">"MAP * 0.0.0.0 , EXCLUDE localhost"</span> \</span></span><br><span class="line"><span class="ruby">  --user-data-dir=<span class="regexp">/tmp/master</span>-host-name</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>-proxy-server=&quot;socks5://localhost:1080&quot;</code> tells Chrome to send all <code>http://</code> and <code>https://</code> URL requests through the SOCKS proxy server localhost:1080, using version 5 of the SOCKS protocol. Hostnames for these URLs are resolved by the proxy server, not locally by Chrome.</li>
+<li><code>--host-resolver-rules=&quot;MAP * 0.0.0.0 , EXCLUDE localhost&quot;</code> prevents Chrome from sending any DNS requests over the network.</li>
+<li><code>--user-data-dir=/tmp/hadoop-master-name</code> forces Chrome to open a new window that is not tied to an existing Chrome session. Without this flag, Chrome may open a new window attached to an existing Chrome session, ignoring your <code>--proxy-server</code> setting. The value set for <code>--user-data-dir</code> can be any nonexistent path.</li>
+</ul>
+<p>Chrome path:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Operating System</th>
+<th>Google Chrome Executable Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mac OS X</td>
+<td><code>/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome</code></td>
+</tr>
+<tr>
+<td>Linux</td>
+<td><code>/usr/bin/google-chrome</code></td>
+</tr>
+<tr>
+<td>Windows</td>
+<td><code>C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>我的</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">/Applications/Google</span>\ Chrome.app/Contents/MacOS/Google\ Chrome \  <span class="params">--proxy-server=</span><span class="string">"socks5://localhost:1080"</span> \</span><br><span class="line"><span class="params">--host-resolver-rules=</span><span class="string">"MAP * 0.0.0.0 , EXCLUDE localhost"</span> \</span><br><span class="line"><span class="params">--user-data-dir=/tmp/tianchi-m</span></span><br></pre></td></tr></table></figure>
+<p>连接成功</p>
+<p><img src="/2018/02/15/google-cloud-configuration/spark.png" alt=""></p>
+<p>注：在连接jupyter的时候，主机名就不是tianchi-m了，是localhost。而别的webui都是你的cluster master name。</p>
+<h1 id="别的连接-参考方法链接"><a href="#别的连接-参考方法链接" class="headerlink" title="别的连接/参考方法链接:"></a>别的连接/参考方法链接:</h1><p><a href="https://cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces" target="_blank" rel="noopener">https://cloud.google.com/dataproc/docs/concepts/accessing/cluster-web-interfaces</a></p>
 <p><a href="https://cloud.google.com/blog/big-data/2017/02/google-cloud-platform-for-data-scientists-using-jupyter-notebooks-with-apache-spark-on-google-cloud" target="_blank" rel="noopener">https://cloud.google.com/blog/big-data/2017/02/google-cloud-platform-for-data-scientists-using-jupyter-notebooks-with-apache-spark-on-google-cloud</a></p>
 <p><a href="https://towardsdatascience.com/running-jupyter-notebook-in-google-cloud-platform-in-15-min-61e16da34d52" target="_blank" rel="noopener">https://towardsdatascience.com/running-jupyter-notebook-in-google-cloud-platform-in-15-min-61e16da34d52</a></p>
 
@@ -549,7 +589,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -562,7 +602,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -630,7 +670,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置-免费使用谷歌云-Jupyter"><span class="nav-number">1.</span> <span class="nav-text">配置:免费使用谷歌云+Jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介："><span class="nav-number">1.1.</span> <span class="nav-text">简介：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Google-cloud网页配置"><span class="nav-number">1.2.</span> <span class="nav-text">Google cloud网页配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载google-cloud-sdk"><span class="nav-number">1.2.1.</span> <span class="nav-text">下载google cloud sdk</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置集群和jupyter"><span class="nav-number">1.3.</span> <span class="nav-text">配置集群和jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pip版本升级"><span class="nav-number">1.3.1.</span> <span class="nav-text">Pip版本升级</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接jupyter"><span class="nav-number">1.4.</span> <span class="nav-text">连接jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#防火墙设置"><span class="nav-number">1.4.1.</span> <span class="nav-text">防火墙设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jupyter的启动"><span class="nav-number">1.4.2.</span> <span class="nav-text">jupyter的启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地映射服务器端口"><span class="nav-number">1.4.3.</span> <span class="nav-text">本地映射服务器端口</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介："><span class="nav-number">1.</span> <span class="nav-text">简介：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Google-cloud网页配置"><span class="nav-number">2.</span> <span class="nav-text">Google cloud网页配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载google-cloud-sdk"><span class="nav-number">2.1.</span> <span class="nav-text">下载google cloud sdk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置集群和jupyter"><span class="nav-number">2.2.</span> <span class="nav-text">配置集群和jupyter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pip版本升级"><span class="nav-number">2.3.</span> <span class="nav-text">Pip版本升级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接jupyter"><span class="nav-number">2.4.</span> <span class="nav-text">连接jupyter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防火墙设置"><span class="nav-number">2.5.</span> <span class="nav-text">防火墙设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jupyter的启动"><span class="nav-number">2.6.</span> <span class="nav-text">jupyter的启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本机terminal配置"><span class="nav-number">3.</span> <span class="nav-text">本机terminal配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#本地映射服务器端口"><span class="nav-number">3.1.</span> <span class="nav-text">本地映射服务器端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-Tunel"><span class="nav-number">3.2.</span> <span class="nav-text">SSH Túnel</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开启Tunel"><span class="nav-number">3.2.1.</span> <span class="nav-text">开启Tunel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置chrome的代理"><span class="nav-number">3.2.2.</span> <span class="nav-text">设置chrome的代理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#别的连接-参考方法链接"><span class="nav-number">4.</span> <span class="nav-text">别的连接/参考方法链接:</span></a></li></ol></div>
             
 
           </div>

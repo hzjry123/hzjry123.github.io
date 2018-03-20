@@ -94,7 +94,7 @@
 <meta property="og:image" content="https://hzjry123.github.io/2018/02/23/regularize-1/L1vsL2.png">
 <meta property="og:image" content="https://hzjry123.github.io/2018/02/23/regularize-1/Gradient.png">
 <meta property="og:image" content="https://hzjry123.github.io/2018/02/23/regularize-1/ball.png">
-<meta property="og:updated_time" content="2018-03-06T07:29:43.288Z">
+<meta property="og:updated_time" content="2018-03-13T19:08:05.922Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则化">
 <meta name="twitter:description" content="正则化定义在数据量很少，特征很多的时候，模型往往会表现的过于复杂。bias(训练误差)会降低，但是variance(测试误差)会升高，会产生过拟合的情况。 过拟合为什么不好比如我们想预测匹兹堡市的年收入情况，但是我们只采访了匹兹堡大学周围的人，没有采访别的人，我们在用这部分数据预测的时候，预测匹兹堡大学周围的生日当然是可以的，但是想预测整个匹兹堡的收入呢？自然不行。数据并没有代表性，或者说数据的有">
@@ -342,7 +342,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,854
+                  1,843
                 </span>
               
 
@@ -425,12 +425,12 @@ L2=min\frac{1}{N}\sum_{i}^{N}{L(y_1,f(x_1)) } + {\lambda }  \left| \left| W \rig
 min\frac{1}{N}\sum_{i}^{N}{L(y_1,f(x_1)) }</script><p>为方便表示我们只考虑二维的平面，即$w_1,w_2$两个特征，在$w_1,w_2$平面内画出目标函数的等高线，这个等高线我们知道就是目标函数的碗投影在二维图中的表示。</p>
 <script type="math/tex; mode=display">
 \lambda J(f)</script><p>$l_2$正则项则成为平面上半径为C（这个C在sklearn的logistics中可以定义）的一个圆。</p>
-<p>$l_1$正则项则成为平面上对角线一半为C的一个正方形。（这里省去$\lambda$而改用C，貌似可以推出来关系，不过我没搞懂）</p>
+<p>$l_1$正则项则成为平面上对角线一半为C的一个正方形。（这里省去$\lambda$而改用C，$\lambda=\frac{1}{C}$）</p>
 <h3 id="求解的intuition以及为什么可以防止过拟合1"><a href="#求解的intuition以及为什么可以防止过拟合1" class="headerlink" title="求解的intuition以及为什么可以防止过拟合1"></a>求解的intuition以及为什么可以防止过拟合1</h3><p>我们知道碗（等高线）的optimal在最中心的地方，但是我们现在不要那个地方最拟合的解，我们要不那么完美的解，因此我们加入了正则项，把正则项的投影到图中，正则项最小的地方自然在原点处。</p>
 <p><strong>我们所希望的$w_1,w_2$ s.t. 正则项也小，损失函数也小，因此我们就在这里有一个trade off</strong>：</p>
 <ul>
-<li>C越大($\lambda$越大)，交点越靠近碗的optimal，惩罚程度越小，模型可能还是过拟合。</li>
-<li>C越小($\lambda$越小)，交点越靠近原点，惩罚程度越大，但是模型表现可能欠拟合。</li>
+<li>C越大($\lambda$越小)，交点越靠近碗的optimal，惩罚程度越小，模型可能还是过拟合。</li>
+<li>C越小($\lambda$越大)，交点越靠近原点，惩罚程度越大，但是模型表现可能欠拟合。</li>
 </ul>
 <p>可以看到$l_1$和$l_2$的不同之处在于$l_1$和坐标轴和坐标轴相交的地方有角，大部分的时候目标函数会和$l_1$在角处相交，而角处是有稀疏性的。</p>
 <p>$l_2$因为没有角，所以相交在有稀疏性的地方概率很小。这样就直观的解释了为什么$l_1$可以产生稀疏性，$l_2$不可以产生稀疏性。</p>
@@ -578,7 +578,7 @@ min\frac{1}{N}\sum_{i}^{N}{L(y_1,f(x_1)) }</script><p>为方便表示我们只�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -591,7 +591,7 @@ min\frac{1}{N}\sum_{i}^{N}{L(y_1,f(x_1)) }</script><p>为方便表示我们只�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

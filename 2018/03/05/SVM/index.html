@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="机器学习," />
 
 
 
@@ -81,14 +81,24 @@
 
 
 
+<meta name="description" content="本文将介绍什么是SVM， SVM是什么？SVM: support vector machine,俗称支持向量机。是一种二分类模型，其模型定义为特征空间上的间隔最大的线性分类器，策略就是间隔最大化，最终转化为一个凸二次规划问题的求解。感觉已经晕了，下图给出一些intuition的部分:  假设我们有一堆正负样本如图，我们想找一条线（一个超平面）去把这些点分开来。这条线当然是无穷条的，在图中我以H2">
+<meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SVM">
+<meta property="og:title" content="SVM理解与推导 (一)">
 <meta property="og:url" content="https://hzjry123.github.io/2018/03/05/SVM/index.html">
 <meta property="og:site_name" content="金若愚的blog">
+<meta property="og:description" content="本文将介绍什么是SVM， SVM是什么？SVM: support vector machine,俗称支持向量机。是一种二分类模型，其模型定义为特征空间上的间隔最大的线性分类器，策略就是间隔最大化，最终转化为一个凸二次规划问题的求解。感觉已经晕了，下图给出一些intuition的部分:  假设我们有一堆正负样本如图，我们想找一条线（一个超平面）去把这些点分开来。这条线当然是无穷条的，在图中我以H2">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-05T22:57:27.727Z">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/05/SVM/intution1.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/05/SVM/intuition.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/05/SVM/sample.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/05/SVM/street.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/05/SVM/lagrange.png">
+<meta property="og:updated_time" content="2018-03-20T05:19:02.773Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SVM">
+<meta name="twitter:title" content="SVM理解与推导 (一)">
+<meta name="twitter:description" content="本文将介绍什么是SVM， SVM是什么？SVM: support vector machine,俗称支持向量机。是一种二分类模型，其模型定义为特征空间上的间隔最大的线性分类器，策略就是间隔最大化，最终转化为一个凸二次规划问题的求解。感觉已经晕了，下图给出一些intuition的部分:  假设我们有一堆正负样本如图，我们想找一条线（一个超平面）去把这些点分开来。这条线当然是无穷条的，在图中我以H2">
+<meta name="twitter:image" content="https://hzjry123.github.io/2018/03/05/SVM/intution1.png">
 
 
 
@@ -124,7 +134,7 @@
 
 
 
-  <title>SVM | 金若愚的blog</title>
+  <title>SVM理解与推导 (一) | 金若愚的blog</title>
   
 
 
@@ -277,7 +287,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">SVM</h2>
+          <h2 class="post-title" itemprop="name headline">SVM理解与推导 (一)</h2>
         
 
         <div class="post-meta">
@@ -307,7 +317,7 @@
 
           
           
-             <span id="/2018/03/05/SVM/" class="leancloud_visitors" data-flag-title="SVM">
+             <span id="/2018/03/05/SVM/" class="leancloud_visitors" data-flag-title="SVM理解与推导 (一)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -332,7 +342,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  1,202
                 </span>
               
 
@@ -348,7 +358,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -369,7 +379,74 @@
       
 
       
-        
+        <p>本文将介绍什么是SVM，</p>
+<h1 id="SVM是什么？"><a href="#SVM是什么？" class="headerlink" title="SVM是什么？"></a>SVM是什么？</h1><p>SVM: support vector machine,俗称支持向量机。是一种二分类模型，其模型定义为特征空间上的间隔最大的线性分类器，策略就是间隔最大化，最终转化为一个凸二次规划问题的求解。感觉已经晕了，下图给出一些intuition的部分:</p>
+<p><img src="/2018/03/05/SVM/intution1.png" alt="ntution"></p>
+<p>假设我们有一堆正负样本如图，我们想找一条线（一个超平面）去把这些点分开来。这条线当然是无穷条的，在图中我以H2 和 H3为例，H2和H3看起来都把正负样本分开了，但是我们的目标不是在训练集上取得好成绩吧，我们的目标还包括测试集（unseen data）。</p>
+<p><img src="/2018/03/05/SVM/intuition.png" alt=""></p>
+<p>这时候我们给出了测试集（就是我新加上去的点），我们发现H2这条线完全分错了。而H3则分类的不错，粗略得来讲，H3距离正负样本的距离都很远，因此他的泛化能力很强。</p>
+<p>至此我们明确了我们的任务，就是找到H3。那么很自然的，我们就产生了两个问题：</p>
+<ol>
+<li>如果这样的超平面确实存在，如何寻找？</li>
+<li>如果这样的超平面不存在，那么如何找到一个尽可能分开正负样本的超平面？</li>
+</ol>
+<a id="more"></a>
+<h1 id="构造过程"><a href="#构造过程" class="headerlink" title="构造过程"></a>构造过程</h1><script type="math/tex; mode=display">
+方法=模型+策略+算法</script><p>回顾之前的方法三要素，我们知道我们的方法要包括模型，策略，算法。即</p>
+<ol>
+<li>假设函数$h(\theta)$</li>
+<li>损失函数$J(\theta)$</li>
+<li>求解方法梯度下降。</li>
+</ol>
+<p>那么我们如何在SVM里套用这样的公式呢？我参考了许多网上的推导过程，在SVM里损失函数反而提到的不多，可能也和他的推导过程有关吧。因此在本文，$h(\theta)$和$J(\theta)$将在最后给出。下文将逐步给出SVM的推导过程。</p>
+<h1 id="超平面H3的寻找"><a href="#超平面H3的寻找" class="headerlink" title="超平面H3的寻找"></a>超平面H3的寻找</h1><h2 id="超平面的定义"><a href="#超平面的定义" class="headerlink" title="超平面的定义"></a>超平面的定义</h2><p>首先我们定义超平面为</p>
+<script type="math/tex; mode=display">
+H=w^TX+b</script><p>$w,b$是超平面的参数，$X$是样本点。</p>
+<h2 id="对超平面的关键假设"><a href="#对超平面的关键假设" class="headerlink" title="对超平面的关键假设"></a>对超平面的关键假设</h2><p>在SVM中，我们假设或者可以理解为经过缩放：</p>
+<script type="math/tex; mode=display">
+w^TX^++b \geq1</script><script type="math/tex; mode=display">
+w^TX^-+b \leq-1</script><p>*叫做缩放可能更有利于理解。</p>
+<p>即一个正样本代入公式，我们希望得出的值$\geq1$，一个负样本代入公式，我们希望得出的值$\leq-1$。而样本代入公式得到的值叫做间隔，该假设（或者叫缩放）称为最大间隔假设。这是SVM里一个很重要的前提，在求解上会提供很大的方便。</p>
+<h2 id="支持向量"><a href="#支持向量" class="headerlink" title="支持向量"></a>支持向量</h2><p>那么现在我们可以粗略的了解到，在最大间隔假设下，对于训练正样本（注意是训练样本），代入平面公式最小得到的是1，对于训练负样本（注意是训练样本），代入平面公式最大得到的是-1。</p>
+<p>因此我们称$w^TX^++b =1$, $w^TX^-+b =-1$的点为Support Vector（支持向量），支持向量就恰好落在这个分界线上，（到现在为止）在训练集中，两边的支持向量中间的<strong>街道</strong>是没有任何样本点的。</p>
+<p><img src="/2018/03/05/SVM/sample.png" alt=""></p>
+<p>对于支持向量，有如下性质</p>
+<script type="math/tex; mode=display">
+y^+(w^TX^++b)=1 * 1 =1</script><script type="math/tex; mode=display">
+y^-(w^TX^-+b)=-1 *- 1 =1</script><p>因此写成一个公式</p>
+<script type="math/tex; mode=display">
+y(w^TX+b)=1</script><p>这就是SVM第一个很重要的点。</p>
+<h2 id="街道宽度—几何间隔"><a href="#街道宽度—几何间隔" class="headerlink" title="街道宽度—几何间隔"></a>街道宽度—几何间隔</h2><p>在之前我们大概了解到，如果中间街道的宽度越大，svm的泛化能力就越好！</p>
+<p>那么问题就转移到怎么找$w,b$使得街道的宽度最大了。那么我们现在首先得得到街道的宽度，在SVM里，我们称之为<strong>几何间隔</strong>。</p>
+<p><img src="/2018/03/05/SVM/street.png" alt=""></p>
+<p>假设我们有两个个样本点$X^+,X^-$，那么可知黄色的向量$X^+-X^-$落在$wx+b=0$的法向量$w$（此处可以百度回忆一下法向量）上的长度就是街宽！因此</p>
+<script type="math/tex; mode=display">
+Width =(X^+-X^-)\frac{w}{||w||} \\
+=\frac{X^+w}{||w||}-\frac{X^-w}{||w||}
+\\因为wx=\frac{1}{y}-b
+\\Width=\frac{1-b}{||w||}-\frac{-1-b}{||w||}=\frac{2}{||w||}</script><p>(此处$X^+,X^-,w$都是向量)。</p>
+<p>至此我们得到了几何间隔了，根据我们之前的intuition，我们希望几何间隔最大。</p>
+<p>至此，我们得到</p>
+<script type="math/tex; mode=display">
+max\frac{2}{||w||} \quad s.t. \quad y(xw+b) = 1
+\\同时max\frac{2}{||w||}<=>min||w||<=>min\frac{||w||^2}{2}</script><p>为什么要将$max\frac{2}{||w||} $变成$min\frac{||w||^2}{2}$呢？因为方便求导嘛。现在我们的任务就是求解了。</p>
+<h2 id="拉格朗日"><a href="#拉格朗日" class="headerlink" title="拉格朗日"></a>拉格朗日</h2><p>现在我们有一个约束条件，$y(xw+b) = 1$，一个优化目标$min\frac{||w||^2}{2}$，使用拉格朗日求解，定义如下：</p>
+<p><img src="/2018/03/05/SVM/lagrange.png" alt=""></p>
+<p>根据拉格朗日乘子法，我们可以转换我们的问题为：</p>
+<script type="math/tex; mode=display">
+L=\frac{||w||^2}{2}-\sum \lambda _i[y_i(wx_i+b)-1]</script><p>对w和b分别求偏导：</p>
+<script type="math/tex; mode=display">
+\frac{\partial L}{\partial w}=w-\sum \lambda _i y_i x_i = 0
+\\=> w = \sum  \lambda _i y_i x_i \\
+\frac{\partial L}{\partial b}=\sum \lambda _i y_i=0</script><p>将$\sum \lambda _i y_i=0$, $ w = \sum  \lambda _i y_i x_i \$带回$L$，</p>
+<script type="math/tex; mode=display">
+L= w =\frac{1}{2} \sum  \lambda _i y_i x_i  \sum  \lambda _j y_j x_j
+\\ - \sum  \lambda _i y_i x_i  \sum  \lambda _j y_j x_j 
+\\ - \sum  \lambda _i y_i b 
++\sum\lambda_i 
+\\L = \sum\lambda_i-\frac{1}{2} \sum^n _{i=1} \sum^n _{j=1} \lambda _i  \lambda _j y_i   y_j  x_i x_j</script><p>我们所要关注的就是如何求解$\lambda$ 了。在这里推荐大家看<a href="http://blog.csdn.net/v_july_v/article/details/7624837里的3.5" target="_blank" rel="noopener">http://blog.csdn.net/v_july_v/article/details/7624837里的3.5</a> SMO求解拉格朗日乘子。</p>
+<p>TODO:松弛变量、 核函数。</p>
+
       
     </div>
     
@@ -383,6 +460,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+        </div>
       
 
       
@@ -402,6 +485,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/11/ir-review/" rel="prev" title="Infromation Mid Term Review">
+                Infromation Mid Term Review <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -458,8 +545,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -478,7 +574,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -491,7 +587,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -549,6 +645,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SVM是什么？"><span class="nav-number">1.</span> <span class="nav-text">SVM是什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构造过程"><span class="nav-number">2.</span> <span class="nav-text">构造过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#超平面H3的寻找"><span class="nav-number">3.</span> <span class="nav-text">超平面H3的寻找</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#超平面的定义"><span class="nav-number">3.1.</span> <span class="nav-text">超平面的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对超平面的关键假设"><span class="nav-number">3.2.</span> <span class="nav-text">对超平面的关键假设</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#支持向量"><span class="nav-number">3.3.</span> <span class="nav-text">支持向量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#街道宽度—几何间隔"><span class="nav-number">3.4.</span> <span class="nav-text">街道宽度—几何间隔</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拉格朗日"><span class="nav-number">3.5.</span> <span class="nav-text">拉格朗日</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<meta name="google-site-verification" content="n8fI7GkJ5IrjCKf79CxRk_uBHH7RrQk2gup5_FmwFfs" />
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Information Retrieval," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="金若愚的blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Information Retrieval的复习笔记，感觉最近忙到爆炸，春假了在图书馆发霉。真的爆炸！！ 1. Text ProcessingWhat is Bag of words? How to simplify calculation? Bag of words is a collection of words appear in document. It assmume the word">
+<meta name="keywords" content="Information Retrieval">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Infromation Mid Term Review">
+<meta property="og:url" content="https://hzjry123.github.io/2018/03/11/ir-review/index.html">
+<meta property="og:site_name" content="金若愚的blog">
+<meta property="og:description" content="Information Retrieval的复习笔记，感觉最近忙到爆炸，春假了在图书馆发霉。真的爆炸！！ 1. Text ProcessingWhat is Bag of words? How to simplify calculation? Bag of words is a collection of words appear in document. It assmume the word">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/bag%20of%20words.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/stem.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/index%20sparse.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/post%20list.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/log%20frequency.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/tf-idf%20weight.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/tf-idf.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/unigram%20language%20model.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/unigram%20eg.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/query%20likelihood.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/mq.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/smooth.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/JM%20smooth.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/dir%20smooth.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/confusion%20matrix.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/tradeoff.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/f%20measure.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/r%20precision.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/dcg.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/11/ir-review/rocchio.png">
+<meta property="og:updated_time" content="2018-03-12T07:30:27.435Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Infromation Mid Term Review">
+<meta name="twitter:description" content="Information Retrieval的复习笔记，感觉最近忙到爆炸，春假了在图书馆发霉。真的爆炸！！ 1. Text ProcessingWhat is Bag of words? How to simplify calculation? Bag of words is a collection of words appear in document. It assmume the word">
+<meta name="twitter:image" content="https://hzjry123.github.io/2018/03/11/ir-review/bag%20of%20words.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hzjry123.github.io/2018/03/11/ir-review/"/>
+
+
+
+
+
+  <title>Infromation Mid Term Review | 金若愚的blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-109859293-1', 'auto');
+  ga('send', 'pageview');
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">金若愚的blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">你好</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/03/11/ir-review/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="金若愚">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金若愚的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Infromation Mid Term Review</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-11T21:28:39+08:00">
+                2018-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/11/ir-review/" class="leancloud_visitors" data-flag-title="Infromation Mid Term Review">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,082
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Information Retrieval的复习笔记，感觉最近忙到爆炸，春假了在图书馆发霉。真的爆炸！！</p>
+<h1 id="1-Text-Processing"><a href="#1-Text-Processing" class="headerlink" title="1. Text Processing"></a>1. Text Processing</h1><h2 id="What-is-Bag-of-words-How-to-simplify-calculation"><a href="#What-is-Bag-of-words-How-to-simplify-calculation" class="headerlink" title="What is Bag of words? How to simplify calculation?"></a>What is Bag of words? How to simplify calculation?</h2><p><img src="/2018/03/11/ir-review/bag of words.png" alt=""></p>
+<p>Bag of words is a collection of words appear in document. It assmume the word is independent with each other. Also it failed to recognize semantic relationship among words, it would not tell you synonyms words, hyponym and hypernym, homonyms. But we can tokenize each word unit for indexing, stemming.</p>
+<h2 id="Remove-stop-words"><a href="#Remove-stop-words" class="headerlink" title="Remove stop words"></a>Remove stop words</h2><p>去除一些没用的词, the, a, an ….</p>
+<h2 id="Lemmatization"><a href="#Lemmatization" class="headerlink" title="Lemmatization"></a>Lemmatization</h2><p>Reduce inflection/some derkvational variant forms to base form.</p>
+<ul>
+<li>Am,are,is -&gt; be</li>
+<li>Car, car’s, car’s, cars’ -&gt; car</li>
+</ul>
+<p>works most on inflectional variants</p>
+<p>合并一个单词的不同词形</p>
+<h2 id="Stemming"><a href="#Stemming" class="headerlink" title="Stemming"></a>Stemming</h2><p>conflate morphological variants to their roots, called stems.</p>
+<p><img src="/2018/03/11/ir-review/stem.png" alt=""></p>
+<p>会去掉单词尾部的一些字母，合并形态上相似的词语，有同个词根的。</p>
+<p>Works on derivational variants</p>
+<h2 id="Why-stemming-is-better-than-lemmatization-gt"><a href="#Why-stemming-is-better-than-lemmatization-gt" class="headerlink" title="Why stemming is better than lemmatization&gt;?"></a>Why stemming is better than lemmatization&gt;?</h2><p>English has many morphological variants in its language, so it is<br>important to recognize these variants are related to the same root words.<br>Stemming helps on that. </p>
+<p>Stemming is more robust than lemmatization, and can handle more<br>complicated cases.</p>
+<h2 id="Why-stem-why-apply-to-both-query-and-document-processing"><a href="#Why-stem-why-apply-to-both-query-and-document-processing" class="headerlink" title="Why stem? why apply to both query and document processing?"></a>Why stem? why apply to both query and document processing?</h2><h1 id="2-Query-Processing"><a href="#2-Query-Processing" class="headerlink" title="2. Query Processing"></a>2. Query Processing</h1><p>执行和document一样的步骤</p>
+<h2 id="Index"><a href="#Index" class="headerlink" title="Index"></a>Index</h2><p><img src="/2018/03/11/ir-review/index sparse.png" alt=""></p>
+<p>统计每个term在每个doc的frequency，构建矩阵。 很稀疏。</p>
+<p>解决办法：构建post list</p>
+<p><img src="/2018/03/11/ir-review/post list.png" alt=""></p>
+<p>但是里面没用位置信息，也没有哪个doc的term frequency</p>
+<p>postlist会很大，不能存放在ram里，这样会降低查询效率，因此要使用编码去压缩字典</p>
+<h2 id="Gamma-code"><a href="#Gamma-code" class="headerlink" title="Gamma code"></a>Gamma code</h2><p>length+offset</p>
+<p>其中length由unary code组成(3 is 1110, 7 is 11111110)</p>
+<p>Offset is binary, but first leading 1 is removed.</p>
+<p>1110011(1110+011)</p>
+<p>11111100101011110111</p>
+<ul>
+<li>1111110 010101-&gt; 1010101</li>
+<li>1110 111 -&gt; 1111</li>
+</ul>
+<h1 id="Boolean-and-Vector-Space-Model"><a href="#Boolean-and-Vector-Space-Model" class="headerlink" title="Boolean and Vector Space Model"></a>Boolean and Vector Space Model</h1><h2 id="Boolean-Model"><a href="#Boolean-Model" class="headerlink" title="Boolean Model:"></a>Boolean Model:</h2><p>use and, or, not to search document.</p>
+<h2 id="Vector-Space-Model"><a href="#Vector-Space-Model" class="headerlink" title="Vector Space Model"></a>Vector Space Model</h2><ul>
+<li>replace relevance with ‘similarity’<ul>
+<li>rank documents by their similarity with the query</li>
+</ul>
+</li>
+<li>Treat the query as if it were a doucment</li>
+</ul>
+<p>Treat documents as vectors, term as axes of the space, vocabulary size = |V|, we have |V| dimensional vector space</p>
+<h2 id="Tf-idf-why-we-need-inverse-document-frequency"><a href="#Tf-idf-why-we-need-inverse-document-frequency" class="headerlink" title="Tf-idf? why we need inverse document frequency?"></a>Tf-idf? why we need inverse document frequency?</h2><p>Tf-idf weighting increases with the numberof occurs within a document and the rarity of the term in the collection. Thedocument length is to help normalization, especially when calculating cos ofvectors, avoid the distortion caused by size of documents.</p>
+<p>log frequency weight of a tem t is:</p>
+<p><img src="/2018/03/11/ir-review/log frequency.png" alt=""></p>
+<p>Idf:</p>
+<script type="math/tex; mode=display">
+idf_t={log_{10}N}/{df_t}</script><p>tf-idf weight of a term:</p>
+<p><img src="/2018/03/11/ir-review/tf-idf weight.png" alt=""></p>
+<p><img src="/2018/03/11/ir-review/tf-idf.png" alt=""></p>
+<h1 id="Language-Model"><a href="#Language-Model" class="headerlink" title="Language Model"></a>Language Model</h1><h2 id="differences-between-statistical-language-model-and-vector-space-model"><a href="#differences-between-statistical-language-model-and-vector-space-model" class="headerlink" title="differences between statistical language model and vector space model?"></a>differences between statistical language model and vector space model?</h2><p>In vector space model, we build the term-document matrix and calculate the similarity base on those terms which we preprocessed. And in the statistical language model we count the frequency to calculate the probability of each document to get the rank list of retrieval results. Usually those queries will let the document get higher score and return in the higher rank of retrieval list. So, base on those kinds of model we can still get the document what we need. </p>
+<h2 id="Unigram-LM"><a href="#Unigram-LM" class="headerlink" title="Unigram LM"></a>Unigram LM</h2><p><img src="/2018/03/11/ir-review/unigram language model.png" alt=""></p>
+<p><img src="/2018/03/11/ir-review/unigram eg.png" alt=""></p>
+<h2 id="Query-Likelihodd-Language-Model"><a href="#Query-Likelihodd-Language-Model" class="headerlink" title="Query Likelihodd Language Model"></a>Query Likelihodd Language Model</h2><p><img src="/2018/03/11/ir-review/query likelihood.png" alt=""></p>
+<p>长度会造成很大影响,因此提出了以下模型</p>
+<p><img src="/2018/03/11/ir-review/mq.png" alt=""></p>
+<p>但是概率很快就变成0了，因此我们需要smooth！</p>
+<p><img src="/2018/03/11/ir-review/smooth.png" alt=""></p>
+<h2 id="JM-smooth"><a href="#JM-smooth" class="headerlink" title="JM smooth"></a>JM smooth</h2><p><img src="/2018/03/11/ir-review/JM smooth.png" alt=""></p>
+<p>加入参数$\lambda$, 通常$\lambda = 0.8$。</p>
+<p>Mix the probability from document to general collection</p>
+<h2 id="Dirichlet-prior-smoothing"><a href="#Dirichlet-prior-smoothing" class="headerlink" title="Dirichlet prior smoothing."></a>Dirichlet prior smoothing.</h2><p><img src="/2018/03/11/ir-review/dir smooth.png" alt=""></p>
+<h1 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h1><h2 id="describe-what-is-topical-relevance-and-discuss-why-it-is-the-right-relevance-definition-for-Cranfield-evaluation-paradigm"><a href="#describe-what-is-topical-relevance-and-discuss-why-it-is-the-right-relevance-definition-for-Cranfield-evaluation-paradigm" class="headerlink" title="describe what is topical relevance, and discuss why it is the right relevance definition for Cranfield evaluation paradigm."></a>describe what is topical relevance, and discuss why it is the right relevance definition for Cranfield evaluation paradigm.</h2><p>Topical relevance is a type of relevance that is related to the content of the document and is objective, which is the result of the match between a query and the document, ignoring the role of users.</p>
+<p>The topical relevance is the right relevance definition for Cranfield evaluation paradigm because when we use topic as our search standard,we can use different kind of model to calculate the score of each document orget the rank list of document collection. So, we can base on the topical relevance to get the retrieval results which user need.</p>
+<h2 id="Precision-recall"><a href="#Precision-recall" class="headerlink" title="Precision, recall?"></a>Precision, recall?</h2><p><img src="/2018/03/11/ir-review/confusion matrix.png" alt=""></p>
+<p>Precision = A / (A + B)</p>
+<p>Recall = A / (A + C)</p>
+<p><img src="/2018/03/11/ir-review/tradeoff.png" alt=""></p>
+<p>Trade off</p>
+<h2 id="describe-what-is-precision-then-discuss-why-we-need-to-consider-both-precision-and-recall-when-evaluating-information-retrieval-systems"><a href="#describe-what-is-precision-then-discuss-why-we-need-to-consider-both-precision-and-recall-when-evaluating-information-retrieval-systems" class="headerlink" title="describe what is precision, then discuss why we need to consider both precision and recall when evaluating information retrieval systems."></a>describe what is precision, then discuss why we need to consider both precision and recall when evaluating information retrieval systems.</h2><p>Precisionrepresent the percentage of the relevant document in the all retrieval results.So, the precision higher means that the retrieval accuracy is higher.</p>
+<p>We need toconsider both precision and recall when evaluating information retrievalsystems, because it will base on different standard you set and get differentresults. Some system will more care about the recall because they need toretrieval all relevant document in their system. However, some system may justprefer to get the high percentage of the relevant documents in their results. So,we usually use the F-Measure to consider both precision and recall and use Betato trim the precision is more important or recall is more important.</p>
+<p><img src="/2018/03/11/ir-review/f measure.png" alt=""></p>
+<h2 id="R-precision"><a href="#R-precision" class="headerlink" title="R-precision"></a>R-precision</h2><p>R = |all relevant doc|</p>
+<p><img src="/2018/03/11/ir-review/r precision.png" alt=""></p>
+<h2 id="DCG"><a href="#DCG" class="headerlink" title="DCG"></a>DCG</h2><p><img src="/2018/03/11/ir-review/dcg.png" alt=""></p>
+<p>当文档有相关程度reli的时候，我们就有了dcg去衡量，越相关的应该放在越前面。</p>
+<h2 id="implicit-Relevance-Feedback-difference-with-pseudo-relevance-feedback"><a href="#implicit-Relevance-Feedback-difference-with-pseudo-relevance-feedback" class="headerlink" title="implicit Relevance Feedback, difference with pseudo relevance feedback?"></a>implicit Relevance Feedback, difference with pseudo relevance feedback?</h2><ul>
+<li>Explicit relevance feedback<ul>
+<li>users explicitly mark relevant and irrelevant documents in the search reuslts.</li>
+</ul>
+</li>
+<li>Implicit relevance feedback<ul>
+<li>system attempts to infer user intentions based on observable behavior</li>
+</ul>
+</li>
+<li>Blind relevance feedback pseudo relevance feedback<ul>
+<li>Avoid obtain user explicit or implicit feedback information.</li>
+<li>use top returned N docs in the intial result </li>
+<li>assume all of them are relevant</li>
+</ul>
+</li>
+</ul>
+<h2 id="pseudo-problem"><a href="#pseudo-problem" class="headerlink" title="pseudo problem"></a>pseudo problem</h2><p>When we do the relevance feedback we need user to provide their feedback or help us to define some answer for building a better query. But in pseudo relevance feedback, we don’t ask the user to provide the feedback. What we do is to see the top N of first retrieval documents as the relevance to the user’s query and use those documents to build an advanced query to search in the system.</p>
+<h2 id="Rocchio"><a href="#Rocchio" class="headerlink" title="Rocchio"></a>Rocchio</h2><p><img src="/2018/03/11/ir-review/rocchio.png" alt=""></p>
+<p>如何衡量ir system</p>
+<h2 id="Known-item-search-evaluation-measure"><a href="#Known-item-search-evaluation-measure" class="headerlink" title="Known item search? evaluation measure?"></a>Known item search? evaluation measure?</h2><h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><h2 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Information-Retrieval/" rel="tag"># Information Retrieval</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/05/SVM/" rel="next" title="SVM理解与推导 (一)">
+                <i class="fa fa-chevron-left"></i> SVM理解与推导 (一)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTk0OC84NTEy"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/head.jpg"
+                alt="金若愚" />
+            
+              <p class="site-author-name" itemprop="name">金若愚</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/u/3078467593" target="_blank" title="微博">
+                    
+                      <i class="fa fa-fw fa-weibo"></i>微博</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.pitt.edu" target="_blank" title="匹兹堡">
+                    
+                      <i class="fa fa-fw fa-globe"></i>匹兹堡</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="ruj10@pitt.edu" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Text-Processing"><span class="nav-number">1.</span> <span class="nav-text">1. Text Processing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-Bag-of-words-How-to-simplify-calculation"><span class="nav-number">1.1.</span> <span class="nav-text">What is Bag of words? How to simplify calculation?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Remove-stop-words"><span class="nav-number">1.2.</span> <span class="nav-text">Remove stop words</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lemmatization"><span class="nav-number">1.3.</span> <span class="nav-text">Lemmatization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stemming"><span class="nav-number">1.4.</span> <span class="nav-text">Stemming</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-stemming-is-better-than-lemmatization-gt"><span class="nav-number">1.5.</span> <span class="nav-text">Why stemming is better than lemmatization&gt;?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-stem-why-apply-to-both-query-and-document-processing"><span class="nav-number">1.6.</span> <span class="nav-text">Why stem? why apply to both query and document processing?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Query-Processing"><span class="nav-number">2.</span> <span class="nav-text">2. Query Processing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Index"><span class="nav-number">2.1.</span> <span class="nav-text">Index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gamma-code"><span class="nav-number">2.2.</span> <span class="nav-text">Gamma code</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Boolean-and-Vector-Space-Model"><span class="nav-number">3.</span> <span class="nav-text">Boolean and Vector Space Model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Boolean-Model"><span class="nav-number">3.1.</span> <span class="nav-text">Boolean Model:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vector-Space-Model"><span class="nav-number">3.2.</span> <span class="nav-text">Vector Space Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tf-idf-why-we-need-inverse-document-frequency"><span class="nav-number">3.3.</span> <span class="nav-text">Tf-idf? why we need inverse document frequency?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Language-Model"><span class="nav-number">4.</span> <span class="nav-text">Language Model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#differences-between-statistical-language-model-and-vector-space-model"><span class="nav-number">4.1.</span> <span class="nav-text">differences between statistical language model and vector space model?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unigram-LM"><span class="nav-number">4.2.</span> <span class="nav-text">Unigram LM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Query-Likelihodd-Language-Model"><span class="nav-number">4.3.</span> <span class="nav-text">Query Likelihodd Language Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JM-smooth"><span class="nav-number">4.4.</span> <span class="nav-text">JM smooth</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dirichlet-prior-smoothing"><span class="nav-number">4.5.</span> <span class="nav-text">Dirichlet prior smoothing.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Evaluation"><span class="nav-number">5.</span> <span class="nav-text">Evaluation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#describe-what-is-topical-relevance-and-discuss-why-it-is-the-right-relevance-definition-for-Cranfield-evaluation-paradigm"><span class="nav-number">5.1.</span> <span class="nav-text">describe what is topical relevance, and discuss why it is the right relevance definition for Cranfield evaluation paradigm.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Precision-recall"><span class="nav-number">5.2.</span> <span class="nav-text">Precision, recall?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#describe-what-is-precision-then-discuss-why-we-need-to-consider-both-precision-and-recall-when-evaluating-information-retrieval-systems"><span class="nav-number">5.3.</span> <span class="nav-text">describe what is precision, then discuss why we need to consider both precision and recall when evaluating information retrieval systems.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R-precision"><span class="nav-number">5.4.</span> <span class="nav-text">R-precision</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DCG"><span class="nav-number">5.5.</span> <span class="nav-text">DCG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#implicit-Relevance-Feedback-difference-with-pseudo-relevance-feedback"><span class="nav-number">5.6.</span> <span class="nav-text">implicit Relevance Feedback, difference with pseudo relevance feedback?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pseudo-problem"><span class="nav-number">5.7.</span> <span class="nav-text">pseudo problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rocchio"><span class="nav-number">5.8.</span> <span class="nav-text">Rocchio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Known-item-search-evaluation-measure"><span class="nav-number">5.9.</span> <span class="nav-text">Known item search? evaluation measure?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">5.10.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-1"><span class="nav-number">5.11.</span> <span class="nav-text"> </span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">金若愚</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTk0OC84NTEy"></div>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("xginy6qzoT0MfSvYhKKVive5-gzGzoHsz", "cuHAKHmtoNikFeUqpsLFIhvv");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>

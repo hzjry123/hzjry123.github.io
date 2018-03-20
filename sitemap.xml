@@ -2,16 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hzjry123.github.io/2018/02/01/binary-tree/</loc>
+    <loc>https://hzjry123.github.io/2018/03/05/SVM/</loc>
     
-    <lastmod>2018-03-06T07:35:51.371Z</lastmod>
+    <lastmod>2018-03-20T05:19:02.773Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hzjry123.github.io/2018/02/15/google-cloud-configuration/</loc>
+    
+    <lastmod>2018-03-16T17:36:38.423Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://hzjry123.github.io/2018/02/23/regularize-1/</loc>
     
-    <lastmod>2018-03-06T07:29:43.288Z</lastmod>
+    <lastmod>2018-03-13T19:08:05.922Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hzjry123.github.io/2018/03/11/ir-review/</loc>
+    
+    <lastmod>2018-03-12T07:30:27.435Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hzjry123.github.io/2018/03/01/k-means/</loc>
+    
+    <lastmod>2018-03-09T17:14:40.186Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hzjry123.github.io/2018/02/01/binary-tree/</loc>
+    
+    <lastmod>2018-03-06T07:35:51.371Z</lastmod>
     
   </url>
   
@@ -26,20 +54,6 @@
     <loc>https://hzjry123.github.io/2018/02/23/openmp/</loc>
     
     <lastmod>2018-03-06T01:41:14.489Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hzjry123.github.io/2018/02/15/google-cloud-configuration/</loc>
-    
-    <lastmod>2018-03-06T01:18:25.232Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hzjry123.github.io/2018/03/05/SVM/</loc>
-    
-    <lastmod>2018-03-05T22:57:27.727Z</lastmod>
     
   </url>
   
