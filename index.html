@@ -260,186 +260,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/03/20/Decision-Tree/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="金若愚">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="金若愚的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/20/Decision-Tree/" itemprop="url">决策树</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-20T13:28:19+08:00">
-                2018-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/03/20/Decision-Tree/" class="leancloud_visitors" data-flag-title="决策树">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  493
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="/2018/03/20/Decision-Tree/category.png" alt=""></p>
-<p>如何选择属性去构建决策树</p>
-<p>构建一棵最优的决策树是一个NP难问题！所以我们只能采用一些启发式策略来解决：</p>
-<ul>
-<li><em>Choose an attribute to partition the data at the node such that each partition is as homogeneous (least impure) as possible. This means we would like to see most of the instances in each partition belonging to as few classes as possible and each partition should be as large as possible.</em></li>
-<li><em>We can stop the growth of the tree if all the leaf nodes are largely dominated by a single class (that is the leaf nodes are nearly pure).</em></li>
-</ul>
-<p>现在新的问题来了：如何评估节点的Impurity？通常可以使用的指标有如下三个（实际应用时，只要选其中一个即可）：</p>
-<ul>
-<li>Gini Index</li>
-<li>Entropy</li>
-<li>Misclassification error</li>
-</ul>
-<script type="math/tex; mode=display">
-GINI(t)=1-\sum_j[p(j\ |\ t)]^2</script><p>选择最佳划分的度量通常是根据划分后子女结点不纯性的程度。不纯的程度越低，类分布就越倾斜。例如，类分布为 (0, 1)的结点具有零不纯性，而均衡分布(0.5, 0.5)的结点具有最高的不纯性。</p>
-<p><img src="/2018/03/20/Decision-Tree/impurity.png" alt=""></p>
-<p>从上面的例子可以看出，第一个结点，具有最低的不纯性度量值，接下来节点的不纯度度量值依次递增。为了确定测试条件的效果，我们需要比较父结点（划分前）的不纯程度和子女结点（划分后） 的不纯程度，它们的差越大，测试条件的效果就越好。增益$Δ$是一种可以用来确定划分效果的标准： </p>
-<script type="math/tex; mode=display">
-\Delta=I(parent)-\sum^k_{j=1}\frac{N(v_j)}{N}I(v_j)</script><p>其中，$I(.)$是给定结点的不纯性度量，$N$是父结点上的记录总数，$k$是属性值的个数，$N(v_j)$是与子女结点 $v_j$ 相关联的记录个数。决策树构建算法通常选择最大化增益$Δ$的测试条件，因为对所有的测试条件来说，$I(parent)是一个不变的值，所<strong>以最大化增益等价于最小化子女结点的不纯性度量的加权平均值。</strong></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/03/11/ir-review/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -720,48 +540,16 @@ GINI(t)=1-\sum_j[p(j\ |\ t)]^2</script><p>选择最佳划分的度量通常是�
 
       
         
-          
-            <h1 id="SVM之松弛变量"><a href="#SVM之松弛变量" class="headerlink" title="SVM之松弛变量"></a>SVM之松弛变量</h1><p>上文我们说到了SVM的推导，也清楚了我们的目标就是求得使街宽margin最大的hyper plane。那么问题来了，如果数据里存在部分噪声使街宽很小，甚至线性不可分了，这又该怎么办，街宽小了模型缺少泛化能力，而线性不可分了我们必须去引进SVM的kernel了（在下一节会讲到）。</p>
+          <h1 id="SVM之松弛变量"><a href="#SVM之松弛变量" class="headerlink" title="SVM之松弛变量"></a>SVM之松弛变量</h1><p>上文我们说到了SVM的推导，也清楚了我们的目标就是求得使街宽margin最大的hyper plane。那么问题来了，如果数据里存在部分噪声使街宽很小，甚至线性不可分了，这又该怎么办，街宽小了模型缺少泛化能力，而线性不可分了我们必须去引进SVM的kernel了（在下一节会讲到）。</p>
 <p><img src="/2018/03/05/SVM2/sv.png" alt=""></p>
 <p>就例如下图被黑线描绘出的蓝点。原本我们的margin（彩色）还是十分美好的，但是加上这个噪音之后，新的margin就变成黑色虚线了，模型的泛化能力一下就差了许多，部分点就会出现分错的情况。</p>
-<p><img src="/2018/03/05/SVM2/outlier.png" alt=""></p>
-<p>原来的约束条件：</p>
-<script type="math/tex; mode=display">
-y(w^TX+b)\geq1</script><p>看我们原来的约束条件，如何修改能使这些噪声点不产生如此之大的影响呢？显然我们应该在不等式的右边把这个1变小，且针对每个样本点，右边的值应该是不同的，针对噪声，右边显然应该更小甚至为负数，针对support vector，显然越接近1越好。</p>
-<p>因此：</p>
-<script type="math/tex; mode=display">
-y(w^TX+b)\geq1 - \xi_i,  \ \ \ \ \ \ \ i = 1,...,n， \xi_i>0</script><p>其中$\xi_i$就是我们的松弛变量了。那么问题来了，现在的噪音还是我们的support vector吗，回忆之前求街宽的过程，我们就是用支持向量来求的。那么现在我们只需</p>
-<script type="math/tex; mode=display">
-Width =(X^+-X^-)\frac{w}{||w||} \\
-=\frac{X^+w}{||w||}-\frac{X^-w}{||w||}
-\\因为wx=\frac{1-\xi}{y}-b
-\\Width=\frac{1-\xi-b}{||w||}-\frac{-1+\xi-b}{||w||}=\frac{2-\xi}{||w||}</script><p>（上述步骤好像在别的地方没有看见过，不知道是不是我搞错了= =）</p>
-<p>同理我们要街宽最大，即分母$w$最小，分子$2-\xi$最大，即我们希望$\xi$很小。因此我们得到新的优化问题和约束条件：</p>
-<script type="math/tex; mode=display">
-min\frac{||w||^2}{2}+C\sum^n_{i=1}\xi_i
-\\s.t. \xi_i>0, \\y(w^TX+b)\geq1 - \xi_i</script><p>其中C是一个参数，用于控制$\xi$的权重和w的平衡，其实就和正则项很像，不能过大不然这个超平面就根本没用了。</p>
-<p>根据拉格朗日函数：<br><img src="/2018/03/05/SVM2/lagrange.png" alt=""></p>
-<p>同样的我们可以得到拉格朗日函数：</p>
-<script type="math/tex; mode=display">
-Lmin=\frac{||w||^2}{2}+C\sum^n_{i=1}\xi_i-\sum \lambda _i[y_i(wx_i+b)-1+\xi_i]-\sum^n_{i=1}r_i\xi_i</script><p>同样求偏导，这次要加一个多$\xi_i$求偏导</p>
-<script type="math/tex; mode=display">
-\frac{\partial L}{\partial w}=w-\sum \lambda _i y_i x_i = 0
-\\=> w = \sum  \lambda _i y_i x_i \\
-\frac{\partial L}{\partial b}=\sum \lambda _i y_i=0
-\\ \frac{\partial L}{\partial \xi_i}= 0=> C-\lambda_i-r_i=0</script><p>我们可知$r_i\geq0,\lambda_i&lt;C$多了一个约束条件</p>
-<p>带回原公式（$\xi$可以被消去，太晚了我就先不打公式了溜了有机会再说吧）：</p>
-<script type="math/tex; mode=display">
-Lmin = \sum\lambda_i-\frac{1}{2} \sum^n _{i=1} \sum^n _{j=1} \lambda _i  \lambda _j y_i   y_j  x_i x_j
-\\ s.t. 0\leq\lambda_i\leq C 
-\\ \sum^n_{i=1}\lambda_i y_i = 0</script><p><img src="/2018/03/05/SVM2/conclusion.png" alt=""></p>
-<p>哇发现和之前简直一模一样，就是多了个C而已。</p>
-<p>引用july大佬的一段总结：</p>
-<blockquote>
-<p>行文至此，可以做个小结，不准确的说，SVM它本质上即是一个分类方法，用$w^T+b$定义分类函数，于是求$w、b$，为寻最大间隔，引出$1/2||w||^2$，继而引入拉格朗日因子，化为对拉格朗日乘子$\lambda$的求解（求解过程中会涉及到一系列最优化或凸二次规划等问题），如此，求$w.b$与求$\lambda$等价，而$\lambda$的求解可以用一种快速学习算法SMO，至于核函数，是为处理非线性情况，若直接映射到高维计算恐维度爆炸，故在低维计算，等效高维表现。</p>
-</blockquote>
-<p>TODO: 核函数</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/05/SVM2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1132,6 +920,167 @@ Lmin = \sum\lambda_i-\frac{1}{2} \sum^n _{i=1} \sum^n _{j=1} \lambda _i  \lambda
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/03/01/k-means/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="金若愚">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金若愚的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/01/k-means/" itemprop="url">K-Means</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-02T12:14:10+08:00">
+                2018-03-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/01/k-means/" class="leancloud_visitors" data-flag-title="K-Means">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  0
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1186,7 +1135,7 @@ Lmin = \sum\lambda_i-\frac{1}{2} \sum^n _{i=1} \sum^n _{j=1} \lambda _i  \lambda
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

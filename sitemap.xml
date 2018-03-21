@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hzjry123.github.io/caogao/Decision-Tree.html</loc>
+    
+    <lastmod>2018-03-21T07:04:56.393Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hzjry123.github.io/2018/03/05/SVM2/</loc>
     
-    <lastmod>2018-03-21T06:51:41.171Z</lastmod>
+    <lastmod>2018-03-21T07:04:12.147Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>https://hzjry123.github.io/caogao/GBDT.html</loc>
     
     <lastmod>2018-03-20T20:27:54.754Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hzjry123.github.io/2018/03/20/Decision-Tree/</loc>
-    
-    <lastmod>2018-03-20T18:12:04.080Z</lastmod>
     
   </url>
   

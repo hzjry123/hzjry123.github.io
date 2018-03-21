@@ -260,182 +260,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/01/18/关于hexo的next主题无法显示latex公式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="金若愚">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="金若愚的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/18/关于hexo的next主题无法显示latex公式/" itemprop="url">关于hexo的next主题无法显示latex公式</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-18T19:50:41+08:00">
-                2018-01-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/01/18/关于hexo的next主题无法显示latex公式/" class="leancloud_visitors" data-flag-title="关于hexo的next主题无法显示latex公式">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  330
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>reference: <a href="http://2wildkids.com/2016/10/06/%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86Hexo%E5%92%8CMathJax%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/#%E5%B0%8F%E7%BB%93" target="_blank" rel="noopener">http://2wildkids.com/2016/10/06/%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86Hexo%E5%92%8CMathJax%E7%9A%84%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98/#%E5%B0%8F%E7%BB%93</a></p>
-<p>Thanks 林肯先生</p>
-<p>在next里写latex时发现渲染不出来，查找后发现是说node.js的渲染和markdown渲染的问题。操作半天也不得行。</p>
-<p>但我发现我是什么公式也渲染不出来啊！后来在next的issue里面查找相关问题，发现得先在/themes/next/_config.yml里把third-party-services settings中的math设置为enable</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mathjax:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>感觉被自己蠢到了。</p>
-<p>但是这样设置以后还是不行，参考了”林肯先生”的做法。</p>
-<ol>
-<li><code>npm uninstall hexo-renderer-marked --save</code>//先删除原先的markdown渲染工具</li>
-<li><code>npm install hexo-renderer-kramed --save</code>//安装新的markdown渲染工具</li>
-</ol>
-<p>由于markdown在渲染时”_ “会被认为是下划线，和latex下标的操作一样，会先渲染markdown的，导致latex无法渲染，因此要在里面加\把_转义，到这个时候才和”林肯先生”的问题一样，我有点震惊。</p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$R<span class="string">\_&#123;m</span> <span class="string">\times</span> n&#125; = U<span class="string">\_&#123;m</span> <span class="string">\times</span> m&#125; S<span class="string">\_&#123;m</span> <span class="string">\times</span> n&#125; V<span class="string">\_&#123;n</span> <span class="string">\times</span> n&#125;<span class="string">'$</span></span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">
-R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>很强，但是能用了，饿死了先去吃饭了，如果有哪位朋友知道这该怎么办，请告诉我一下。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/01/17/Maximum-Product-subarray/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1104,6 +928,178 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2017/11/19/LeetCode121/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="金若愚">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金若愚的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/19/LeetCode121/" itemprop="url">LeetCode121</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T01:17:14+08:00">
+                2017-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/11/19/LeetCode121/" class="leancloud_visitors" data-flag-title="LeetCode121">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  317
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="121-Best-Time-to-Buy-and-Sell-Stock"><a href="#121-Best-Time-to-Buy-and-Sell-Stock" class="headerlink" title="121. Best Time to Buy and Sell Stock"></a>121. Best Time to Buy and Sell Stock</h1><h3 id="1-Description："><a href="#1-Description：" class="headerlink" title="1. Description："></a>1. Description：</h3><p>Say you have an array for which the <em>i</em>th element is the price of a given stock on day <em>i</em>.</p>
+<p>If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Input</span>: [7, 1, 5, 3, 6, 4]</span><br><span class="line"><span class="attribute">Output</span>: 5</span><br><span class="line"></span><br><span class="line">max. difference = 6-1 = 5 (not 7-1 = 6, as selling price needs to be larger than buying price)</span><br></pre></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Input</span>: [7, 6, 4, 3, 1]</span><br><span class="line"><span class="attribute">Output</span>: 0</span><br><span class="line"></span><br><span class="line">In this case, no transaction is done, i.e. max profit = 0.</span><br></pre></td></tr></table></figure>
+<hr>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/19/LeetCode121/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1158,7 +1154,7 @@ R\_{m \times n} = U\_{m \times m} S\_{m \times n} V\_{n \times n}'</script><p>�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
