@@ -81,23 +81,23 @@
 
 
 
-<meta name="description" content="本文将介绍什么是SVM， SVM是什么？SVM: support vector machine,俗称支持向量机。是一种二分类模型，其模型定义为特征空间上的间隔最大的线性分类器，策略就是间隔最大化，最终转化为一个凸二次规划问题的求解。感觉已经晕了，下图给出一些intuition的部分:  假设我们有一堆正负样本如图，我们想找一条线（一个超平面）去把这些点分开来。这条线当然是无穷条的，在图中我以H2">
+<meta name="description" content="本文将介绍什么是SVM SVM是什么？SVM: support vector machine,俗称支持向量机。是一种二分类模型，其模型定义为特征空间上的间隔最大的线性分类器，策略就是间隔最大化，最终转化为一个凸二次规划问题的求解。感觉已经晕了，下图给出一些intuition的部分:  假设我们有一堆正负样本如图，我们想找一条线（一个超平面）去把这些点分开来。这条线当然是无穷条的，在图中我以H2 和">
 <meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SVM理解与推导 (一)">
 <meta property="og:url" content="https://hzjry123.github.io/2018/03/05/SVM/index.html">
 <meta property="og:site_name" content="金若愚的blog">
-<meta property="og:description" content="本文将介绍什么是SVM， SVM是什么？SVM: support vector machine,俗称支持向量机。是一种二分类模型，其模型定义为特征空间上的间隔最大的线性分类器，策略就是间隔最大化，最终转化为一个凸二次规划问题的求解。感觉已经晕了，下图给出一些intuition的部分:  假设我们有一堆正负样本如图，我们想找一条线（一个超平面）去把这些点分开来。这条线当然是无穷条的，在图中我以H2">
+<meta property="og:description" content="本文将介绍什么是SVM SVM是什么？SVM: support vector machine,俗称支持向量机。是一种二分类模型，其模型定义为特征空间上的间隔最大的线性分类器，策略就是间隔最大化，最终转化为一个凸二次规划问题的求解。感觉已经晕了，下图给出一些intuition的部分:  假设我们有一堆正负样本如图，我们想找一条线（一个超平面）去把这些点分开来。这条线当然是无穷条的，在图中我以H2 和">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://hzjry123.github.io/2018/03/05/SVM/intution1.png">
 <meta property="og:image" content="https://hzjry123.github.io/2018/03/05/SVM/intuition.png">
 <meta property="og:image" content="https://hzjry123.github.io/2018/03/05/SVM/sample.png">
 <meta property="og:image" content="https://hzjry123.github.io/2018/03/05/SVM/street.png">
 <meta property="og:image" content="https://hzjry123.github.io/2018/03/05/SVM/lagrange.png">
-<meta property="og:updated_time" content="2018-03-20T05:19:02.773Z">
+<meta property="og:updated_time" content="2018-03-21T06:46:17.311Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SVM理解与推导 (一)">
-<meta name="twitter:description" content="本文将介绍什么是SVM， SVM是什么？SVM: support vector machine,俗称支持向量机。是一种二分类模型，其模型定义为特征空间上的间隔最大的线性分类器，策略就是间隔最大化，最终转化为一个凸二次规划问题的求解。感觉已经晕了，下图给出一些intuition的部分:  假设我们有一堆正负样本如图，我们想找一条线（一个超平面）去把这些点分开来。这条线当然是无穷条的，在图中我以H2">
+<meta name="twitter:description" content="本文将介绍什么是SVM SVM是什么？SVM: support vector machine,俗称支持向量机。是一种二分类模型，其模型定义为特征空间上的间隔最大的线性分类器，策略就是间隔最大化，最终转化为一个凸二次规划问题的求解。感觉已经晕了，下图给出一些intuition的部分:  假设我们有一堆正负样本如图，我们想找一条线（一个超平面）去把这些点分开来。这条线当然是无穷条的，在图中我以H2 和">
 <meta name="twitter:image" content="https://hzjry123.github.io/2018/03/05/SVM/intution1.png">
 
 
@@ -379,7 +379,7 @@
       
 
       
-        <p>本文将介绍什么是SVM，</p>
+        <p>本文将介绍什么是SVM</p>
 <h1 id="SVM是什么？"><a href="#SVM是什么？" class="headerlink" title="SVM是什么？"></a>SVM是什么？</h1><p>SVM: support vector machine,俗称支持向量机。是一种二分类模型，其模型定义为特征空间上的间隔最大的线性分类器，策略就是间隔最大化，最终转化为一个凸二次规划问题的求解。感觉已经晕了，下图给出一些intuition的部分:</p>
 <p><img src="/2018/03/05/SVM/intution1.png" alt="ntution"></p>
 <p>假设我们有一堆正负样本如图，我们想找一条线（一个超平面）去把这些点分开来。这条线当然是无穷条的，在图中我以H2 和 H3为例，H2和H3看起来都把正负样本分开了，但是我们的目标不是在训练集上取得好成绩吧，我们的目标还包括测试集（unseen data）。</p>
@@ -444,7 +444,8 @@ L= w =\frac{1}{2} \sum  \lambda _i y_i x_i  \sum  \lambda _j y_j x_j
 \\ - \sum  \lambda _i y_i x_i  \sum  \lambda _j y_j x_j 
 \\ - \sum  \lambda _i y_i b 
 +\sum\lambda_i 
-\\L = \sum\lambda_i-\frac{1}{2} \sum^n _{i=1} \sum^n _{j=1} \lambda _i  \lambda _j y_i   y_j  x_i x_j</script><p>我们所要关注的就是如何求解$\lambda$ 了。在这里推荐大家看<a href="http://blog.csdn.net/v_july_v/article/details/7624837里的3.5" target="_blank" rel="noopener">http://blog.csdn.net/v_july_v/article/details/7624837里的3.5</a> SMO求解拉格朗日乘子。</p>
+\\L = \sum\lambda_i-\frac{1}{2} \sum^n _{i=1} \sum^n _{j=1} \lambda _i  \lambda _j y_i   y_j  x_i x_j
+\\s.t.  \sum^n_{i=1}\lambda_i y_i = 0</script><p>我们所要关注的就是如何求解$\lambda​$ 了。在这里推荐大家看<a href="http://blog.csdn.net/v_july_v/article/details/7624837里的3.5" target="_blank" rel="noopener">http://blog.csdn.net/v_july_v/article/details/7624837里的3.5</a> SMO求解拉格朗日乘子。</p>
 <p>TODO:松弛变量、 核函数。</p>
 
       
@@ -486,8 +487,8 @@ L= w =\frac{1}{2} \sum  \lambda _i y_i x_i  \sum  \lambda _j y_j x_j
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/11/ir-review/" rel="prev" title="Infromation Mid Term Review">
-                Infromation Mid Term Review <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/05/SVM2/" rel="prev" title="SVM理解与推导 (二)">
+                SVM理解与推导 (二) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -574,7 +575,7 @@ L= w =\frac{1}{2} \sum  \lambda _i y_i x_i  \sum  \lambda _j y_j x_j
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

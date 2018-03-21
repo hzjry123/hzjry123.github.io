@@ -260,6 +260,186 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/03/20/Decision-Tree/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="金若愚">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金若愚的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/20/Decision-Tree/" itemprop="url">决策树</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-20T13:28:19+08:00">
+                2018-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/20/Decision-Tree/" class="leancloud_visitors" data-flag-title="决策树">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  493
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="/2018/03/20/Decision-Tree/category.png" alt=""></p>
+<p>如何选择属性去构建决策树</p>
+<p>构建一棵最优的决策树是一个NP难问题！所以我们只能采用一些启发式策略来解决：</p>
+<ul>
+<li><em>Choose an attribute to partition the data at the node such that each partition is as homogeneous (least impure) as possible. This means we would like to see most of the instances in each partition belonging to as few classes as possible and each partition should be as large as possible.</em></li>
+<li><em>We can stop the growth of the tree if all the leaf nodes are largely dominated by a single class (that is the leaf nodes are nearly pure).</em></li>
+</ul>
+<p>现在新的问题来了：如何评估节点的Impurity？通常可以使用的指标有如下三个（实际应用时，只要选其中一个即可）：</p>
+<ul>
+<li>Gini Index</li>
+<li>Entropy</li>
+<li>Misclassification error</li>
+</ul>
+<script type="math/tex; mode=display">
+GINI(t)=1-\sum_j[p(j\ |\ t)]^2</script><p>选择最佳划分的度量通常是根据划分后子女结点不纯性的程度。不纯的程度越低，类分布就越倾斜。例如，类分布为 (0, 1)的结点具有零不纯性，而均衡分布(0.5, 0.5)的结点具有最高的不纯性。</p>
+<p><img src="/2018/03/20/Decision-Tree/impurity.png" alt=""></p>
+<p>从上面的例子可以看出，第一个结点，具有最低的不纯性度量值，接下来节点的不纯度度量值依次递增。为了确定测试条件的效果，我们需要比较父结点（划分前）的不纯程度和子女结点（划分后） 的不纯程度，它们的差越大，测试条件的效果就越好。增益$Δ$是一种可以用来确定划分效果的标准： </p>
+<script type="math/tex; mode=display">
+\Delta=I(parent)-\sum^k_{j=1}\frac{N(v_j)}{N}I(v_j)</script><p>其中，$I(.)$是给定结点的不纯性度量，$N$是父结点上的记录总数，$k$是属性值的个数，$N(v_j)$是与子女结点 $v_j$ 相关联的记录个数。决策树构建算法通常选择最大化增益$Δ$的测试条件，因为对所有的测试条件来说，$I(parent)是一个不变的值，所<strong>以最大化增益等价于最小化子女结点的不纯性度量的加权平均值。</strong></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/03/11/ir-review/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -372,103 +552,215 @@
 
       
         
-          
-            <p>Information Retrieval的复习笔记，感觉最近忙到爆炸，春假了在图书馆发霉。真的爆炸！！</p>
+          <p>Information Retrieval的复习笔记，感觉最近忙到爆炸，春假了在图书馆发霉。真的爆炸！！</p>
 <h1 id="1-Text-Processing"><a href="#1-Text-Processing" class="headerlink" title="1. Text Processing"></a>1. Text Processing</h1><h2 id="What-is-Bag-of-words-How-to-simplify-calculation"><a href="#What-is-Bag-of-words-How-to-simplify-calculation" class="headerlink" title="What is Bag of words? How to simplify calculation?"></a>What is Bag of words? How to simplify calculation?</h2><p><img src="/2018/03/11/ir-review/bag of words.png" alt=""></p>
 <p>Bag of words is a collection of words appear in document. It assmume the word is independent with each other. Also it failed to recognize semantic relationship among words, it would not tell you synonyms words, hyponym and hypernym, homonyms. But we can tokenize each word unit for indexing, stemming.</p>
-<h2 id="Remove-stop-words"><a href="#Remove-stop-words" class="headerlink" title="Remove stop words"></a>Remove stop words</h2><p>去除一些没用的词, the, a, an ….</p>
-<h2 id="Lemmatization"><a href="#Lemmatization" class="headerlink" title="Lemmatization"></a>Lemmatization</h2><p>Reduce inflection/some derkvational variant forms to base form.</p>
-<ul>
-<li>Am,are,is -&gt; be</li>
-<li>Car, car’s, car’s, cars’ -&gt; car</li>
-</ul>
-<p>works most on inflectional variants</p>
-<p>合并一个单词的不同词形</p>
-<h2 id="Stemming"><a href="#Stemming" class="headerlink" title="Stemming"></a>Stemming</h2><p>conflate morphological variants to their roots, called stems.</p>
-<p><img src="/2018/03/11/ir-review/stem.png" alt=""></p>
-<p>会去掉单词尾部的一些字母，合并形态上相似的词语，有同个词根的。</p>
-<p>Works on derivational variants</p>
-<h2 id="Why-stemming-is-better-than-lemmatization-gt"><a href="#Why-stemming-is-better-than-lemmatization-gt" class="headerlink" title="Why stemming is better than lemmatization&gt;?"></a>Why stemming is better than lemmatization&gt;?</h2><p>English has many morphological variants in its language, so it is<br>important to recognize these variants are related to the same root words.<br>Stemming helps on that. </p>
-<p>Stemming is more robust than lemmatization, and can handle more<br>complicated cases.</p>
-<h2 id="Why-stem-why-apply-to-both-query-and-document-processing"><a href="#Why-stem-why-apply-to-both-query-and-document-processing" class="headerlink" title="Why stem? why apply to both query and document processing?"></a>Why stem? why apply to both query and document processing?</h2><h1 id="2-Query-Processing"><a href="#2-Query-Processing" class="headerlink" title="2. Query Processing"></a>2. Query Processing</h1><p>执行和document一样的步骤</p>
-<h2 id="Index"><a href="#Index" class="headerlink" title="Index"></a>Index</h2><p><img src="/2018/03/11/ir-review/index sparse.png" alt=""></p>
-<p>统计每个term在每个doc的frequency，构建矩阵。 很稀疏。</p>
-<p>解决办法：构建post list</p>
-<p><img src="/2018/03/11/ir-review/post list.png" alt=""></p>
-<p>但是里面没用位置信息，也没有哪个doc的term frequency</p>
-<p>postlist会很大，不能存放在ram里，这样会降低查询效率，因此要使用编码去压缩字典</p>
-<h2 id="Gamma-code"><a href="#Gamma-code" class="headerlink" title="Gamma code"></a>Gamma code</h2><p>length+offset</p>
-<p>其中length由unary code组成(3 is 1110, 7 is 11111110)</p>
-<p>Offset is binary, but first leading 1 is removed.</p>
-<p>1110011(1110+011)</p>
-<p>11111100101011110111</p>
-<ul>
-<li>1111110 010101-&gt; 1010101</li>
-<li>1110 111 -&gt; 1111</li>
-</ul>
-<h1 id="Boolean-and-Vector-Space-Model"><a href="#Boolean-and-Vector-Space-Model" class="headerlink" title="Boolean and Vector Space Model"></a>Boolean and Vector Space Model</h1><h2 id="Boolean-Model"><a href="#Boolean-Model" class="headerlink" title="Boolean Model:"></a>Boolean Model:</h2><p>use and, or, not to search document.</p>
-<h2 id="Vector-Space-Model"><a href="#Vector-Space-Model" class="headerlink" title="Vector Space Model"></a>Vector Space Model</h2><ul>
-<li>replace relevance with ‘similarity’<ul>
-<li>rank documents by their similarity with the query</li>
-</ul>
-</li>
-<li>Treat the query as if it were a doucment</li>
-</ul>
-<p>Treat documents as vectors, term as axes of the space, vocabulary size = |V|, we have |V| dimensional vector space</p>
-<h2 id="Tf-idf-why-we-need-inverse-document-frequency"><a href="#Tf-idf-why-we-need-inverse-document-frequency" class="headerlink" title="Tf-idf? why we need inverse document frequency?"></a>Tf-idf? why we need inverse document frequency?</h2><p>Tf-idf weighting increases with the numberof occurs within a document and the rarity of the term in the collection. Thedocument length is to help normalization, especially when calculating cos ofvectors, avoid the distortion caused by size of documents.</p>
-<p>log frequency weight of a tem t is:</p>
-<p><img src="/2018/03/11/ir-review/log frequency.png" alt=""></p>
-<p>Idf:</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/11/ir-review/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/03/05/SVM2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="金若愚">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金若愚的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/05/SVM2/" itemprop="url">SVM理解与推导 (二)</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-06T01:00:39+08:00">
+                2018-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/05/SVM2/" class="leancloud_visitors" data-flag-title="SVM理解与推导 (二)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  763
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="SVM之松弛变量"><a href="#SVM之松弛变量" class="headerlink" title="SVM之松弛变量"></a>SVM之松弛变量</h1><p>上文我们说到了SVM的推导，也清楚了我们的目标就是求得使街宽margin最大的hyper plane。那么问题来了，如果数据里存在部分噪声使街宽很小，甚至线性不可分了，这又该怎么办，街宽小了模型缺少泛化能力，而线性不可分了我们必须去引进SVM的kernel了（在下一节会讲到）。</p>
+<p><img src="/2018/03/05/SVM2/sv.png" alt=""></p>
+<p>就例如下图被黑线描绘出的蓝点。原本我们的margin（彩色）还是十分美好的，但是加上这个噪音之后，新的margin就变成黑色虚线了，模型的泛化能力一下就差了许多，部分点就会出现分错的情况。</p>
+<p><img src="/2018/03/05/SVM2/outlier.png" alt=""></p>
+<p>原来的约束条件：</p>
 <script type="math/tex; mode=display">
-idf_t={log_{10}N}/{df_t}</script><p>tf-idf weight of a term:</p>
-<p><img src="/2018/03/11/ir-review/tf-idf weight.png" alt=""></p>
-<p><img src="/2018/03/11/ir-review/tf-idf.png" alt=""></p>
-<h1 id="Language-Model"><a href="#Language-Model" class="headerlink" title="Language Model"></a>Language Model</h1><h2 id="differences-between-statistical-language-model-and-vector-space-model"><a href="#differences-between-statistical-language-model-and-vector-space-model" class="headerlink" title="differences between statistical language model and vector space model?"></a>differences between statistical language model and vector space model?</h2><p>In vector space model, we build the term-document matrix and calculate the similarity base on those terms which we preprocessed. And in the statistical language model we count the frequency to calculate the probability of each document to get the rank list of retrieval results. Usually those queries will let the document get higher score and return in the higher rank of retrieval list. So, base on those kinds of model we can still get the document what we need. </p>
-<h2 id="Unigram-LM"><a href="#Unigram-LM" class="headerlink" title="Unigram LM"></a>Unigram LM</h2><p><img src="/2018/03/11/ir-review/unigram language model.png" alt=""></p>
-<p><img src="/2018/03/11/ir-review/unigram eg.png" alt=""></p>
-<h2 id="Query-Likelihodd-Language-Model"><a href="#Query-Likelihodd-Language-Model" class="headerlink" title="Query Likelihodd Language Model"></a>Query Likelihodd Language Model</h2><p><img src="/2018/03/11/ir-review/query likelihood.png" alt=""></p>
-<p>长度会造成很大影响,因此提出了以下模型</p>
-<p><img src="/2018/03/11/ir-review/mq.png" alt=""></p>
-<p>但是概率很快就变成0了，因此我们需要smooth！</p>
-<p><img src="/2018/03/11/ir-review/smooth.png" alt=""></p>
-<h2 id="JM-smooth"><a href="#JM-smooth" class="headerlink" title="JM smooth"></a>JM smooth</h2><p><img src="/2018/03/11/ir-review/JM smooth.png" alt=""></p>
-<p>加入参数$\lambda$, 通常$\lambda = 0.8$。</p>
-<p>Mix the probability from document to general collection</p>
-<h2 id="Dirichlet-prior-smoothing"><a href="#Dirichlet-prior-smoothing" class="headerlink" title="Dirichlet prior smoothing."></a>Dirichlet prior smoothing.</h2><p><img src="/2018/03/11/ir-review/dir smooth.png" alt=""></p>
-<h1 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h1><h2 id="describe-what-is-topical-relevance-and-discuss-why-it-is-the-right-relevance-definition-for-Cranfield-evaluation-paradigm"><a href="#describe-what-is-topical-relevance-and-discuss-why-it-is-the-right-relevance-definition-for-Cranfield-evaluation-paradigm" class="headerlink" title="describe what is topical relevance, and discuss why it is the right relevance definition for Cranfield evaluation paradigm."></a>describe what is topical relevance, and discuss why it is the right relevance definition for Cranfield evaluation paradigm.</h2><p>Topical relevance is a type of relevance that is related to the content of the document and is objective, which is the result of the match between a query and the document, ignoring the role of users.</p>
-<p>The topical relevance is the right relevance definition for Cranfield evaluation paradigm because when we use topic as our search standard,we can use different kind of model to calculate the score of each document orget the rank list of document collection. So, we can base on the topical relevance to get the retrieval results which user need.</p>
-<h2 id="Precision-recall"><a href="#Precision-recall" class="headerlink" title="Precision, recall?"></a>Precision, recall?</h2><p><img src="/2018/03/11/ir-review/confusion matrix.png" alt=""></p>
-<p>Precision = A / (A + B)</p>
-<p>Recall = A / (A + C)</p>
-<p><img src="/2018/03/11/ir-review/tradeoff.png" alt=""></p>
-<p>Trade off</p>
-<h2 id="describe-what-is-precision-then-discuss-why-we-need-to-consider-both-precision-and-recall-when-evaluating-information-retrieval-systems"><a href="#describe-what-is-precision-then-discuss-why-we-need-to-consider-both-precision-and-recall-when-evaluating-information-retrieval-systems" class="headerlink" title="describe what is precision, then discuss why we need to consider both precision and recall when evaluating information retrieval systems."></a>describe what is precision, then discuss why we need to consider both precision and recall when evaluating information retrieval systems.</h2><p>Precisionrepresent the percentage of the relevant document in the all retrieval results.So, the precision higher means that the retrieval accuracy is higher.</p>
-<p>We need toconsider both precision and recall when evaluating information retrievalsystems, because it will base on different standard you set and get differentresults. Some system will more care about the recall because they need toretrieval all relevant document in their system. However, some system may justprefer to get the high percentage of the relevant documents in their results. So,we usually use the F-Measure to consider both precision and recall and use Betato trim the precision is more important or recall is more important.</p>
-<p><img src="/2018/03/11/ir-review/f measure.png" alt=""></p>
-<h2 id="R-precision"><a href="#R-precision" class="headerlink" title="R-precision"></a>R-precision</h2><p>R = |all relevant doc|</p>
-<p><img src="/2018/03/11/ir-review/r precision.png" alt=""></p>
-<h2 id="DCG"><a href="#DCG" class="headerlink" title="DCG"></a>DCG</h2><p><img src="/2018/03/11/ir-review/dcg.png" alt=""></p>
-<p>当文档有相关程度reli的时候，我们就有了dcg去衡量，越相关的应该放在越前面。</p>
-<h2 id="implicit-Relevance-Feedback-difference-with-pseudo-relevance-feedback"><a href="#implicit-Relevance-Feedback-difference-with-pseudo-relevance-feedback" class="headerlink" title="implicit Relevance Feedback, difference with pseudo relevance feedback?"></a>implicit Relevance Feedback, difference with pseudo relevance feedback?</h2><ul>
-<li>Explicit relevance feedback<ul>
-<li>users explicitly mark relevant and irrelevant documents in the search reuslts.</li>
-</ul>
-</li>
-<li>Implicit relevance feedback<ul>
-<li>system attempts to infer user intentions based on observable behavior</li>
-</ul>
-</li>
-<li>Blind relevance feedback pseudo relevance feedback<ul>
-<li>Avoid obtain user explicit or implicit feedback information.</li>
-<li>use top returned N docs in the intial result </li>
-<li>assume all of them are relevant</li>
-</ul>
-</li>
-</ul>
-<h2 id="pseudo-problem"><a href="#pseudo-problem" class="headerlink" title="pseudo problem"></a>pseudo problem</h2><p>When we do the relevance feedback we need user to provide their feedback or help us to define some answer for building a better query. But in pseudo relevance feedback, we don’t ask the user to provide the feedback. What we do is to see the top N of first retrieval documents as the relevance to the user’s query and use those documents to build an advanced query to search in the system.</p>
-<h2 id="Rocchio"><a href="#Rocchio" class="headerlink" title="Rocchio"></a>Rocchio</h2><p><img src="/2018/03/11/ir-review/rocchio.png" alt=""></p>
-<p>如何衡量ir system</p>
-<h2 id="Known-item-search-evaluation-measure"><a href="#Known-item-search-evaluation-measure" class="headerlink" title="Known item search? evaluation measure?"></a>Known item search? evaluation measure?</h2><h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><h2 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h2>
+y(w^TX+b)\geq1</script><p>看我们原来的约束条件，如何修改能使这些噪声点不产生如此之大的影响呢？显然我们应该在不等式的右边把这个1变小，且针对每个样本点，右边的值应该是不同的，针对噪声，右边显然应该更小甚至为负数，针对support vector，显然越接近1越好。</p>
+<p>因此：</p>
+<script type="math/tex; mode=display">
+y(w^TX+b)\geq1 - \xi_i,  \ \ \ \ \ \ \ i = 1,...,n， \xi_i>0</script><p>其中$\xi_i$就是我们的松弛变量了。那么问题来了，现在的噪音还是我们的support vector吗，回忆之前求街宽的过程，我们就是用支持向量来求的。那么现在我们只需</p>
+<script type="math/tex; mode=display">
+Width =(X^+-X^-)\frac{w}{||w||} \\
+=\frac{X^+w}{||w||}-\frac{X^-w}{||w||}
+\\因为wx=\frac{1-\xi}{y}-b
+\\Width=\frac{1-\xi-b}{||w||}-\frac{-1+\xi-b}{||w||}=\frac{2-\xi}{||w||}</script><p>（上述步骤好像在别的地方没有看见过，不知道是不是我搞错了= =）</p>
+<p>同理我们要街宽最大，即分母$w$最小，分子$2-\xi$最大，即我们希望$\xi$很小。因此我们得到新的优化问题和约束条件：</p>
+<script type="math/tex; mode=display">
+min\frac{||w||^2}{2}+C\sum^n_{i=1}\xi_i
+\\s.t. \xi_i>0, \\y(w^TX+b)\geq1 - \xi_i</script><p>其中C是一个参数，用于控制$\xi$的权重和w的平衡，其实就和正则项很像，不能过大不然这个超平面就根本没用了。</p>
+<p>根据拉格朗日函数：<br><img src="/2018/03/05/SVM2/lagrange.png" alt=""></p>
+<p>同样的我们可以得到拉格朗日函数：</p>
+<script type="math/tex; mode=display">
+Lmin=\frac{||w||^2}{2}+C\sum^n_{i=1}\xi_i-\sum \lambda _i[y_i(wx_i+b)-1+\xi_i]-\sum^n_{i=1}r_i\xi_i</script><p>同样求偏导，这次要加一个多$\xi_i$求偏导</p>
+<script type="math/tex; mode=display">
+\frac{\partial L}{\partial w}=w-\sum \lambda _i y_i x_i = 0
+\\=> w = \sum  \lambda _i y_i x_i \\
+\frac{\partial L}{\partial b}=\sum \lambda _i y_i=0
+\\ \frac{\partial L}{\partial \xi_i}= 0=> C-\lambda_i-r_i=0</script><p>我们可知$r_i\geq0,\lambda_i&lt;C$多了一个约束条件</p>
+<p>带回原公式（$\xi$可以被消去，太晚了我就先不打公式了溜了有机会再说吧）：</p>
+<script type="math/tex; mode=display">
+Lmin = \sum\lambda_i-\frac{1}{2} \sum^n _{i=1} \sum^n _{j=1} \lambda _i  \lambda _j y_i   y_j  x_i x_j
+\\ s.t. 0\leq\lambda_i\leq C 
+\\ \sum^n_{i=1}\lambda_i y_i = 0</script><p><img src="/2018/03/05/SVM2/conclusion.png" alt=""></p>
+<p>哇发现和之前简直一模一样，就是多了个C而已。</p>
+<p>引用july大佬的一段总结：</p>
+<blockquote>
+<p>行文至此，可以做个小结，不准确的说，SVM它本质上即是一个分类方法，用$w^T+b$定义分类函数，于是求$w、b$，为寻最大间隔，引出$1/2||w||^2$，继而引入拉格朗日因子，化为对拉格朗日乘子$\lambda$的求解（求解过程中会涉及到一系列最优化或凸二次规划等问题），如此，求$w.b$与求$\lambda$等价，而$\lambda$的求解可以用一种快速学习算法SMO，至于核函数，是为处理非线性情况，若直接映射到高维计算恐维度爆炸，故在低维计算，等效高维表现。</p>
+</blockquote>
+<p>TODO: 核函数</p>
+
           
         
       
@@ -628,7 +920,7 @@ idf_t={log_{10}N}/{df_t}</script><p>tf-idf weight of a term:</p>
 
       
         
-          <p>本文将介绍什么是SVM，</p>
+          <p>本文将介绍什么是SVM</p>
 <h1 id="SVM是什么？"><a href="#SVM是什么？" class="headerlink" title="SVM是什么？"></a>SVM是什么？</h1><p>SVM: support vector machine,俗称支持向量机。是一种二分类模型，其模型定义为特征空间上的间隔最大的线性分类器，策略就是间隔最大化，最终转化为一个凸二次规划问题的求解。感觉已经晕了，下图给出一些intuition的部分:</p>
 <p><img src="/2018/03/05/SVM/intution1.png" alt="ntution"></p>
 <p>假设我们有一堆正负样本如图，我们想找一条线（一个超平面）去把这些点分开来。这条线当然是无穷条的，在图中我以H2 和 H3为例，H2和H3看起来都把正负样本分开了，但是我们的目标不是在训练集上取得好成绩吧，我们的目标还包括测试集（unseen data）。</p>
@@ -840,347 +1132,6 @@ idf_t={log_{10}N}/{df_t}</script><p>tf-idf weight of a term:</p>
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/03/01/k-means/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="金若愚">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="金若愚的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/01/k-means/" itemprop="url">K-Means</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-02T12:14:10+08:00">
-                2018-03-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/03/01/k-means/" class="leancloud_visitors" data-flag-title="K-Means">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  0
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/03/01/logistic-regression/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="金若愚">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="金若愚的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/01/logistic-regression/" itemprop="url">logistic regression</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-02T11:57:53+08:00">
-                2018-03-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/03/01/logistic-regression/" class="leancloud_visitors" data-flag-title="logistic regression">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  896
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="逻辑回归"><a href="#逻辑回归" class="headerlink" title="逻辑回归"></a>逻辑回归</h1><h2 id="构造过程"><a href="#构造过程" class="headerlink" title="构造过程"></a>构造过程</h2><script type="math/tex; mode=display">
-方法=模型+策略+算法</script><p>回顾之前的方法三要素，我们知道我们的方法要包括模型，策略，算法。即</p>
-<ol>
-<li>假设函数$h(\theta)$</li>
-<li>损失函数$J(\theta)$</li>
-<li>求解方法梯度下降。</li>
-</ol>
-<h2 id="假设函数-h-theta"><a href="#假设函数-h-theta" class="headerlink" title="假设函数$h(\theta)$"></a>假设函数$h(\theta)$</h2><h3 id="简单介绍："><a href="#简单介绍：" class="headerlink" title="简单介绍："></a>简单介绍：</h3><p>当我们在针对二分类问题的时候，预测邮件是否为垃圾邮件，肿瘤是否为良性等等，由于我们的预测结果只有0，1，因此这种分类问题我们无法使用线性回归再去预测。</p>
-<p>原因：</p>
-<ol>
-<li>线性回归要求数据符合正态分布，逻辑回归要求数据符合0，1分布。</li>
-<li>线性回归要求$x,y$符合线性关系，逻辑回归则没有要求。</li>
-<li>线性回归预测的是分析的是$x,y$的关系，而逻辑回归是分析$y$取某个值的概率与自变量的关系。</li>
-<li>线性回归要求$y$是连续变量，逻辑回归要求$y$是离散变量。</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/01/logistic-regression/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1235,7 +1186,7 @@ idf_t={log_{10}N}/{df_t}</script><p>tf-idf weight of a term:</p>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
