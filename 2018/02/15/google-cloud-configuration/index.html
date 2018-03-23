@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://hzjry123.github.io/2018/02/15/google-cloud-configuration/token.png">
 <meta property="og:image" content="https://hzjry123.github.io/2018/02/15/google-cloud-configuration/jupyter.png">
 <meta property="og:image" content="https://hzjry123.github.io/2018/02/15/google-cloud-configuration/spark.png">
-<meta property="og:updated_time" content="2018-03-21T03:37:07.102Z">
+<meta property="og:updated_time" content="2018-03-22T22:09:35.845Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="google cloud configuration and jupyter">
 <meta name="twitter:description" content="简介：最近学习了机器学习的算法基础，也实践过很多小数据的数据分析，因此对大数据的分析产生了兴趣，想部署一个spark集群去学习大数据，发现aws虽然免费但是挺坑的，只有1g memory。偶然了解到google cloud，听说google cloud给注册用户赠送有效期为一年的300刀抵用券，而且在google cloud上部署hadoop集群或者高性能机器都很方便。 jupyter noteb">
@@ -341,7 +341,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,506
+                  1,543
                 </span>
               
 
@@ -392,6 +392,10 @@
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gs:<span class="regexp">//</span>dataproc-initialization-actions<span class="regexp">/jupyter/</span>jupyter.sh</span><br></pre></td></tr></table></figure>
 <p>gs：github shell，执行GitHub的shell，这是按照jupyter、anaconda和spark的脚本。</p>
 <h2 id="Pip版本升级"><a href="#Pip版本升级" class="headerlink" title="Pip版本升级"></a>Pip版本升级</h2><p>这一步是在网页上的Master的shell里执行。（master的ssh）</p>
+<p>首先要更改脚本装的conda的权限</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line"><span class="keyword">cd</span> /<span class="keyword">opt</span></span><br><span class="line">chmod -R <span class="symbol">&lt;user_name&gt;</span> conda/</span><br></pre></td></tr></table></figure>
+<p>然后再切换回自己的用户</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">exit</span></span><br></pre></td></tr></table></figure>
 <p>pip是python里包下载工具，最好升级一下不然会出现很多怪错误。</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">conda update pip</span></span><br></pre></td></tr></table></figure>
 <h2 id="连接jupyter"><a href="#连接jupyter" class="headerlink" title="连接jupyter"></a>连接jupyter</h2><p>这一步确实有很多坑啊，参考了很多命令才得以使用。</p>
@@ -589,7 +593,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

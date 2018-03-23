@@ -3,6 +3,40 @@
 
 
     
+  <url>
+    <loc>https://hzjry123.github.io/2018/03/22/quick-sort/</loc>
+    <lastmod>2018-03-23T04:37:41.929Z</lastmod>
+    <data>
+        <display>
+        <title>quick sort</title>
+        <pubTime>2018-03-22T14:35:14.000Z</pubTime>
+        
+        <tag>Algorithm</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hzjry123.github.io/2018/02/15/google-cloud-configuration/</loc>
+    <lastmod>2018-03-22T22:09:35.845Z</lastmod>
+    <data>
+        <display>
+        <title>google cloud configuration and jupyter</title>
+        <pubTime>2018-02-15T17:28:32.000Z</pubTime>
+        
+        <tag>机器学习</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>https://hzjry123.github.io/2018/03/05/SVM2/</loc>
@@ -28,23 +62,6 @@
         <display>
         <title>SVM理解与推导 (一)</title>
         <pubTime>2018-03-05T09:57:27.000Z</pubTime>
-        
-        <tag>机器学习</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hzjry123.github.io/2018/02/15/google-cloud-configuration/</loc>
-    <lastmod>2018-03-21T03:37:07.102Z</lastmod>
-    <data>
-        <display>
-        <title>google cloud configuration and jupyter</title>
-        <pubTime>2018-02-15T17:28:32.000Z</pubTime>
         
         <tag>机器学习</tag>
          
