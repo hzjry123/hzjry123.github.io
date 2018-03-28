@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="机器学习," />
 
 
 
@@ -81,19 +81,22 @@
 
 
 
-<meta name="description" content="你好水亚红你好，我是 金若愚。 这是我的第一篇博客 我喜欢水亚红。 我们的照片">
-<meta property="og:type" content="website">
-<meta property="og:title" content="第一篇博客">
-<meta property="og:url" content="https://hzjry123.github.io/test2.html">
+<meta name="description" content="Goal: extracting information from a usually large amount of different unstructured textual resources. Turn unstructured to structured data. 数据预处理remove stopwords:stopwords: frequently occuring and ins">
+<meta name="keywords" content="机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文本数据挖掘">
+<meta property="og:url" content="https://hzjry123.github.io/2018/03/27/text-mining/index.html">
 <meta property="og:site_name" content="金若愚的blog">
-<meta property="og:description" content="你好水亚红你好，我是 金若愚。 这是我的第一篇博客 我喜欢水亚红。 我们的照片">
+<meta property="og:description" content="Goal: extracting information from a usually large amount of different unstructured textual resources. Turn unstructured to structured data. 数据预处理remove stopwords:stopwords: frequently occuring and ins">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://hzjry123.github.io/DSC_6750.jpg">
-<meta property="og:updated_time" content="2017-06-11T17:16:29.000Z">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/27/text-mining/svd.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/27/text-mining/SVD%20stage.png">
+<meta property="og:image" content="https://hzjry123.github.io/2018/03/27/text-mining/svd%20result.png">
+<meta property="og:updated_time" content="2018-03-28T04:09:41.485Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一篇博客">
-<meta name="twitter:description" content="你好水亚红你好，我是 金若愚。 这是我的第一篇博客 我喜欢水亚红。 我们的照片">
-<meta name="twitter:image" content="https://hzjry123.github.io/DSC_6750.jpg">
+<meta name="twitter:title" content="文本数据挖掘">
+<meta name="twitter:description" content="Goal: extracting information from a usually large amount of different unstructured textual resources. Turn unstructured to structured data. 数据预处理remove stopwords:stopwords: frequently occuring and ins">
+<meta name="twitter:image" content="https://hzjry123.github.io/2018/03/27/text-mining/svd.png">
 
 
 
@@ -123,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://hzjry123.github.io/test2.html"/>
+  <link rel="canonical" href="https://hzjry123.github.io/2018/03/27/text-mining/"/>
 
 
 
 
 
-  <title>第一篇博客 | 金若愚的blog</title>
+  <title>文本数据挖掘 | 金若愚的blog</title>
   
 
 
@@ -142,7 +145,7 @@
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-109859293-1', 'auto');
   ga('send', 'pageview');
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script>
 
 
 
@@ -157,7 +160,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -253,37 +256,254 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/03/27/text-mining/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="金若愚">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金若愚的blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline">第一篇博客</h2>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h2 id="你好水亚红"><a href="#你好水亚红" class="headerlink" title="你好水亚红"></a>你好水亚红</h2><p>你好，我是 <strong>金若愚</strong>。</p>
-<p>这是我的<strong>第一篇</strong>博客</p>
-<p>我喜欢<strong>水亚红</strong>。</p>
-<h2 id="我们的照片"><a href="#我们的照片" class="headerlink" title="我们的照片"></a>我们的照片</h2><p><img src="/DSC_6750.jpg" alt="羞死了" title="这就是啾咪撸撸"></p>
-
+          <h2 class="post-title" itemprop="name headline">文本数据挖掘</h2>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-27T10:09:20-04:00">
+                2018-03-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/27/text-mining/" class="leancloud_visitors" data-flag-title="文本数据挖掘">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  8
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal:"></a>Goal:</h2><p> extracting information from a usually large amount of different unstructured textual resources. <strong>Turn unstructured to structured data.</strong></p>
+<h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><h3 id="remove-stopwords"><a href="#remove-stopwords" class="headerlink" title="remove stopwords:"></a>remove stopwords:</h3><p>stopwords: frequently occuring and insignificant words. </p>
+<ul>
+<li>a, about, an, are, as…. is, in, of.</li>
+</ul>
+<h3 id="stemming"><a href="#stemming" class="headerlink" title="stemming"></a>stemming</h3><p>reduce words to their stems or roots.</p>
+<p>e.g. computer, computing, compute-&gt; comput</p>
+<p>Walks, walker -&gt; walk</p>
+<h3 id="Other-pre-processing-tasks"><a href="#Other-pre-processing-tasks" class="headerlink" title="Other pre-processing tasks:"></a>Other pre-processing tasks:</h3><p>Digits removed, hyhens, punctuation marks</p>
+<h3 id="Web-Page-Pre-Processing"><a href="#Web-Page-Pre-Processing" class="headerlink" title="Web Page Pre-Processing"></a>Web Page Pre-Processing</h3><p>针对html不同的部分, \<title>, \<body>, \<h1>…分配不同的重要性。</h1></body></title></p>
+<p>超链接，超链接代表的内容往往代表了更准确的描述。</p>
+<p>移除html tags</p>
+<h2 id="Feature-re-weighting"><a href="#Feature-re-weighting" class="headerlink" title="Feature re-weighting"></a>Feature re-weighting</h2><p>并不是所有的词汇是一样重要的，在文档中出现更多的词汇可能相对就缺少discriminatory power。</p>
+<p>处理方式： <strong>inverse-document frequency</strong></p>
+<script type="math/tex; mode=display">
+IDF = log\frac{n}{d_j}</script><p>$n$: number of documents</p>
+<p>$d_j$: number of documents containing word j.</p>
+<p>$Term importance = TF * IDF$</p>
+<script type="math/tex; mode=display">
+tf-idf = f_{ij}\times log(\frac{n}{d_j})</script><p>$f_{ij}$: term frequency, the relative frequency of word j in document i.</p>
+<h2 id="Vector-Space-Model"><a href="#Vector-Space-Model" class="headerlink" title="Vector Space Model"></a>Vector Space Model</h2><p>Corpus(语料库), a set of N documents</p>
+<ul>
+<li>D =$ {d1,…,dn}$</li>
+</ul>
+<p>Vocabulary, a set of M words</p>
+<ul>
+<li>W =${w1,…,w_m}$</li>
+</ul>
+<p>$M \times N$的矩阵代表了words的频率</p>
+<p>有些词在所有文档里出现很多，但是有的词只在一些文档里出现很多，$tf-idf$就是要惩罚这些出现很多的词。</p>
+<h3 id="Query-和-document的相似性计算"><a href="#Query-和-document的相似性计算" class="headerlink" title="Query 和 document的相似性计算"></a>Query 和 document的相似性计算</h3><p>余弦相似度: $cos(q,d) = \frac{q^T}{||q||\space ||d||}$</p>
+<p>Limitation: </p>
+<ul>
+<li>维度过高</li>
+<li>很稀疏，余弦相似度会不准确</li>
+<li>捕捉不到语义关系，没有关注词汇的内在含义</li>
+</ul>
+<h1 id="Topic-Modeling"><a href="#Topic-Modeling" class="headerlink" title="Topic Modeling"></a>Topic Modeling</h1><p>LSA(Latent Semantic Analysis)</p>
+<p>pLSA(probabilistic Latent Semantic Analysis)</p>
+<p><strong>LDA(Latent Dirichlet Allocation)</strong></p>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>words &lt;-&gt; topics(concepts) &lt;-&gt;documents</p>
+<h2 id="LSA"><a href="#LSA" class="headerlink" title="LSA"></a>LSA</h2><h3 id="General-Idea"><a href="#General-Idea" class="headerlink" title="General Idea"></a>General Idea</h3><p>把文档从高维投影到低维，让低维空间反映语言关系，根据向量内积计算document similarity</p>
+<h3 id="method：SVD"><a href="#method：SVD" class="headerlink" title="method：SVD"></a>method：SVD</h3><p><img src="/2018/03/27/text-mining/svd.png" alt=""></p>
+<ul>
+<li>给定一个term-document matrix X (m x n)，做奇异值分解。<ul>
+<li>$X=U\sum V^T$</li>
+<li>从$\sum$选择k大的奇异值，进行降维。</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2018/03/27/text-mining/SVD stage.png" alt=""></p>
+<h3 id="Concept-space"><a href="#Concept-space" class="headerlink" title="Concept space"></a>Concept space</h3><p>降维后我们相当于把原矩阵投影到concept space了，concept ~ topic</p>
+<p><img src="/2018/03/27/text-mining/svd result.png" alt=""></p>
+<p>左奇异向量相当于$term_i$在concept空间里的出现。</p>
+<p>右奇异向量相当与$document_i$在concept空间里的出现。</p>
+<h3 id="计算document-q和j的余弦相似度"><a href="#计算document-q和j的余弦相似度" class="headerlink" title="计算document q和j的余弦相似度"></a>计算document q和j的余弦相似度</h3><script type="math/tex; mode=display">
+d_j = U_k\sum k \hat d_j</script><script type="math/tex; mode=display">
+\hat d_j = {\sum }_k^{-1} U_k ^T d_j</script><h3 id="Pros-and-Cons"><a href="#Pros-and-Cons" class="headerlink" title="Pros and Cons"></a>Pros and Cons</h3><ul>
+<li>Pros<ul>
+<li>同义词可以被捕捉到</li>
+<li>降维可以移除噪声</li>
+</ul>
+</li>
+<li>Cons<ul>
+<li>可能有负值，难以解释</li>
+<li>一词多义问题无法被解决</li>
+</ul>
+</li>
+</ul>
+<h2 id="pLSA"><a href="#pLSA" class="headerlink" title="pLSA"></a>pLSA</h2><h2 id="LDA"><a href="#LDA" class="headerlink" title="LDA"></a>LDA</h2>
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/22/quick-sort/" rel="next" title="quick sort">
+                <i class="fa fa-chevron-left"></i> quick sort
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -431,7 +651,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#你好水亚红"><span class="nav-number">1.</span> <span class="nav-text">你好水亚红</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我们的照片"><span class="nav-number">2.</span> <span class="nav-text">我们的照片</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Goal"><span class="nav-number">1.</span> <span class="nav-text">Goal:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据预处理"><span class="nav-number">2.</span> <span class="nav-text">数据预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#remove-stopwords"><span class="nav-number">2.1.</span> <span class="nav-text">remove stopwords:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stemming"><span class="nav-number">2.2.</span> <span class="nav-text">stemming</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Other-pre-processing-tasks"><span class="nav-number">2.3.</span> <span class="nav-text">Other pre-processing tasks:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web-Page-Pre-Processing"><span class="nav-number">2.4.</span> <span class="nav-text">Web Page Pre-Processing</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">…分配不同的重要性。</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Feature-re-weighting"><span class="nav-number">1.</span> <span class="nav-text">Feature re-weighting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vector-Space-Model"><span class="nav-number">2.</span> <span class="nav-text">Vector Space Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Query-和-document的相似性计算"><span class="nav-number">2.1.</span> <span class="nav-text">Query 和 document的相似性计算</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Topic-Modeling"><span class="nav-number"></span> <span class="nav-text">Topic Modeling</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSA"><span class="nav-number">2.</span> <span class="nav-text">LSA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#General-Idea"><span class="nav-number">2.1.</span> <span class="nav-text">General Idea</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#method：SVD"><span class="nav-number">2.2.</span> <span class="nav-text">method：SVD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Concept-space"><span class="nav-number">2.3.</span> <span class="nav-text">Concept space</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算document-q和j的余弦相似度"><span class="nav-number">2.4.</span> <span class="nav-text">计算document q和j的余弦相似度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pros-and-Cons"><span class="nav-number">2.5.</span> <span class="nav-text">Pros and Cons</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pLSA"><span class="nav-number">3.</span> <span class="nav-text">pLSA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LDA"><span class="nav-number">4.</span> <span class="nav-text">LDA</span></a></li></ol></div>
             
 
           </div>
@@ -776,7 +996,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 

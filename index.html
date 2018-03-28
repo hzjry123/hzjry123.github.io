@@ -7,7 +7,7 @@
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
@@ -136,7 +136,7 @@
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-109859293-1', 'auto');
   ga('send', 'pageview');
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script>
 
 
 
@@ -151,7 +151,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
+  <div class="container sidebar-position-left 
   page-home">
     <div class="headband"></div>
 
@@ -260,6 +260,236 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/03/27/text-mining/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="金若愚">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="金若愚的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/27/text-mining/" itemprop="url">文本数据挖掘</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-27T22:09:20+08:00">
+                2018-03-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/27/text-mining/" class="leancloud_visitors" data-flag-title="文本数据挖掘">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  8
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal:"></a>Goal:</h2><p> extracting information from a usually large amount of different unstructured textual resources. <strong>Turn unstructured to structured data.</strong></p>
+<h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><h3 id="remove-stopwords"><a href="#remove-stopwords" class="headerlink" title="remove stopwords:"></a>remove stopwords:</h3><p>stopwords: frequently occuring and insignificant words. </p>
+<ul>
+<li>a, about, an, are, as…. is, in, of.</li>
+</ul>
+<h3 id="stemming"><a href="#stemming" class="headerlink" title="stemming"></a>stemming</h3><p>reduce words to their stems or roots.</p>
+<p>e.g. computer, computing, compute-&gt; comput</p>
+<p>Walks, walker -&gt; walk</p>
+<h3 id="Other-pre-processing-tasks"><a href="#Other-pre-processing-tasks" class="headerlink" title="Other pre-processing tasks:"></a>Other pre-processing tasks:</h3><p>Digits removed, hyhens, punctuation marks</p>
+<h3 id="Web-Page-Pre-Processing"><a href="#Web-Page-Pre-Processing" class="headerlink" title="Web Page Pre-Processing"></a>Web Page Pre-Processing</h3><p>针对html不同的部分, \<title>, \<body>, \<h1>…分配不同的重要性。</h1></body></title></p>
+<p>超链接，超链接代表的内容往往代表了更准确的描述。</p>
+<p>移除html tags</p>
+<h2 id="Feature-re-weighting"><a href="#Feature-re-weighting" class="headerlink" title="Feature re-weighting"></a>Feature re-weighting</h2><p>并不是所有的词汇是一样重要的，在文档中出现更多的词汇可能相对就缺少discriminatory power。</p>
+<p>处理方式： <strong>inverse-document frequency</strong></p>
+<script type="math/tex; mode=display">
+IDF = log\frac{n}{d_j}</script><p>$n$: number of documents</p>
+<p>$d_j$: number of documents containing word j.</p>
+<p>$Term importance = TF * IDF$</p>
+<script type="math/tex; mode=display">
+tf-idf = f_{ij}\times log(\frac{n}{d_j})</script><p>$f_{ij}$: term frequency, the relative frequency of word j in document i.</p>
+<h2 id="Vector-Space-Model"><a href="#Vector-Space-Model" class="headerlink" title="Vector Space Model"></a>Vector Space Model</h2><p>Corpus(语料库), a set of N documents</p>
+<ul>
+<li>D =$ {d1,…,dn}$</li>
+</ul>
+<p>Vocabulary, a set of M words</p>
+<ul>
+<li>W =${w1,…,w_m}$</li>
+</ul>
+<p>$M \times N$的矩阵代表了words的频率</p>
+<p>有些词在所有文档里出现很多，但是有的词只在一些文档里出现很多，$tf-idf$就是要惩罚这些出现很多的词。</p>
+<h3 id="Query-和-document的相似性计算"><a href="#Query-和-document的相似性计算" class="headerlink" title="Query 和 document的相似性计算"></a>Query 和 document的相似性计算</h3><p>余弦相似度: $cos(q,d) = \frac{q^T}{||q||\space ||d||}$</p>
+<p>Limitation: </p>
+<ul>
+<li>维度过高</li>
+<li>很稀疏，余弦相似度会不准确</li>
+<li>捕捉不到语义关系，没有关注词汇的内在含义</li>
+</ul>
+<h1 id="Topic-Modeling"><a href="#Topic-Modeling" class="headerlink" title="Topic Modeling"></a>Topic Modeling</h1><p>LSA(Latent Semantic Analysis)</p>
+<p>pLSA(probabilistic Latent Semantic Analysis)</p>
+<p><strong>LDA(Latent Dirichlet Allocation)</strong></p>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>words &lt;-&gt; topics(concepts) &lt;-&gt;documents</p>
+<h2 id="LSA"><a href="#LSA" class="headerlink" title="LSA"></a>LSA</h2><h3 id="General-Idea"><a href="#General-Idea" class="headerlink" title="General Idea"></a>General Idea</h3><p>把文档从高维投影到低维，让低维空间反映语言关系，根据向量内积计算document similarity</p>
+<h3 id="method：SVD"><a href="#method：SVD" class="headerlink" title="method：SVD"></a>method：SVD</h3><p><img src="/2018/03/27/text-mining/svd.png" alt=""></p>
+<ul>
+<li>给定一个term-document matrix X (m x n)，做奇异值分解。<ul>
+<li>$X=U\sum V^T$</li>
+<li>从$\sum$选择k大的奇异值，进行降维。</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2018/03/27/text-mining/SVD stage.png" alt=""></p>
+<h3 id="Concept-space"><a href="#Concept-space" class="headerlink" title="Concept space"></a>Concept space</h3><p>降维后我们相当于把原矩阵投影到concept space了，concept ~ topic</p>
+<p><img src="/2018/03/27/text-mining/svd result.png" alt=""></p>
+<p>左奇异向量相当于$term_i$在concept空间里的出现。</p>
+<p>右奇异向量相当与$document_i$在concept空间里的出现。</p>
+<h3 id="计算document-q和j的余弦相似度"><a href="#计算document-q和j的余弦相似度" class="headerlink" title="计算document q和j的余弦相似度"></a>计算document q和j的余弦相似度</h3><script type="math/tex; mode=display">
+d_j = U_k\sum k \hat d_j</script><script type="math/tex; mode=display">
+\hat d_j = {\sum }_k^{-1} U_k ^T d_j</script><h3 id="Pros-and-Cons"><a href="#Pros-and-Cons" class="headerlink" title="Pros and Cons"></a>Pros and Cons</h3><ul>
+<li>Pros<ul>
+<li>同义词可以被捕捉到</li>
+<li>降维可以移除噪声</li>
+</ul>
+</li>
+<li>Cons<ul>
+<li>可能有负值，难以解释</li>
+<li>一词多义问题无法被解决</li>
+</ul>
+</li>
+</ul>
+<h2 id="pLSA"><a href="#pLSA" class="headerlink" title="pLSA"></a>pLSA</h2><h2 id="LDA"><a href="#LDA" class="headerlink" title="LDA"></a>LDA</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/03/22/quick-sort/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -334,7 +564,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,020
+                  1,013
                 </span>
               
 
@@ -372,40 +602,19 @@
 
       
         
-          
-            <p>今天复习了一下快排，感觉还是挺多收货的.</p>
+          <p>今天复习了一下快排，感觉还是挺多收货的.</p>
 <h1 id="快排的思想"><a href="#快排的思想" class="headerlink" title="快排的思想"></a>快排的思想</h1><p>快速排序是C.R.A.Hoare于1962年提出的一种划分交换排序。它采用了一种分治的策略，通常称其为分治法(Divide-and-ConquerMethod)。</p>
 <p>该方法的基本思想是：</p>
 <p>1．先从数列中取出一个数作为基准数pivot。</p>
 <p>2．分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边。</p>
 <p>3．再对左右区间重复第二步，直到各区间只有一个数。</p>
-<h1 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h1><p>根据以上的介绍，我写了最基础的快排（升序），即用最左边的元素作为pivot。在oj上过不了。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quicksortbasic</span><span class="params">(<span class="keyword">int</span>[] put, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(put == <span class="keyword">null</span> || put.length &lt; <span class="number">2</span> || left &gt;= right)<span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> i = left, j = right;</span><br><span class="line">    <span class="keyword">int</span> pivot = put[left];</span><br><span class="line">    <span class="keyword">while</span>(i != j)</span><br><span class="line">    &#123;	</span><br><span class="line">        <span class="comment">//从右往左，找到比pivot小的第一个元素</span></span><br><span class="line">        <span class="keyword">while</span>(i &lt; j &amp;&amp; put[j] &gt;= pivot)&#123;</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//从左往右，找到比pivot大的第一个元素</span></span><br><span class="line">        <span class="keyword">while</span>(i &lt; j &amp;&amp; put[i] &lt;= pivot)&#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//如果存在这样的两个元素，则交换</span></span><br><span class="line">        <span class="keyword">if</span>(i &lt; j)&#123;</span><br><span class="line">            swap(put,i,j);</span><br><span class="line">            i++;</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//最后交换left和结束处的位置,即有几个比left小的</span></span><br><span class="line">    swap(put,left,i);</span><br><span class="line">    quicksortbasic(put, left, i - <span class="number">1</span>);</span><br><span class="line">    quicksortbasic(put, i + <span class="number">1</span>, right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="挖坑法："><a href="#挖坑法：" class="headerlink" title="挖坑法："></a>挖坑法：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">wakengfa</span><span class="params">(<span class="keyword">int</span>[] put, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(put == <span class="keyword">null</span> || put.length &lt; <span class="number">2</span> || left &gt;= right)<span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">int</span> i = left, j = right;</span><br><span class="line">    	<span class="comment">//如果想用中间的点作为pivot</span></span><br><span class="line">    	<span class="comment">//swap(put,(left+right)/2,left);</span></span><br><span class="line">    	<span class="comment">//对left处挖坑</span></span><br><span class="line">        <span class="keyword">int</span> pivot = put[left];</span><br><span class="line">        <span class="keyword">while</span>(i &lt; j)&#123;</span><br><span class="line">            <span class="comment">//从右往左，找到比pivot小的第一个元素</span></span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; put[j] &gt;= pivot)&#123;</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//如果有这样的j，则用新找到的j填坑</span></span><br><span class="line">            <span class="keyword">if</span>(i &lt; j)&#123;</span><br><span class="line">                put[i] = put[j];</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//从左往右，找到比pivot大的第一个元素</span></span><br><span class="line">            <span class="keyword">while</span>(i &lt; j &amp;&amp; put[i] &lt;= pivot)&#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//如果有这样的i，则填上j的坑</span></span><br><span class="line">            <span class="keyword">if</span>(i &lt; j)&#123;</span><br><span class="line">                put[j] = put[i];</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    	<span class="comment">//最后有i个比pivot小的元素。在put[i]处加入pivot      </span></span><br><span class="line">        put[i] = pivot;</span><br><span class="line">        wakengfa(put, left, i - <span class="number">1</span>);</span><br><span class="line">        wakengfa(put, i + <span class="number">1</span>, right);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>对挖坑填数进行总结</p>
-<p>1．i =L; j = R; 将基准数挖出形成第一个坑a[i]。</p>
-<p>2．j—由后向前找比它小的数，找到后挖出此数填前一个坑a[i]中。</p>
-<p>3．i++由前向后找比它大的数，找到后也挖出此数填到前一个坑a[j]中。</p>
-<p>4．再重复执行2，3二步，直到i==j，将基准数填入a[i]中。</p>
-<p>在挖坑法中，考虑到已经排序好的逆序数组（降序数组）会造成递归栈溢出的可能</p>
-<p> {9，8，7，6，5，4，3，2，1，0} </p>
-<p>第一次“填坑” 会变成 {0，8，7，6，5，4，3，2，1，0} </p>
-<p>第一次结束：{0，8，7，6，5，4，3，2，1，9} </p>
-<p>递归开始：</p>
-<p>{0，8，7，6，5，4，3，2，1}  {9} </p>
-<p>可以想见当数组长度很长的时候，是有可能会溢出的。因此一般会选择中间点或者是中位数作为pivot，保证递归两边数量差不多，效率最高。</p>
-<h2 id="别的版本"><a href="#别的版本" class="headerlink" title="别的版本"></a>别的版本</h2><p>附上快排另一个版本，和挖坑法类似，但是比挖坑法难理解，我有点没理解的。。。。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quicksortmiddle</span><span class="params">(<span class="keyword">int</span>[] put, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(right &lt;= left) <span class="keyword">return</span>;</span><br><span class="line">     <span class="keyword">int</span> i = left, j = right;</span><br><span class="line">     <span class="keyword">int</span> pivot = put[(right +left)/<span class="number">2</span>];</span><br><span class="line">     <span class="keyword">while</span>(i &lt;= j)</span><br><span class="line">     &#123;</span><br><span class="line">         <span class="keyword">while</span>(i &lt;= j &amp;&amp; put[i] &lt; pivot)&#123;</span><br><span class="line">             i++;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">while</span>(i &lt;= j &amp;&amp; put[j] &gt; pivot)&#123;</span><br><span class="line">             j--;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">if</span>(i &lt;= j)&#123;</span><br><span class="line">             swap(put,i++,j--);</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">    quicksortmiddle(put, left, j);</span><br><span class="line">    quicksortmiddle(put, i, right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>附上swap和调用代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSortenter</span><span class="params">(<span class="keyword">int</span>[] put)</span></span>&#123;</span><br><span class="line">        wakengfa(put,<span class="number">0</span>,put.length - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] input, <span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = input[a];</span><br><span class="line">        input[a] = input[b];</span><br><span class="line">        input[b] = temp;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>Main函数</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[] = &#123;<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> b[] = &#123;&#125;;</span><br><span class="line">        quickSortenter(a);</span><br><span class="line">        selectSort(b);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> element:</span><br><span class="line">             a) &#123;</span><br><span class="line">            System.out.print(element + <span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-<p>reference：</p>
-<p><a href="https://blog.csdn.net/morewindows/article/details/6684558" target="_blank" rel="noopener">https://blog.csdn.net/morewindows/article/details/6684558</a></p>
-<p>测试oj：</p>
-<p><a href="http://www.lintcode.com/zh-cn/problem/sort-integers-ii/#" target="_blank" rel="noopener">http://www.lintcode.com/zh-cn/problem/sort-integers-ii/#</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/22/quick-sort/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -951,167 +1160,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hzjry123.github.io/2018/03/02/python-filter/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="金若愚">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="金若愚的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/02/python-filter/" itemprop="url">python filter</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-02T14:16:48+08:00">
-                2018-03-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/03/02/python-filter/" class="leancloud_visitors" data-flag-title="python filter">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  0
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1166,7 +1214,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1561,7 +1609,7 @@
         }
       });
     </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
