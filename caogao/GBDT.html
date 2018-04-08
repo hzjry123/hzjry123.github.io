@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="Boosting 和 Gradient Boosting的区别Boosting：在算法开始时，为每个样本赋上一个权重，初始的时候，权重相同，在每一步训练中得到的模型，会使得数据点的估计有对有错，那么在每一步之后增加分错的点的权重，减少分对点的权重，如果有的点老是被分错，他的权重就会十分高（重点关注）。那么N次迭代过后，将会得到N个简单的分类器，组合起来（加权、投票等），得到一个最终模型。 而Gra">
+<meta name="description" content="a greedy algorithm for fitting adaptive basis function models  弱学习机：对一定分布的训练样本给出假设（根据有无云猜测下雨）  强学习机：根据得到的弱学习机和相应权重给出假设。  弱学习机 boosting-&amp;gt; 强学习机  目标：   min_f\sum ^N _{i=1}L(y_i,f(x_i))​     Boosting 和">
 <meta property="og:type" content="website">
-<meta property="og:title" content="GBDT的理解">
+<meta property="og:title" content="Adaboost">
 <meta property="og:url" content="https://hzjry123.github.io/caogao/GBDT.html">
 <meta property="og:site_name" content="金若愚的blog">
-<meta property="og:description" content="Boosting 和 Gradient Boosting的区别Boosting：在算法开始时，为每个样本赋上一个权重，初始的时候，权重相同，在每一步训练中得到的模型，会使得数据点的估计有对有错，那么在每一步之后增加分错的点的权重，减少分对点的权重，如果有的点老是被分错，他的权重就会十分高（重点关注）。那么N次迭代过后，将会得到N个简单的分类器，组合起来（加权、投票等），得到一个最终模型。 而Gra">
+<meta property="og:description" content="a greedy algorithm for fitting adaptive basis function models  弱学习机：对一定分布的训练样本给出假设（根据有无云猜测下雨）  强学习机：根据得到的弱学习机和相应权重给出假设。  弱学习机 boosting-&amp;gt; 强学习机  目标：   min_f\sum ^N _{i=1}L(y_i,f(x_i))​     Boosting 和">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-20T20:27:54.754Z">
+<meta property="og:updated_time" content="2018-04-07T16:42:13.624Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GBDT的理解">
-<meta name="twitter:description" content="Boosting 和 Gradient Boosting的区别Boosting：在算法开始时，为每个样本赋上一个权重，初始的时候，权重相同，在每一步训练中得到的模型，会使得数据点的估计有对有错，那么在每一步之后增加分错的点的权重，减少分对点的权重，如果有的点老是被分错，他的权重就会十分高（重点关注）。那么N次迭代过后，将会得到N个简单的分类器，组合起来（加权、投票等），得到一个最终模型。 而Gra">
+<meta name="twitter:title" content="Adaboost">
+<meta name="twitter:description" content="a greedy algorithm for fitting adaptive basis function models  弱学习机：对一定分布的训练样本给出假设（根据有无云猜测下雨）  强学习机：根据得到的弱学习机和相应权重给出假设。  弱学习机 boosting-&amp;gt; 强学习机  目标：   min_f\sum ^N _{i=1}L(y_i,f(x_i))​     Boosting 和">
 
 
 
@@ -127,7 +127,7 @@
 
 
 
-  <title>GBDT的理解 | 金若愚的blog</title>
+  <title>Adaboost | 金若愚的blog</title>
   
 
 
@@ -256,7 +256,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-	<h2 class="post-title" itemprop="name headline">GBDT的理解</h2>
+	<h2 class="post-title" itemprop="name headline">Adaboost</h2>
 
 
 
@@ -268,7 +268,23 @@
       <div class="post-body">
         
         
-          <h2 id="Boosting-和-Gradient-Boosting的区别"><a href="#Boosting-和-Gradient-Boosting的区别" class="headerlink" title="Boosting 和 Gradient Boosting的区别"></a>Boosting 和 Gradient Boosting的区别</h2><p>Boosting：在算法开始时，为每个样本赋上一个权重，初始的时候，权重相同，在每一步训练中得到的模型，会使得数据点的估计有对有错，那么在每一步之后增加分错的点的权重，减少分对点的权重，如果有的点老是被分错，他的权重就会十分高（重点关注）。那么N次迭代过后，将会得到N个简单的分类器，组合起来（加权、投票等），得到一个最终模型。</p>
+          <p>a greedy algorithm for fitting adaptive basis function models</p>
+<ul>
+<li><p>弱学习机：对一定分布的训练样本给出假设（根据有无云猜测下雨）</p>
+</li>
+<li><p>强学习机：根据得到的弱学习机和相应权重给出假设。</p>
+<ul>
+<li><p>弱学习机 boosting-&gt; 强学习机</p>
+</li>
+<li><p>目标：</p>
+</li>
+<li><script type="math/tex; mode=display">
+min_f\sum ^N _{i=1}L(y_i,f(x_i))</script><p>​</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Boosting-和-Gradient-Boosting的区别"><a href="#Boosting-和-Gradient-Boosting的区别" class="headerlink" title="Boosting 和 Gradient Boosting的区别"></a>Boosting 和 Gradient Boosting的区别</h2><p>Boosting：在算法开始时，为每个样本赋上一个权重，初始的时候，权重相同，在每一步训练中得到的模型，会使得数据点的估计有对有错，那么在每一步之后增加分错的点的权重，减少分对点的权重，如果有的点老是被分错，他的权重就会十分高（重点关注）。那么N次迭代过后，将会得到N个简单的分类器，组合起来（加权、投票等），得到一个最终模型。</p>
 <p>而Gradient Boost 和 Boost的区别在于，每一步的计算是为了减少上一步的residual，而为了减少residual，在减少的梯度方向上建立一个新的模型。</p>
 <h2 id="残差是什么"><a href="#残差是什么" class="headerlink" title="残差是什么"></a>残差是什么</h2><script type="math/tex; mode=display">
 残差=真实值-预测值</script>
@@ -347,7 +363,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
